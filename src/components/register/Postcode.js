@@ -44,6 +44,7 @@ const postCodeStyle = {
   position: "absolute",
   width: "100%",
   height: "76%",
+  'border-radius': '0.5rem',
 };
 
 const Container = styled.div`

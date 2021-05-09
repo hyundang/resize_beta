@@ -3,7 +3,7 @@ import styled from "styled-components";
 const Header = styled.div`
   position: fixed;
   top: 0;
-  overflow: scroll;
+  z-index: 5;
 
   width: 100%;
   height: 5rem;
