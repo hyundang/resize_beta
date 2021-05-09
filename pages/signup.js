@@ -13,7 +13,6 @@ import ic_lt_arrow from "../src/assets/icons/ic-arrow-side-black.svg";
 import ic_down_arrow from "../src/assets/icons/arrow-down.svg";
 import ic_find from "../src/assets/icons/ic-find.svg";
 
-
 const SignupPage = () => {
   // prevent refresh
   useEffect(() => {
