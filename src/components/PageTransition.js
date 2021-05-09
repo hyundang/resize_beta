@@ -25,17 +25,6 @@ const PageTransition = ({ children, type, pagenum }) => {
 
   return (
     <>
-      <div>
-        <Link href="/">
-          <a>HOME</a>
-        </Link>
-        <Link href="/mypage">
-          <a>MY_PAGE</a>
-        </Link>
-        <Link href="/contact">
-          <a>CONTACT</a>
-        </Link>
-      </div>
       <TransitionGroup style={{ position: "relative" }}>
         <Transition
           key={type === "app" ? router.pathname : pagenum}
