@@ -2,15 +2,12 @@ import React, { useState, useEffect } from "react";
 import styled, { css, keyframes } from "styled-components";
 import Link from "next/link";
 // components
-import Header from "../src/components/common/Header";
-import InputBox from "../src/components/register/InputBox";
-import DaumPostcode from "../src/components/register/Postcode";
-import DateInput from "../src/components/register/DateInput";
-import Radio from "../src/components/common/RadioBtn";
-import Check from "../src/components/common/Checkbox";
+import { Check, Header, Radio } from "../src/components/common";
+import { InputBox, Postcode, DateInput } from "../src/components/register";
 // assets
 import ic_lt_arrow from "../src/assets/icons/ic-arrow-side-black.svg";
 import ic_down_arrow from "../src/assets/icons/arrow-down.svg";
+import ic_up_arrow from "../src/assets/icons/arrow-up.svg";
 import ic_find from "../src/assets/icons/ic-find.svg";
 
 const SignupPage = () => {
@@ -46,6 +43,26 @@ const SignupPage = () => {
     two: false,
     three: false,
   });
+  const policyDatas = [
+    {
+      id: "0",
+      text: "이용약관",
+      isPolicyOpen: isPolicyOpen.one,
+      policyText: PolicyOne,
+    },
+    {
+      id: "1",
+      text: "개인정보 취급방침",
+      isPolicyOpen: isPolicyOpen.two,
+      policyText: PolicyTwo,
+    },
+    {
+      id: "2",
+      text: "[선택] 마케팅 활용동의",
+      isPolicyOpen: isPolicyOpen.three,
+      policyText: PolicyThree,
+    },
+  ];
 
   const handleInputChange = (e) => {
     const {
@@ -123,7 +140,7 @@ const SignupPage = () => {
   // password format check
   useEffect(() => {
     //  8 ~ 16자 영문, 숫자 조합
-    const regExp = /^(?=.*\d)(?=.*[a-zA-Z])[0-9a-zA-Z]{8,16}$/;
+    const regExp = /^(?=.*\d)(?=.*[a-zA-Z])[0-9a-zA-Z]{10,16}$/;
     inputData.password.length === 0
       ? setPwFormat(true)
       : setPwFormat(regExp.test(inputData.password));
@@ -212,11 +229,11 @@ const SignupPage = () => {
           minLength="8"
           required
           id="password"
-          placeholder="8~16자리, 영문/숫자 조합을 입력해주세요."
+          placeholder="10~16자리, 영문/숫자를 포함한 조합을 입력해주세요."
           value={inputData.password}
           onChange={handleInputChange}
         />
-        {!pwFormat && <DescText>8~16자리, 영문/숫자 조합</DescText>}
+        {!pwFormat && <DescText>10~16자리, 영문/숫자 조합</DescText>}
         <div style={{ height: "2.45rem" }} />
         <Qtext>비밀번호 확인</Qtext>
         <InputBox
@@ -224,7 +241,7 @@ const SignupPage = () => {
           minLength="8"
           required
           id="password_check"
-          placeholder="8~16자리, 영문/숫자 조합을 입력해주세요."
+          placeholder="10~16자리, 영문/숫자를 포함한 조합을 입력해주세요."
           value={inputData.password_check}
           onChange={handleInputChange}
         />
@@ -250,7 +267,7 @@ const SignupPage = () => {
           <Icon className="ic_find" src={ic_find} />
         </div>
         {isPostOpen && (
-          <DaumPostcode
+          <Postcode
             inputData={inputData}
             setInputData={setInputData}
             setIsPostOpen={setIsPostOpen}
@@ -266,9 +283,9 @@ const SignupPage = () => {
         <div style={{ height: "2.45rem" }} />
         <div
           style={{
-            position: 'absolute',
-            left: '0',
-            zIndex:'2',
+            position: "absolute",
+            left: "0",
+            zIndex: "2",
             width: "100vw",
             height: "1rem",
             background: `#F5F3F0`,
@@ -290,33 +307,20 @@ const SignupPage = () => {
           text="전체 동의"
         />
         <div style={{ height: "2rem" }} />
-        <CheckBox
-          id="0"
-          handleCheckClick={handleChkClick}
-          handleDownClick={handleDownClick}
-          inputData={inputData}
-          isPolicyOpen={isPolicyOpen.one}
-          text="이용약관"
-          PolicyText={PolicyOne}
-        />
-        <CheckBox
-          id="1"
-          handleCheckClick={handleChkClick}
-          handleDownClick={handleDownClick}
-          inputData={inputData}
-          isPolicyOpen={isPolicyOpen.two}
-          text="개인정보 취급방침"
-          PolicyText={PolicyTwo}
-        />
-        <CheckBox
-          id="2"
-          handleCheckClick={handleChkClick}
-          handleDownClick={handleDownClick}
-          inputData={inputData}
-          isPolicyOpen={isPolicyOpen.three}
-          text="[선택] 마케팅 활용동의"
-          PolicyText={PolicyThree}
-        />
+        {policyDatas.map((item, idx) => {
+          return (
+            <CheckBox
+              id={item.id}
+              key={idx}
+              handleCheckClick={handleChkClick}
+              handleDownClick={handleDownClick}
+              inputData={inputData}
+              isPolicyOpen={item.isPolicyOpen}
+              text={item.text}
+              PolicyText={item.policyText}
+            />
+          );
+        })}
         <div style={{ height: "12.2rem" }} />
         <Bottom>다음</Bottom>
       </Container>
@@ -482,7 +486,7 @@ const CheckBox = ({
         />
         <img
           id={id}
-          src={ic_down_arrow}
+          src={isPolicyOpen ? ic_up_arrow : ic_down_arrow}
           style={{ width: "4rem", height: "4rem" }}
           onClick={handleDownClick}
         />
