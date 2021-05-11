@@ -60,7 +60,7 @@ const LoginPage = () => {
         <InputBox
           type="number"
           id="phone"
-          placeholder="휴대폰 번호를 입력하세요"
+          placeholder="휴대폰 번호를 입력해주세요"
           value={inputData.phone}
           onChange={handleInputChange}
         />
@@ -71,7 +71,7 @@ const LoginPage = () => {
           minLength="8"
           required
           id="password"
-          placeholder="비밀번호를 입력하세요"
+          placeholder="비밀번호를 입력해주세요"
           value={inputData.password}
           onChange={handleInputChange}
         />
