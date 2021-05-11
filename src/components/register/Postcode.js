@@ -42,9 +42,10 @@ export default Postcode;
 const postCodeStyle = {
   display: "block",
   position: "absolute",
+  'z-index': '2',
   width: "100%",
-  height: "76%",
-  'border-radius': '0.5rem',
+  height: "90%",
+  "border-radius": "0.5rem",
 };
 
 const Container = styled.div`
@@ -80,7 +81,8 @@ const Btn = styled.div`
   bottom: 0;
 
   width: 100%;
-  height: 5.4rem;
+  height: 10%;
+  background-color: ${({ theme }) => theme.colors.white};
   box-shadow: 0 0.5rem 0.5rem 0.5rem rgba(0, 0, 0, 0.05);
 
   display: flex;
@@ -90,5 +92,5 @@ const Btn = styled.div`
   font-size: 1.5rem;
   font-weight: 700;
   line-height: 2.8rem;
-  color: ${({theme})=>theme.colors.blue};
+  color: ${({ theme }) => theme.colors.blue};
 `;

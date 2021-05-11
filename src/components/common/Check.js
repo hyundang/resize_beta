@@ -1,8 +1,8 @@
 import styled, { css } from "styled-components";
 
-const CheckBox = ({ id, checkedList, handleCheckClick, text }) => (
-  <CheckBoxContainer className="checkBox">
-    <StyledCheckBox
+const Check = ({ id, checkedList, handleCheckClick, text }) => (
+  <CheckContainer className="check">
+    <StyledCheck
       id={id}
       checked={
         id === "check_all"
@@ -18,16 +18,16 @@ const CheckBox = ({ id, checkedList, handleCheckClick, text }) => (
       <Icon id={id} viewBox="0 0 24 24">
         <polyline id={id} points="18 8 10 16 6 11" onClick={handleCheckClick} />
       </Icon>
-    </StyledCheckBox>
-    <CheckBoxText id={id} onClick={handleCheckClick}>
+    </StyledCheck>
+    <CheckText id={id} onClick={handleCheckClick}>
       {text}
-    </CheckBoxText>
-  </CheckBoxContainer>
+    </CheckText>
+  </CheckContainer>
 );
 
-export default CheckBox;
+export default Check;
 
-const CheckBoxContainer = styled.div`
+const CheckContainer = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -39,7 +39,7 @@ const Icon = styled.svg`
   stroke: ${({ theme }) => theme.colors.gray_1};
 `;
 
-const StyledCheckBox = styled.div`
+const StyledCheck = styled.div`
   width: 2rem;
   height: 2rem;
   border-radius: 1rem;
@@ -66,7 +66,7 @@ const StyledCheckBox = styled.div`
         `}
 `;
 
-const CheckBoxText = styled.span`
+const CheckText = styled.span`
   height: 2rem;
   margin-left: 1rem;
 
