@@ -33,9 +33,11 @@ const LoginPage = () => {
   };
 
   const handleCEGetBtn = () => {
-    setIsCEGetBtnAtv(true);
-    setPnFormat(false);
-    setIsCEOkay(true);
+    if (inputData.phone.length > 0) {
+      setIsCEGetBtnAtv(true);
+      setPnFormat(false);
+      setIsCEOkay(true);
+    }
   };
 
   const handleCECheckBtn = () => {
@@ -159,7 +161,7 @@ const Qtext = styled.div`
 
 const Btn = styled.div`
   position: absolute;
-  right: 1.4rem;
+  right: 2rem;
   z-index: 2;
 
   width: 8.6rem;
