@@ -40,3 +40,6 @@ a {
 #datePicker:focus{
   border-bottom: solid 0.1rem #b7b7b7;
 }
+.react-datepicker-wrapper{
+  width: 100%;
+}

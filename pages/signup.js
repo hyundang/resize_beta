@@ -6,6 +6,7 @@ import { Check, Header, Radio } from "../src/components/common";
 import { InputBox, Postcode, DateInput } from "../src/components/register";
 // assets
 import ic_lt_arrow from "../src/assets/icons/ic-arrow-side-black.svg";
+import ic_dropdown from "../src/assets/icons/dropdown.svg";
 import ic_down_arrow from "../src/assets/icons/arrow-down.svg";
 import ic_up_arrow from "../src/assets/icons/arrow-up.svg";
 import ic_find from "../src/assets/icons/ic-find.svg";
@@ -37,6 +38,11 @@ const SignupPage = () => {
   const [pwCheck, setPwCheck] = useState(false);
   // for postcode api
   const [isPostOpen, setIsPostOpen] = useState(false);
+  // for phone number
+  const [pnFormat, setPnFormat] = useState(false);
+  const [isCEGetBtnAtv, setIsCEGetBtnAtv] = useState(false);
+  // for certification
+  const [isCEOkay, setIsCEOkay] = useState(false);
   // for policybox
   const [isPolicyOpen, setIsPolicyOpen] = useState({
     one: false,
@@ -74,6 +80,7 @@ const SignupPage = () => {
     });
   };
 
+  // for inputs
   const handleInputDate = (date, e) => {
     const d = new Date(date);
     const data = d.toISOString().slice(0, 10);
@@ -81,6 +88,18 @@ const SignupPage = () => {
       ...inputData,
       birth: [d, data],
     });
+  };
+
+  const handleCEGetBtn = () => {
+    if (inputData.phone.length > 0) {
+      setIsCEGetBtnAtv(true);
+      setPnFormat(false);
+      setIsCEOkay(true);
+    }
+  };
+
+  const handleCECheckBtn = () => {
+    setIsCEOkay(false);
   };
 
   // for check all
@@ -109,6 +128,8 @@ const SignupPage = () => {
           check_list: inputData.check_list.concat([e.target.id]),
         });
   };
+
+  // for policy down btn click
   const handleDownClick = (e) => {
     e.stopPropagation();
     switch (e.target.id) {
@@ -158,6 +179,15 @@ const SignupPage = () => {
         );
   }, [inputData.password_check]);
 
+  // phone number format check
+  useEffect(() => {
+    inputData.phone.length === 0
+      ? setPnFormat(true)
+      : setPnFormat(
+          (inputData.phone[0] === "0") & (inputData.phone.length === 11)
+        );
+  }, [inputData.phone]);
+
   return (
     <>
       <Header className="header">
@@ -182,7 +212,7 @@ const SignupPage = () => {
         <Qtext>생일</Qtext>
         <Icon
           className="ic_find"
-          src={ic_down_arrow}
+          src={ic_dropdown}
           style={{ top: "15rem" }}
         />
         <DateInput onChange={handleInputDate} inputDate={inputData.birth} />
@@ -215,14 +245,54 @@ const SignupPage = () => {
         />
         <div style={{ height: "2.45rem" }} />
         <Qtext>휴대폰 번호</Qtext>
-        <InputBox
-          type="number"
-          id="phone"
-          placeholder="휴대폰 번호를 입력해주세요."
-          value={inputData.phone}
-          onChange={handleInputChange}
-        />
+        <div>
+          <InputBox
+            type="number"
+            id="phone"
+            placeholder="휴대폰 번호를 입력해주세요."
+            value={inputData.phone}
+            onChange={handleInputChange}
+          />
+          <CEBtn
+            id="CECGetBtn"
+            style={{ top: "36.1rem" }}
+            isActive={pnFormat & (inputData.phone.length !== 0)}
+            onClick={pnFormat ? handleCEGetBtn : () => {}}
+          >
+            인증번호 받기
+          </CEBtn>
+        </div>
+        {!pnFormat && !isCEGetBtnAtv && (
+          <DescText>올바른 휴대폰 번호를 입력해주세요</DescText>
+        )}
         <div style={{ height: "2.45rem" }} />
+        {isCEGetBtnAtv && (
+          <>
+            <Qtext>인증번호</Qtext>
+            <InputBox
+              type="number"
+              id="CE"
+              placeholder=""
+              value={inputData.CE}
+              onChange={handleInputChange}
+            />
+            <Time isActive={isCEOkay}>3:00</Time>
+            <CEBtn
+              id="CECheckBtn"
+              style={{ top: "43.5rem" }}
+              isActive={isCEOkay}
+              onClick={isCEOkay ? handleCECheckBtn : () => {}}
+            >
+              인증번호 확인
+            </CEBtn>
+            {isCEOkay ? (
+              <DescText>문자메시지로 전송된 인증번호를 입력해주세요.</DescText>
+            ) : (
+              <DescText>인증되었습니다.</DescText>
+            )}
+            <div style={{ height: "2.45rem" }} />
+          </>
+        )}
         <Qtext>비밀번호</Qtext>
         <InputBox
           type="password"
@@ -374,6 +444,54 @@ const DescText = styled.div`
 
   font-weight: 400;
   color: ${({ theme }) => theme.colors.blue};
+`;
+
+const CEBtn = styled.div`
+  position: absolute;
+  right: 2rem;
+  z-index: 2;
+
+  width: 8.6rem;
+  height: 3.2rem;
+  border-radius: 0.5rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 1.2rem;
+  font-weight: 400;
+
+  transition: 0.2s;
+
+  ${(props) =>
+    props.isActive
+      ? css`
+          border: none;
+          background-color: ${({ theme }) => theme.colors.black};
+          color: ${({ theme }) => theme.colors.white};
+        `
+      : css`
+          border: solid 0.1rem ${({ theme }) => theme.colors.gray_2};
+          background-color: ${({ theme }) => theme.colors.white};
+          color: ${({ theme }) => theme.colors.gray_2};
+        `}
+`;
+
+const Time = styled.div`
+  position: absolute;
+  top: 44.2rem;
+  right: 12.6rem;
+  z-index: 2;
+
+  width: 2.6rem;
+  height: 1.8rem;
+
+  display: ${(props) => (props.isActive ? "block" : "none")};
+
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: ${({ theme }) => theme.colors.red};
 `;
 
 const RadioWrap = styled.div`
