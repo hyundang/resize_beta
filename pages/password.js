@@ -2,9 +2,8 @@ import React, { useState, useEffect } from "react";
 import styled, { css } from "styled-components";
 import Link from "next/link";
 // components
-import Header from "../src/components/common/Header";
-import InputBox from "../src/components/register/InputBox";
-import Modal from "../src/components/common/Modal";
+import { Header, Modal } from "../src/components/common";
+import { InputBox } from "../src/components/register";
 // assets
 import ic_bak_arrow from "../src/assets/icons/ic-arrow-side-black.svg";
 
