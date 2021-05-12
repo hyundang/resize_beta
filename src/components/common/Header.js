@@ -6,7 +6,7 @@ const Header = styled.div`
   z-index: 5;
 
   width: 100%;
-  height: 5rem;
+  height: 8.7rem;
   background-color: ${({ theme }) => theme.colors.white};
   box-shadow: 0 0.1rem 0.5rem 0.5rem rgba(255, 255, 255, 1);
 

@@ -41,7 +41,6 @@ export default function Home() {
     <>
       <Header
         style={{
-          height: "8.7rem",
           padding: "0 0.6rem 0 2.4rem",
           boxShadow: "0 0 0.3rem 0.3rem rgba(0,0,0,0.05)",
           justifyContent: "space-between",
@@ -103,7 +102,7 @@ export default function Home() {
       <MenuContainer isOpen={isMenuOpen}>
         <img
           src={ic_exit}
-          style={{ position:'relative',left: "75%" }}
+          style={{ position: "relative", left: "75%" }}
           onClick={() => setIsMenuOpen(false)}
         />
         <div style={{ marginBottom: "3.2rem" }}>MY STYLE</div>

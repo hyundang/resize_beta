@@ -190,7 +190,7 @@ const SignupPage = () => {
 
   return (
     <>
-      <Header className="header">
+      <Header className="header" style={{ height: "5rem" }}>
         <Link href="login">
           <img
             src={ic_lt_arrow}
@@ -210,11 +210,7 @@ const SignupPage = () => {
         />
         <div style={{ height: "2.45rem" }} />
         <Qtext>생일</Qtext>
-        <Icon
-          className="ic_find"
-          src={ic_dropdown}
-          style={{ top: "15rem" }}
-        />
+        <Icon className="ic_find" src={ic_dropdown} style={{ top: "15rem" }} />
         <DateInput onChange={handleInputDate} inputDate={inputData.birth} />
         <div style={{ height: "2.45rem" }} />
         <Qtext>성별</Qtext>

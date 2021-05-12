@@ -55,7 +55,7 @@ const LoginPage = () => {
 
   return (
     <>
-      <Header className="header">
+      <Header className="header" style={{ height: "5rem", boxShadow: "none" }}>
         <Link href="login">
           <img
             src={ic_bak_arrow}

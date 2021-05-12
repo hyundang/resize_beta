@@ -49,8 +49,10 @@ const LoginPage = () => {
       <Header
         className="header"
         style={{
-          justifyContent: "center",
+          height: "5rem",
           borderBottom: "solid 0.1rem #F5F3F0",
+          boxShadow: "none",
+          justifyContent: "center",
         }}
       >
         ONLY FOR CLUB MEMBERS
