@@ -31,21 +31,21 @@ module.exports = {
       new Dotenv({ silent: true })
     );
 
-    config.optimization.push({
-      minimizer:
-        mode === "production"
-          ? [
-              new TerserPlugin({
-                terserOptions: {
-                  compress: {
-                    drop_console: true,
-                  },
-                },
-              }),
-            ]
-          : [],
-    });
-
     return config;
+  },
+
+  optimization: {
+    minimizer:
+      process.env.NODE_ENV === "production"
+        ? [
+            new TerserPlugin({
+              terserOptions: {
+                compress: {
+                  drop_console: true,
+                },
+              },
+            }),
+          ]
+        : [],
   },
 };

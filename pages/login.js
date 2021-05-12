@@ -38,7 +38,7 @@ const LoginPage = () => {
   // password format check
   useEffect(() => {
     //  8 ~ 16자 영문, 숫자 조합
-    const regExp = /^(?=.*\d)(?=.*[a-zA-Z])[0-9a-zA-Z]{8,16}$/;
+    const regExp = /^(?=.*\d)(?=.*[a-zA-Z])[0-9a-zA-Z]{10,16}$/;
     inputData.password.length === 0
       ? setPwFormat(true)
       : setPwFormat(regExp.test(inputData.password));
