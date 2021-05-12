@@ -3,7 +3,7 @@ import { css } from "styled-components";
 const colors = {
   white: "#ffffff",
   black: "#191919",
-  gray_0: '#F5F3F0', 
+  gray_0: '#F1F1F1', 
   gray_1: '#dddddd',
   gray_2: '#b7b7b7',
   gray_3: "#707070",

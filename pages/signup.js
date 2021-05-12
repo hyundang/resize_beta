@@ -288,7 +288,7 @@ const SignupPage = () => {
             zIndex: "2",
             width: "100vw",
             height: "1rem",
-            background: `#F5F3F0`,
+            background: `#F1F1F1`,
           }}
         />
         <Title
