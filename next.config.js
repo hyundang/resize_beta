@@ -1,12 +1,6 @@
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const Dotenv = require("dotenv-webpack");
-
-let apiDomain;
-if (process.env.NODE_ENV === "development") {
-  apiDomain = process.env.DEV_API_URL;
-} else if (process.env.NODE_ENV === "production") {
-  apiDomain = process.env.API_URL;
-}
+const TerserPlugin = require("terser-webpack-plugin");
 
 module.exports = {
   webpack(config, { dev, webpack }) {
@@ -28,11 +22,29 @@ module.exports = {
 
     config.plugins.push(
       new webpack.DefinePlugin({
-        API_DOMAIN: JSON.stringify(apiDomain),
+        API_DOMAIN:
+          process.env.NODE_ENV === "production"
+            ? JSON.stringify(process.env.API_URL)
+            : JSON.stringify(process.env.DEV_API_URL),
       }),
       new webpack.EnvironmentPlugin(["NODE_ENV"]),
       new Dotenv({ silent: true })
     );
+
+    config.optimization.push({
+      minimizer:
+        mode === "production"
+          ? [
+              new TerserPlugin({
+                terserOptions: {
+                  compress: {
+                    drop_console: true,
+                  },
+                },
+              }),
+            ]
+          : [],
+    });
 
     return config;
   },
