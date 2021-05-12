@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import styled, { css } from "styled-components";
 import Link from "next/link";
 // components
-import Header from "../src/components/common/Header";
-import InputBox from "../src/components/register/InputBox";
+import { Header } from "../src/components/common";
+import { InputBox } from "../src/components/register";
 
 const LoginPage = () => {
   // for input
