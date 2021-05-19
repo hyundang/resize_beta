@@ -71,6 +71,7 @@ const LoginPage = () => {
           type="number"
           id="phone"
           placeholder="01012345678"
+          pattern="\d*"
           value={inputData.phone}
           onChange={handleInputChange}
         />
@@ -91,6 +92,7 @@ const LoginPage = () => {
           type="number"
           id="CE"
           placeholder="인증번호를 입력해주세요"
+          pattern="\d*"
           value={inputData.CE}
           onChange={handleInputChange}
         />
