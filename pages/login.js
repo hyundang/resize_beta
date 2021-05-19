@@ -63,6 +63,7 @@ const LoginPage = () => {
           type="number"
           id="phone"
           placeholder="휴대폰 번호를 입력해주세요"
+          pattern="\d*"
           value={inputData.phone}
           onChange={handleInputChange}
         />
