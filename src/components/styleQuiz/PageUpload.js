@@ -59,6 +59,9 @@ const PageUpload = ({ inputData, setInputData, onBackClick, onNextClick }) => {
 
   // for bottom shadow
   useEffect(() => {
+    // for scroll
+    window.scrollTo(0, 0);
+
     const option = {
       root: viewport.current,
       threshold: 1,
