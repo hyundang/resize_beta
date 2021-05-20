@@ -649,7 +649,7 @@ const styleQuiz = () => {
           <Header className="header" style={{ justifyContent: "center" }}>
             Style Quiz
           </Header>
-          <Bar pageNum={pageNum} maxNum={30} />
+          <Bar pageNum={pageNum} maxNum={46} />
           <TransitionPage type="page" pagenum={pageNum}>
             <PageItems
               options={styleQuizData.brand}

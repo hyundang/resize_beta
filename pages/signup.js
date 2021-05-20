@@ -24,7 +24,7 @@ const SignupPage = () => {
   const [inputData, setInputData] = useState({
     name: "",
     birth: "",
-    sex: "",
+    sex: -1,
     email: "",
     phone: "",
     password: "",
@@ -49,6 +49,8 @@ const SignupPage = () => {
     two: false,
     three: false,
   });
+
+  // for policy data
   const policyDatas = [
     {
       id: "0",
@@ -70,6 +72,7 @@ const SignupPage = () => {
     },
   ];
 
+  // for inputs
   const handleInputChange = (e) => {
     const {
       target: { value },
@@ -80,7 +83,7 @@ const SignupPage = () => {
     });
   };
 
-  // for inputs
+  // for input birth
   const handleInputDate = (date, e) => {
     const d = new Date(date);
     const data = d.toISOString().slice(0, 10);
@@ -111,21 +114,20 @@ const SignupPage = () => {
         })
       : setInputData({
           ...inputData,
-          check_list: ["0", "1", "2"],
+          check_list: [0, 1, 2],
         });
   };
   // for check
   const handleChkClick = (e) => {
-    inputData.check_list.includes(e.target.id)
+    const id = Number(e.target.id);
+    inputData.check_list.includes(id)
       ? setInputData({
           ...inputData,
-          check_list: inputData.check_list.filter(
-            (item) => item !== e.target.id
-          ),
+          check_list: inputData.check_list.filter((item) => item !== id),
         })
       : setInputData({
           ...inputData,
-          check_list: inputData.check_list.concat([e.target.id]),
+          check_list: inputData.check_list.concat([id]),
         });
   };
 
@@ -153,10 +155,6 @@ const SignupPage = () => {
         break;
     }
   };
-
-  useEffect(() => {
-    console.log(inputData.check_list);
-  }, [inputData.check_list]);
 
   // password format check
   useEffect(() => {
@@ -216,17 +214,27 @@ const SignupPage = () => {
         <Qtext>성별</Qtext>
         <RadioWrap>
           <Radio
-            id="sex"
-            value="woman"
+            id={0}
+            value={0}
             data={inputData.sex}
-            onChange={handleInputChange}
+            onChange={(e) =>
+              setInputData({
+                ...inputData,
+                sex: Number(e.target.id),
+              })
+            }
             text="여성"
           />
           <Radio
-            id="sex"
-            value="man"
+            id={1}
+            value={1}
             data={inputData.sex}
-            onChange={handleInputChange}
+            onChange={(e) =>
+              setInputData({
+                ...inputData,
+                sex: Number(e.target.id),
+              })
+            }
             text="남성"
           />
         </RadioWrap>
