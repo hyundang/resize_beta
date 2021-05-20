@@ -34,10 +34,8 @@ const PagePayment = ({
       root: viewport.current,
       threshold: 1,
     };
-    const handleIntersection = (entries, observer) => {
-      entries.forEach((entry) => {
-        entry.isIntersecting ? setIsShow(false) : setIsShow(true);
-      });
+    const handleIntersection = ([entry], observer) => {
+      entry.isIntersecting ? setIsShow(false) : setIsShow(true);
     };
     const io = new IntersectionObserver(handleIntersection, option);
     io.observe(target.current);
@@ -45,7 +43,7 @@ const PagePayment = ({
 
   return (
     <>
-      <Container className="container" ref={target}>
+      <Container className="container">
         <Text>얼굴형이 어떠신가요?</Text>
         <ItemsSmall
           items={options.face}
@@ -87,7 +85,7 @@ const PagePayment = ({
           isNoneGone={true}
           isOne={true}
         />
-        <div style={{ height: "9.2rem" }} />
+        <div style={{ marginTop: "7.2rem", height: "1px" }} ref={target} />
       </Container>
       <Bottom
         ref={viewport}

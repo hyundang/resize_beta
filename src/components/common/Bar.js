@@ -20,6 +20,7 @@ const Container = styled.div`
   height: 0.7rem;
   border-radius: 0.5rem;
   background-color: ${({ theme }) => theme.colors.gray_2};
+  box-shadow: 0 0.5rem 1rem 0.5rem rgba(255, 255, 255, 1);
 
   display: flex;
   align-items: flex-start;

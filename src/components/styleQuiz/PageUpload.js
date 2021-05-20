@@ -66,10 +66,8 @@ const PageUpload = ({ inputData, setInputData, onBackClick, onNextClick }) => {
       root: viewport.current,
       threshold: 1,
     };
-    const handleIntersection = (entries, observer) => {
-      entries.forEach((entry) => {
-        entry.isIntersecting ? setIsShow(false) : setIsShow(true);
-      });
+    const handleIntersection = ([entry], observer) => {
+      entry.isIntersecting ? setIsShow(false) : setIsShow(true);
     };
     const io = new IntersectionObserver(handleIntersection, option);
     io.observe(target.current);

@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 // components
 import { InputBox, Bottom } from "../common";
@@ -6,10 +6,6 @@ import { InputBox, Bottom } from "../common";
 const PageBrand = ({ inputData, placeholder, onBackClick, onNextClick }) => {
   // for bottom btn active
   const [isActive, setIsActive] = useState(false);
-  // for bottom shadow
-  const viewport = useRef(null);
-  const target = useRef(null);
-  const [isShow, setIsShow] = useState(true);
 
   useEffect(() => {
     inputData.value !== "" ? setIsActive(true) : setIsActive(false);
@@ -18,31 +14,17 @@ const PageBrand = ({ inputData, placeholder, onBackClick, onNextClick }) => {
   useEffect(() => {
     // for scroll
     window.scrollTo(0, 0);
-
-    // for bottom shadow
-    const option = {
-      root: viewport.current,
-      threshold: 1,
-    };
-    const handleIntersection = (entries, observer) => {
-      entries.forEach((entry) => {
-        entry.isIntersecting ? setIsShow(false) : setIsShow(true);
-      });
-    };
-    const io = new IntersectionObserver(handleIntersection, option);
-    io.observe(target.current);
   }, []);
 
   return (
     <>
-      <Container className="container" ref={target}>
+      <Container className="container">
         <Text>평소 자주 구매하는 브랜드가 있으신가요?</Text>
         <InputBox placeholder={placeholder} type="text" input={inputData} />
       </Container>
       <Bottom
-        ref={viewport}
         className="bottom"
-        isShow={isShow}
+        isShow={false}
         isActive={isActive}
         onBackClick={onBackClick}
         onNextClick={onNextClick}

@@ -41,10 +41,8 @@ const PageBodyType = ({
       root: viewport.current,
       threshold: 1,
     };
-    const handleIntersection = (entries, observer) => {
-      entries.forEach((entry) => {
-        entry.isIntersecting ? setIsShow(false) : setIsShow(true);
-      });
+    const handleIntersection = ([entry], observer) => {
+      entry.isIntersecting ? setIsShow(false) : setIsShow(true);
     };
     const io = new IntersectionObserver(handleIntersection, option);
     io.observe(target.current);
@@ -52,7 +50,7 @@ const PageBodyType = ({
 
   return (
     <>
-      <Container className="container" ref={target}>
+      <Container className="container">
         <Text
           style={{
             marginBottom: "0.5rem",
@@ -83,7 +81,7 @@ const PageBodyType = ({
             />
           );
         })}
-        <div style={{ height: "9.2rem" }} />
+        <div style={{ marginTop: "5.9rem", height: "1px" }} ref={target} />
       </Container>
       <Bottom
         ref={viewport}

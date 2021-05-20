@@ -31,10 +31,8 @@ const PageItems = ({
       root: viewport.current,
       threshold: 1,
     };
-    const handleIntersection = (entries, observer) => {
-      entries.forEach((entry) => {
-        entry.isIntersecting ? setIsShow(false) : setIsShow(true);
-      });
+    const handleIntersection = ([entry], observer) => {
+      entry.isIntersecting ? setIsShow(false) : setIsShow(true);
     };
     const io = new IntersectionObserver(handleIntersection, option);
     io.observe(target.current);
@@ -42,10 +40,15 @@ const PageItems = ({
 
   return (
     <>
-      <Container className="container" ref={target}>
+      <Container className="container">
         <Text>{qText}</Text>
-        <ItemsSmall items={options} data={inputData} setData={setInputData} isNoneGone={isNoneGone}/>
-        <div style={{ height: "9.2rem" }} />
+        <ItemsSmall
+          items={options}
+          data={inputData}
+          setData={setInputData}
+          isNoneGone={isNoneGone}
+        />
+        <div style={{ marginTop: "9.2rem", height: "1px" }} ref={target} />
       </Container>
       <Bottom
         ref={viewport}

@@ -53,22 +53,16 @@ const Page_1 = ({
       root: viewport.current,
       threshold: 1,
     };
-    const handleIntersection = (entries, observer) => {
-      entries.forEach((entry) => {
-        entry.isIntersecting ? setIsShow(false) : setIsShow(true);
-      });
+    const handleIntersection = ([entry], observer) => {
+      entry.isIntersecting? setIsShow(false) : setIsShow(true)
     };
     const io = new IntersectionObserver(handleIntersection, option);
     io.observe(target.current);
   }, []);
 
-  useEffect(() => {
-    console.log(isShow);
-  }, [isShow]);
-
   return (
     <>
-      <Container className="container" ref={target}>
+      <Container className="container">
         <Text>어떤 목적으로 리사이즈에 방문하게 되셨나요?</Text>
         {options[1].map((item, idx) => {
           return (
@@ -102,7 +96,7 @@ const Page_1 = ({
             );
           })}
         </RadioContainer>
-        <div style={{ height: "9.2rem" }} />
+        <div style={{ marginTop: "5.9rem",height:'1px' }} ref={target}/>
       </Container>
       <Bottom
         ref={viewport}

@@ -30,10 +30,8 @@ const PageStyle = ({
       root: viewport.current,
       threshold: 1,
     };
-    const handleIntersection = (entries, observer) => {
-      entries.forEach((entry) => {
-        entry.isIntersecting ? setIsShow(false) : setIsShow(true);
-      });
+    const handleIntersection = ([entry], observer) => {
+      entry.isIntersecting ? setIsShow(false) : setIsShow(true);
     };
     const io = new IntersectionObserver(handleIntersection, option);
     io.observe(target.current);
@@ -41,7 +39,7 @@ const PageStyle = ({
 
   return (
     <>
-      <Container className="container" ref={target}>
+      <Container className="container">
         <Text>이 스타일은 어떠신가요?</Text>
         <StyleImg
           className="style_img"
@@ -88,7 +86,7 @@ const PageStyle = ({
             싫어요
           </Btn>
         </BtnContainer>
-        <div style={{ height: "9.2rem" }} />
+        <div style={{ marginTop: "5.9rem", height: "1px" }} ref={target} />
       </Container>
       <Bottom
         ref={viewport}

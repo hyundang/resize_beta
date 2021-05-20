@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 // components
 import { InputBox, Bottom } from "../common";
@@ -11,10 +11,6 @@ const PageBodySize = ({
 }) => {
   // for bottom btn active
   const [isActive, setIsActive] = useState(false);
-  // for bottom shadow
-  const viewport = useRef(null);
-  const target = useRef(null);
-  const [isShow, setIsShow] = useState(true);
 
   useEffect(() => {
     (inputData_1.value.length === 3) &
@@ -26,24 +22,11 @@ const PageBodySize = ({
   useEffect(() => {
     // for scroll
     window.scrollTo(0, 0);
-
-    // for bottom shadow
-    const option = {
-      root: viewport.current,
-      threshold: 1,
-    };
-    const handleIntersection = (entries, observer) => {
-      entries.forEach((entry) => {
-        entry.isIntersecting ? setIsShow(false) : setIsShow(true);
-      });
-    };
-    const io = new IntersectionObserver(handleIntersection, option);
-    io.observe(target.current);
   }, []);
 
   return (
     <>
-      <Container className="container" ref={target}>
+      <Container className="container">
         <Text>키와 몸무게가 어떻게 되시나요?</Text>
         <Text style={{ fontSize: "1.4rem", marginBottom: "0.8rem" }}>키</Text>
         <InputBox
@@ -64,9 +47,8 @@ const PageBodySize = ({
         />
       </Container>
       <Bottom
-        ref={viewport}
         className="bottom"
-        isShow={isShow}
+        isShow={false}
         isActive={isActive}
         onBackClick={onBackClick}
         onNextClick={onNextClick}

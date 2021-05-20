@@ -19,7 +19,7 @@ export default Bottom;
 
 const Container = styled.div`
   position: fixed;
-  bottom: 0;
+  bottom: -1px;
   z-index: 5;
 
   width: 100%;

@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 // components
 import { Bottom, Radio } from "../common";
@@ -14,10 +14,6 @@ const PagePreferSorP = ({
 }) => {
   // for bottom btn active
   const [isActive, setIsActive] = useState(false);
-  // for bottom shadow
-  const viewport = useRef(null);
-  const target = useRef(null);
-  const [isShow, setIsShow] = useState(true);
 
   // for checking bottom btn active
   useEffect(() => {
@@ -26,23 +22,11 @@ const PagePreferSorP = ({
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    // for bottom shadow
-    const option = {
-      root: viewport.current,
-      threshold: 1,
-    };
-    const handleIntersection = (entries, observer) => {
-      entries.forEach((entry) => {
-        entry.isIntersecting ? setIsShow(false) : setIsShow(true);
-      });
-    };
-    const io = new IntersectionObserver(handleIntersection, option);
-    io.observe(target.current);
   }, []);
 
   return (
     <>
-      <Container className="container" ref={target}>
+      <Container className="container">
         <Text
           style={{
             fontSize: "1.6rem",
@@ -73,9 +57,8 @@ const PagePreferSorP = ({
         <div style={{ height: "8.6rem" }} />
       </Container>
       <Bottom
-        ref={viewport}
         className="bottom"
-        isShow={isShow}
+        isShow={false}
         isActive={isActive}
         onBackClick={onBackClick}
         onNextClick={onNextClick}
