@@ -20,3 +20,21 @@ export const getUserSelector = selector({
     set(UserState, newValue);
   },
 });
+
+import { atom, atomFamily } from "recoil";
+
+export const SignupDataState = atom({
+  key: "SignupDataState",
+  default: {
+    name: "",
+    birth: "",
+    sex: -1,
+    email: "",
+    phone: "",
+    password: "",
+    password_check: "",
+    address: "",
+    address_detail: "",
+    check_list: [],
+  },
+});
