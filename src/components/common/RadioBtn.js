@@ -11,7 +11,9 @@ const Radio = ({ id, value, data, onChange, text }) => {
         onChange={onChange}
       />
       <RadioBtnLabel />
-      <div style={{ marginLeft: "1rem" }}>{text}</div>
+      <div style={{ marginLeft: "1.2rem" }} id={id} onClick={onChange}>
+        {text}
+      </div>
     </Item>
   );
 };
@@ -26,6 +28,10 @@ const Item = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: ${({ theme }) => theme.colors.black};
 `;
 
 const RadioBtnLabel = styled.label`

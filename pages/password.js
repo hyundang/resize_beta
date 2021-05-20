@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import styled, { css } from "styled-components";
 import Link from "next/link";
 // components
-import { Header, Modal } from "../src/components/common";
+import { Header, Modal, BottomBlack } from "../src/components/common";
 import { InputBox } from "../src/components/register";
 // assets
 import ic_bak_arrow from "../src/assets/icons/ic-arrow-side-black.svg";
@@ -110,7 +110,7 @@ const LoginPage = () => {
         >
           인증번호 확인
         </Btn>
-        <Bottom>다음</Bottom>
+        <BottomBlack>다음</BottomBlack>
       </Container>
       {isOpen && (
         <Modal
@@ -205,25 +205,6 @@ const Time = styled.div`
   font-size: 1.2rem;
   font-weight: 400;
   color: ${({ theme }) => theme.colors.red};
-`;
-
-const Bottom = styled.div`
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  z-index: 2;
-
-  width: 100%;
-  height: 6rem;
-  background-color: ${({ theme }) => theme.colors.black};
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  font-size: 1.6rem;
-  font-weight: 400;
-  color: ${({ theme }) => theme.colors.white};
 `;
 
 const DescText = styled.div`

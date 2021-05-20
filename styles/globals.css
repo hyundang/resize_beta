@@ -43,3 +43,8 @@ a {
 .react-datepicker-wrapper{
   width: 100%;
 }
+
+@font-face {
+  font-family: "brown_sunflower";
+  src: url("../src/font/BROWN\ SUNFLOWER.ttf");
+}

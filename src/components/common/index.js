@@ -1,5 +1,11 @@
 export { default as Check } from "./Check";
 export { default as Header } from "./Header";
-// export {default as InputBox} from './InputBox';
+export {default as InputBox} from './InputBox';
+export { default as InputBoxBig } from "./InputBoxBig";
 export { default as Modal } from "./Modal";
 export { default as Radio } from "./RadioBtn";
+export { default as Bottom } from "./Bottom";
+export { default as BottomBlack } from "./BottomBlack";
+export { default as ItemsSmall } from "./ItemsSmall";
+export { default as Bar } from "./Bar";
+export { default as Options } from "./Options";

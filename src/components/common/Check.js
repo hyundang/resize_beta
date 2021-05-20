@@ -1,33 +1,42 @@
 import styled, { css } from "styled-components";
 
-const Check = ({ id, checkedList, handleCheckClick, text }) => (
-  <CheckContainer className="check">
-    <StyledCheck
-      id={id}
-      checked={
-        id === "check_all"
-          ? checkedList.length === 3
+const Check = ({ id, checkedList, handleCheckClick, text }) => {
+  return (
+    <CheckContainer className="check" id={id} onClick={handleCheckClick}>
+      <StyledCheck
+        id={id}
+        checked={
+          id === "check_all"
+            ? checkedList.length === 3
+              ? true
+              : false
+            : checkedList.includes(Number(`${id}`))
             ? true
             : false
-          : checkedList.includes(`${id}`)
-          ? true
-          : false
-      }
-      onClick={handleCheckClick}
-    >
-      <Icon id={id} viewBox="0 0 24 24">
-        <polyline id={id} points="18 8 10 16 6 11" onClick={handleCheckClick} />
-      </Icon>
-    </StyledCheck>
-    <CheckText id={id} onClick={handleCheckClick}>
-      {text}
-    </CheckText>
-  </CheckContainer>
-);
+        }
+        onClick={handleCheckClick}
+      >
+        <Icon id={id} viewBox="0 0 24 24">
+          <polyline
+            id={id}
+            points="18 8 10 16 6 11"
+            onClick={handleCheckClick}
+          />
+        </Icon>
+      </StyledCheck>
+      <CheckText id={id} onClick={handleCheckClick}>
+        {text}
+      </CheckText>
+    </CheckContainer>
+  );
+};
 
 export default Check;
 
 const CheckContainer = styled.div`
+  width: 100%;
+  height: 2rem;
+
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -72,5 +81,6 @@ const CheckText = styled.span`
 
   font-size: 1.4rem;
   font-weight: 400;
+  line-height: 1.6rem;
   color: ${({ theme }) => theme.colors.black};
 `;

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import styled, { css, keyframes } from "styled-components";
 import Link from "next/link";
 // components
-import { Check, Header, Radio } from "../src/components/common";
+import { Check, Header, Radio, BottomBlack } from "../src/components/common";
 import { InputBox, Postcode, DateInput } from "../src/components/register";
 // assets
 import ic_lt_arrow from "../src/assets/icons/ic-arrow-side-black.svg";
@@ -390,7 +390,7 @@ const SignupPage = () => {
           );
         })}
         <div style={{ height: "12.2rem" }} />
-        <Bottom>다음</Bottom>
+        <BottomBlack>다음</BottomBlack>
       </Container>
     </>
   );
@@ -509,25 +509,6 @@ const Icon = styled.img`
   width: 4rem;
   height: 4rem;
   margin-bottom: 1rem;
-`;
-
-const Bottom = styled.div`
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  z-index: 5;
-
-  width: 100%;
-  height: 6rem;
-  background-color: ${({ theme }) => theme.colors.black};
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  font-size: 1.6rem;
-  font-weight: 500;
-  color: ${({ theme }) => theme.colors.white};
 `;
 
 const CheckBoxContainer = styled.div`
