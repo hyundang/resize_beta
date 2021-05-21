@@ -25,15 +25,20 @@ const PageUpload = ({ inputData, setInputData, onBackClick, onNextClick }) => {
   };
 
   const handleInputFile = (e) => {
-    if (inputData[e.target.id].length < 5) {
-      const {
-        target: { files },
-      } = e;
-      const img_url = URL.createObjectURL(files[0]);
+    const len = e.target.files.length;
+    const files = e.target.files;
+    let urls = inputData[e.target.id];
+    if (inputData[e.target.id].length + len <= 5) {
+      for (let i = 0; i < len; i++) {
+        let img_url = URL.createObjectURL(files[i]);
+        urls = urls.concat([img_url]);
+      }
       setInputData({
         ...inputData,
-        [e.target.id]: inputData[e.target.id].concat([img_url]),
+        [e.target.id]: urls,
       });
+    } else {
+      file.current.value = "";
     }
   };
 
@@ -106,7 +111,7 @@ const PageUpload = ({ inputData, setInputData, onBackClick, onNextClick }) => {
         <Text>
           답변은 선택사항입니다. 업로드 된 이미지는 보다 정확한 스타일링을 위해
           전담 큐레이터에게 전달됩니다. 이외 목적으로는 절대 사용되지 않습니다.
-          최대한 실물과 가까운 사진을 업로드해주세요.
+          최대한 실물과 가까운 사진을 업로드해주세요. (각 최대 5장)
         </Text>
         <ImgContainer id="img_container">
           <ImgWrap id="img_wrap">
@@ -131,6 +136,7 @@ const PageUpload = ({ inputData, setInputData, onBackClick, onNextClick }) => {
               type="file"
               id="img_face"
               accept="image/jpeg, image/jpg, image/png"
+              multiple={true}
               ref={file}
               onChange={handleInputFile}
               style={{ width: "0", height: "0" }}
@@ -172,6 +178,7 @@ const PageUpload = ({ inputData, setInputData, onBackClick, onNextClick }) => {
               type="file"
               id="img_body"
               accept="image/jpeg, image/jpg, image/png"
+              multiple={true}
               ref={file}
               onChange={handleInputFile}
               style={{ width: "0", height: "0" }}
