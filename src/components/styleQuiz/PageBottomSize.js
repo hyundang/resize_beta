@@ -2,13 +2,12 @@ import React, { useEffect, useState, useRef } from "react";
 import styled from "styled-components";
 // components
 import { Bottom, Options, Radio } from "../common";
-// for figuring the input data property
-import { props } from "../../lib/data/properties";
 
 const PageBottomSize = ({
   options,
   inputData,
   setInputData,
+  props,
   onBackClick,
   onNextClick,
 }) => {
@@ -77,18 +76,18 @@ const PageBottomSize = ({
                   flexDirection: "column",
                 }}
               >
-                {item[props.size_bottom[idx]].map((e, index) => {
+                {item[props[idx]].map((e, index) => {
                   return (
                     <>
                       <Radio
                         id={index}
                         value={index}
                         text={e}
-                        data={inputData[props.size_bottom[idx]]}
+                        data={inputData[props[idx]]}
                         onChange={(e) =>
                           setInputData({
                             ...inputData,
-                            [props.size_bottom[idx]]: Number(e.target.id),
+                            [props[idx]]: Number(e.target.id),
                           })
                         }
                       />
@@ -119,20 +118,20 @@ const PageBottomSize = ({
                 본인의 발 정사이즈와 가장 가까운 사이즈를 선택해주세요.
               </Text>
               <Options
-                options={item[props.size_bottom[idx]]}
+                options={item[props[idx]]}
                 text={item.text}
                 inputData={inputData}
                 setInputData={setInputData}
-                property={props.size_bottom[idx]}
+                property={props[idx]}
               />
             </>
           ) : (
             <Options
-              options={item[props.size_bottom[idx]]}
+              options={item[props[idx]]}
               text={item.text}
               inputData={inputData}
               setInputData={setInputData}
-              property={props.size_bottom[idx]}
+              property={props[idx]}
             />
           );
         })}

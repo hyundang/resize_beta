@@ -35,9 +35,14 @@ import {
   StyleQuizInputState_46,
 } from "../src/states/styleQuiz";
 // data
-import { styleQuizData } from "../src/lib/data/styleQuiz";
+import { styleQuizData_M } from "../src/lib/data/styleQuiz_M";
+import { styleQuizData_W } from "../src/lib/data/styleQuiz_W";
+// for figuring the input data property
+import { props } from "../src/lib/data/properties";
 // hooks
 import { useRecoilInput } from "../src/hooks";
+
+const sex = 1; // only man
 
 const styleQuiz = () => {
   // for page
@@ -107,13 +112,16 @@ const styleQuiz = () => {
     case 1:
       return (
         <>
-          <Header className="header" style={{ justifyContent: "center", fontSize:'2rem'}}>
+          <Header
+            className="header"
+            style={{ justifyContent: "center", fontSize: "2rem" }}
+          >
             Style Quiz
           </Header>
           <Bar pageNum={pageNum} maxNum={46} />
           <TransitionPage type="page" pagenum={pageNum}>
             <Page_1
-              options={styleQuizData.page_1}
+              options={styleQuizData_M.page_1}
               inputData={data_1}
               setInputData={setData_1}
               onBackClick={() => setPageNum(0)}
@@ -125,13 +133,16 @@ const styleQuiz = () => {
     case 2:
       return (
         <>
-          <Header className="header" style={{ justifyContent: "center", fontSize:'2rem'}}>
+          <Header
+            className="header"
+            style={{ justifyContent: "center", fontSize: "2rem" }}
+          >
             Style Quiz
           </Header>
           <Bar pageNum={pageNum} maxNum={46} />
           <TransitionPage type="page" pagenum={pageNum}>
             <PageItems
-              options={styleQuizData.page_2}
+              options={styleQuizData_M.page_2}
               qText={"싫어하는 색상톤이 있으신가요?"}
               inputData={data_2}
               setInputData={setData_2}
@@ -144,13 +155,16 @@ const styleQuiz = () => {
     case 3:
       return (
         <>
-          <Header className="header" style={{ justifyContent: "center", fontSize:'2rem'}}>
+          <Header
+            className="header"
+            style={{ justifyContent: "center", fontSize: "2rem" }}
+          >
             Style Quiz
           </Header>
           <Bar pageNum={pageNum} maxNum={46} />
           <TransitionPage type="page" pagenum={pageNum}>
             <PageItems
-              options={styleQuizData.page_3}
+              options={styleQuizData_M.page_3}
               qText={"싫어하는 색상이 있으신가요?"}
               inputData={data_3}
               setInputData={setData_3}
@@ -163,13 +177,18 @@ const styleQuiz = () => {
     case 4:
       return (
         <>
-          <Header className="header" style={{ justifyContent: "center", fontSize:'2rem'}}>
+          <Header
+            className="header"
+            style={{ justifyContent: "center", fontSize: "2rem" }}
+          >
             Style Quiz
           </Header>
           <Bar pageNum={pageNum} maxNum={46} />
           <TransitionPage type="page" pagenum={pageNum}>
             <PageItems
-              options={styleQuizData.page_4}
+              options={
+                sex === 0 ? styleQuizData_M.page_4 : styleQuizData_W.page_4
+              }
               qText={"싫어하는 패턴이 있으신가요?"}
               inputData={data_4}
               setInputData={setData_4}
@@ -182,13 +201,18 @@ const styleQuiz = () => {
     case 5:
       return (
         <>
-          <Header className="header" style={{ justifyContent: "center", fontSize:'2rem'}}>
+          <Header
+            className="header"
+            style={{ justifyContent: "center", fontSize: "2rem" }}
+          >
             Style Quiz
           </Header>
           <Bar pageNum={pageNum} maxNum={46} />
           <TransitionPage type="page" pagenum={pageNum}>
             <PageItems
-              options={styleQuizData.page_5}
+              options={
+                sex === 0 ? styleQuizData_M.page_5 : styleQuizData_W.page_5
+              }
               qText={"싫어하는 디테일이 있으신가요?"}
               inputData={data_5}
               setInputData={setData_5}
@@ -201,13 +225,18 @@ const styleQuiz = () => {
     case 6:
       return (
         <>
-          <Header className="header" style={{ justifyContent: "center", fontSize:'2rem'}}>
+          <Header
+            className="header"
+            style={{ justifyContent: "center", fontSize: "2rem" }}
+          >
             Style Quiz
           </Header>
           <Bar pageNum={pageNum} maxNum={46} />
           <TransitionPage type="page" pagenum={pageNum}>
             <PageItems
-              options={styleQuizData.page_6}
+              options={
+                sex === 0 ? styleQuizData_M.page_6 : styleQuizData_W.page_6
+              }
               qText={"싫어하는 소재가 있으신가요?"}
               inputData={data_6}
               setInputData={setData_6}
@@ -220,13 +249,18 @@ const styleQuiz = () => {
     case 7:
       return (
         <>
-          <Header className="header" style={{ justifyContent: "center", fontSize:'2rem'}}>
+          <Header
+            className="header"
+            style={{ justifyContent: "center", fontSize: "2rem" }}
+          >
             Style Quiz
           </Header>
           <Bar pageNum={pageNum} maxNum={46} />
           <TransitionPage type="page" pagenum={pageNum}>
             <PageItems
-              options={styleQuizData.page_7}
+              options={
+                sex === 0 ? styleQuizData_M.page_7 : styleQuizData_W.page_7
+              }
               qText={"싫어하는 넥라인 혹은 칼라가 있으신가요?"}
               inputData={data_7}
               setInputData={setData_7}
@@ -239,13 +273,18 @@ const styleQuiz = () => {
     case 8:
       return (
         <>
-          <Header className="header" style={{ justifyContent: "center", fontSize:'2rem'}}>
+          <Header
+            className="header"
+            style={{ justifyContent: "center", fontSize: "2rem" }}
+          >
             Style Quiz
           </Header>
           <Bar pageNum={pageNum} maxNum={46} />
           <TransitionPage type="page" pagenum={pageNum}>
             <PageStyle
-              src={styleQuizData.style[0]}
+              src={
+                sex === 0 ? styleQuizData_M.style[0] : styleQuizData_W.style[0]
+              }
               inputData={data_8}
               setInputData={setData_8}
               onBackClick={() => setPageNum(7)}
@@ -257,13 +296,18 @@ const styleQuiz = () => {
     case 9:
       return (
         <>
-          <Header className="header" style={{ justifyContent: "center", fontSize:'2rem'}}>
+          <Header
+            className="header"
+            style={{ justifyContent: "center", fontSize: "2rem" }}
+          >
             Style Quiz
           </Header>
           <Bar pageNum={pageNum} maxNum={46} />
           <TransitionPage type="page" pagenum={pageNum}>
             <PageStyle
-              src={styleQuizData.style[1]}
+              src={
+                sex === 0 ? styleQuizData_M.style[1] : styleQuizData_W.style[1]
+              }
               inputData={data_9}
               setInputData={setData_9}
               onBackClick={() => setPageNum(8)}
@@ -275,13 +319,18 @@ const styleQuiz = () => {
     case 10:
       return (
         <>
-          <Header className="header" style={{ justifyContent: "center", fontSize:'2rem'}}>
+          <Header
+            className="header"
+            style={{ justifyContent: "center", fontSize: "2rem" }}
+          >
             Style Quiz
           </Header>
           <Bar pageNum={pageNum} maxNum={46} />
           <TransitionPage type="page" pagenum={pageNum}>
             <PageStyle
-              src={styleQuizData.style[2]}
+              src={
+                sex === 0 ? styleQuizData_M.style[2] : styleQuizData_W.style[2]
+              }
               inputData={data_10}
               setInputData={setData_10}
               onBackClick={() => setPageNum(9)}
@@ -293,13 +342,18 @@ const styleQuiz = () => {
     case 11:
       return (
         <>
-          <Header className="header" style={{ justifyContent: "center", fontSize:'2rem'}}>
+          <Header
+            className="header"
+            style={{ justifyContent: "center", fontSize: "2rem" }}
+          >
             Style Quiz
           </Header>
           <Bar pageNum={pageNum} maxNum={46} />
           <TransitionPage type="page" pagenum={pageNum}>
             <PageStyle
-              src={styleQuizData.style[3]}
+              src={
+                sex === 0 ? styleQuizData_M.style[3] : styleQuizData_W.style[3]
+              }
               inputData={data_11}
               setInputData={setData_11}
               onBackClick={() => setPageNum(10)}
@@ -311,13 +365,18 @@ const styleQuiz = () => {
     case 12:
       return (
         <>
-          <Header className="header" style={{ justifyContent: "center", fontSize:'2rem'}}>
+          <Header
+            className="header"
+            style={{ justifyContent: "center", fontSize: "2rem" }}
+          >
             Style Quiz
           </Header>
           <Bar pageNum={pageNum} maxNum={46} />
           <TransitionPage type="page" pagenum={pageNum}>
             <PageStyle
-              src={styleQuizData.style[4]}
+              src={
+                sex === 0 ? styleQuizData_M.style[4] : styleQuizData_W.style[4]
+              }
               inputData={data_12}
               setInputData={setData_12}
               onBackClick={() => setPageNum(11)}
@@ -329,13 +388,18 @@ const styleQuiz = () => {
     case 13:
       return (
         <>
-          <Header className="header" style={{ justifyContent: "center", fontSize:'2rem'}}>
+          <Header
+            className="header"
+            style={{ justifyContent: "center", fontSize: "2rem" }}
+          >
             Style Quiz
           </Header>
           <Bar pageNum={pageNum} maxNum={46} />
           <TransitionPage type="page" pagenum={pageNum}>
             <PageStyle
-              src={styleQuizData.style[5]}
+              src={
+                sex === 0 ? styleQuizData_M.style[5] : styleQuizData_W.style[5]
+              }
               inputData={data_13}
               setInputData={setData_13}
               onBackClick={() => setPageNum(12)}
@@ -347,13 +411,18 @@ const styleQuiz = () => {
     case 14:
       return (
         <>
-          <Header className="header" style={{ justifyContent: "center", fontSize:'2rem'}}>
+          <Header
+            className="header"
+            style={{ justifyContent: "center", fontSize: "2rem" }}
+          >
             Style Quiz
           </Header>
           <Bar pageNum={pageNum} maxNum={46} />
           <TransitionPage type="page" pagenum={pageNum}>
             <PageStyle
-              src={styleQuizData.style[6]}
+              src={
+                sex === 0 ? styleQuizData_M.style[6] : styleQuizData_W.style[6]
+              }
               inputData={data_14}
               setInputData={setData_14}
               onBackClick={() => setPageNum(13)}
@@ -365,13 +434,18 @@ const styleQuiz = () => {
     case 15:
       return (
         <>
-          <Header className="header" style={{ justifyContent: "center", fontSize:'2rem'}}>
+          <Header
+            className="header"
+            style={{ justifyContent: "center", fontSize: "2rem" }}
+          >
             Style Quiz
           </Header>
           <Bar pageNum={pageNum} maxNum={46} />
           <TransitionPage type="page" pagenum={pageNum}>
             <PageStyle
-              src={styleQuizData.style[7]}
+              src={
+                sex === 0 ? styleQuizData_M.style[7] : styleQuizData_W.style[7]
+              }
               inputData={data_15}
               setInputData={setData_15}
               onBackClick={() => setPageNum(14)}
@@ -383,13 +457,18 @@ const styleQuiz = () => {
     case 16:
       return (
         <>
-          <Header className="header" style={{ justifyContent: "center", fontSize:'2rem'}}>
+          <Header
+            className="header"
+            style={{ justifyContent: "center", fontSize: "2rem" }}
+          >
             Style Quiz
           </Header>
           <Bar pageNum={pageNum} maxNum={46} />
           <TransitionPage type="page" pagenum={pageNum}>
             <PageStyle
-              src={styleQuizData.style[8]}
+              src={
+                sex === 0 ? styleQuizData_M.style[8] : styleQuizData_W.style[8]
+              }
               inputData={data_16}
               setInputData={setData_16}
               onBackClick={() => setPageNum(15)}
@@ -401,13 +480,18 @@ const styleQuiz = () => {
     case 17:
       return (
         <>
-          <Header className="header" style={{ justifyContent: "center", fontSize:'2rem'}}>
+          <Header
+            className="header"
+            style={{ justifyContent: "center", fontSize: "2rem" }}
+          >
             Style Quiz
           </Header>
           <Bar pageNum={pageNum} maxNum={46} />
           <TransitionPage type="page" pagenum={pageNum}>
             <PageStyle
-              src={styleQuizData.style[9]}
+              src={
+                sex === 0 ? styleQuizData_M.style[9] : styleQuizData_W.style[9]
+              }
               inputData={data_17}
               setInputData={setData_17}
               onBackClick={() => setPageNum(16)}
@@ -419,13 +503,20 @@ const styleQuiz = () => {
     case 18:
       return (
         <>
-          <Header className="header" style={{ justifyContent: "center", fontSize:'2rem'}}>
+          <Header
+            className="header"
+            style={{ justifyContent: "center", fontSize: "2rem" }}
+          >
             Style Quiz
           </Header>
           <Bar pageNum={pageNum} maxNum={46} />
           <TransitionPage type="page" pagenum={pageNum}>
             <PageStyle
-              src={styleQuizData.style[10]}
+              src={
+                sex === 0
+                  ? styleQuizData_M.style[10]
+                  : styleQuizData_W.style[10]
+              }
               inputData={data_18}
               setInputData={setData_18}
               onBackClick={() => setPageNum(17)}
@@ -437,13 +528,20 @@ const styleQuiz = () => {
     case 19:
       return (
         <>
-          <Header className="header" style={{ justifyContent: "center", fontSize:'2rem'}}>
+          <Header
+            className="header"
+            style={{ justifyContent: "center", fontSize: "2rem" }}
+          >
             Style Quiz
           </Header>
           <Bar pageNum={pageNum} maxNum={46} />
           <TransitionPage type="page" pagenum={pageNum}>
             <PageStyle
-              src={styleQuizData.style[11]}
+              src={
+                sex === 0
+                  ? styleQuizData_M.style[11]
+                  : styleQuizData_W.style[11]
+              }
               inputData={data_19}
               setInputData={setData_19}
               onBackClick={() => setPageNum(18)}
@@ -455,13 +553,20 @@ const styleQuiz = () => {
     case 20:
       return (
         <>
-          <Header className="header" style={{ justifyContent: "center", fontSize:'2rem'}}>
+          <Header
+            className="header"
+            style={{ justifyContent: "center", fontSize: "2rem" }}
+          >
             Style Quiz
           </Header>
           <Bar pageNum={pageNum} maxNum={46} />
           <TransitionPage type="page" pagenum={pageNum}>
             <PageStyle
-              src={styleQuizData.style[12]}
+              src={
+                sex === 0
+                  ? styleQuizData_M.style[12]
+                  : styleQuizData_W.style[12]
+              }
               inputData={data_20}
               setInputData={setData_20}
               onBackClick={() => setPageNum(19)}
@@ -473,13 +578,20 @@ const styleQuiz = () => {
     case 21:
       return (
         <>
-          <Header className="header" style={{ justifyContent: "center", fontSize:'2rem'}}>
+          <Header
+            className="header"
+            style={{ justifyContent: "center", fontSize: "2rem" }}
+          >
             Style Quiz
           </Header>
           <Bar pageNum={pageNum} maxNum={46} />
           <TransitionPage type="page" pagenum={pageNum}>
             <PageStyle
-              src={styleQuizData.style[13]}
+              src={
+                sex === 0
+                  ? styleQuizData_M.style[13]
+                  : styleQuizData_W.style[13]
+              }
               inputData={data_21}
               setInputData={setData_21}
               onBackClick={() => setPageNum(20)}
@@ -491,13 +603,20 @@ const styleQuiz = () => {
     case 22:
       return (
         <>
-          <Header className="header" style={{ justifyContent: "center", fontSize:'2rem'}}>
+          <Header
+            className="header"
+            style={{ justifyContent: "center", fontSize: "2rem" }}
+          >
             Style Quiz
           </Header>
           <Bar pageNum={pageNum} maxNum={46} />
           <TransitionPage type="page" pagenum={pageNum}>
             <PageStyle
-              src={styleQuizData.style[14]}
+              src={
+                sex === 0
+                  ? styleQuizData_M.style[14]
+                  : styleQuizData_W.style[14]
+              }
               inputData={data_22}
               setInputData={setData_22}
               onBackClick={() => setPageNum(21)}
@@ -509,13 +628,16 @@ const styleQuiz = () => {
     case 23:
       return (
         <>
-          <Header className="header" style={{ justifyContent: "center", fontSize:'2rem'}}>
+          <Header
+            className="header"
+            style={{ justifyContent: "center", fontSize: "2rem" }}
+          >
             Style Quiz
           </Header>
           <Bar pageNum={pageNum} maxNum={46} />
           <TransitionPage type="page" pagenum={pageNum}>
             <PageItems
-              options={styleQuizData.top}
+              options={sex === 0 ? styleQuizData_M.top : styleQuizData_W.top}
               qText={"다음 중 마음에 드는 상의를 모두 골라주세요."}
               inputData={data_23}
               setInputData={setData_23}
@@ -530,20 +652,27 @@ const styleQuiz = () => {
     case 24:
       return (
         <>
-          <Header className="header" style={{ justifyContent: "center", fontSize:'2rem'}}>
+          <Header
+            className="header"
+            style={{ justifyContent: "center", fontSize: "2rem" }}
+          >
             Style Quiz
           </Header>
           <Bar pageNum={pageNum} maxNum={46} />
           <TransitionPage type="page" pagenum={pageNum}>
             <PageItems
-              options={styleQuizData.pants}
+              options={
+                sex === 0 ? styleQuizData_M.pants : styleQuizData_W.pants
+              }
               qText={"다음 중 마음에 드는 바지를 모두 골라주세요."}
               inputData={data_24}
               setInputData={setData_24}
               isNoneGone={true}
               isLike={true}
               onBackClick={() => setPageNum(23)}
-              onNextClick={() => setPageNum(25)}
+              onNextClick={() => {
+                sex === 0 ? setPageNum(26) : setPageNum(25);
+              }}
             />
           </TransitionPage>
         </>
@@ -551,13 +680,16 @@ const styleQuiz = () => {
     case 25:
       return (
         <>
-          <Header className="header" style={{ justifyContent: "center", fontSize:'2rem'}}>
+          <Header
+            className="header"
+            style={{ justifyContent: "center", fontSize: "2rem" }}
+          >
             Style Quiz
           </Header>
           <Bar pageNum={pageNum} maxNum={46} />
           <TransitionPage type="page" pagenum={pageNum}>
             <PageItems
-              options={styleQuizData.skirt}
+              options={styleQuizData_W.skirt}
               qText={"다음 중 마음에 드는 치마/원피스를 모두 골라주세요."}
               inputData={data_25}
               setInputData={setData_25}
@@ -572,20 +704,29 @@ const styleQuiz = () => {
     case 26:
       return (
         <>
-          <Header className="header" style={{ justifyContent: "center", fontSize:'2rem'}}>
+          <Header
+            className="header"
+            style={{ justifyContent: "center", fontSize: "2rem" }}
+          >
             Style Quiz
           </Header>
-          <Bar pageNum={pageNum} maxNum={46} />
+          <Bar pageNum={sex === 0 ? pageNum - 1 : pageNum} maxNum={46} />
           <TransitionPage type="page" pagenum={pageNum}>
             <PageItems
-              options={styleQuizData.outer}
+              options={
+                sex === 0 ? styleQuizData_M.outer : styleQuizData_W.outer
+              }
               qText={"다음 중 마음에 드는 아우터를 모두 골라주세요."}
               inputData={data_26}
               setInputData={setData_26}
               isNoneGone={true}
               isLike={true}
-              onBackClick={() => setPageNum(25)}
-              onNextClick={() => setPageNum(27)}
+              onBackClick={() => {
+                sex === 0 ? setPageNum(24) : setPageNum(25);
+              }}
+              onNextClick={() => {
+                sex === 0 ? setPageNum(28) : setPageNum(27);
+              }}
             />
           </TransitionPage>
         </>
@@ -593,7 +734,10 @@ const styleQuiz = () => {
     case 27:
       return (
         <>
-          <Header className="header" style={{ justifyContent: "center", fontSize:'2rem'}}>
+          <Header
+            className="header"
+            style={{ justifyContent: "center", fontSize: "2rem" }}
+          >
             Style Quiz
           </Header>
           <Bar pageNum={pageNum} maxNum={46} />
@@ -610,19 +754,24 @@ const styleQuiz = () => {
     case 28:
       return (
         <>
-          <Header className="header" style={{ justifyContent: "center", fontSize:'2rem'}}>
+          <Header
+            className="header"
+            style={{ justifyContent: "center", fontSize: "2rem" }}
+          >
             Style Quiz
           </Header>
-          <Bar pageNum={pageNum} maxNum={46} />
+          <Bar pageNum={sex === 0 ? pageNum - 2 : pageNum} maxNum={46} />
           <TransitionPage type="page" pagenum={pageNum}>
             <PageItems
-              options={styleQuizData.cody}
+              options={sex === 0 ? styleQuizData_M.cody : styleQuizData_W.cody}
               qText={"평소 자주 착용하는 코디가 있으신가요?"}
               inputData={data_28}
               setInputData={setData_28}
               isNoneGone={true}
               isLike={true}
-              onBackClick={() => setPageNum(27)}
+              onBackClick={() => {
+                sex === 0 ? setPageNum(26) : setPageNum(27);
+              }}
               onNextClick={() => setPageNum(29)}
             />
           </TransitionPage>
@@ -631,13 +780,16 @@ const styleQuiz = () => {
     case 29:
       return (
         <>
-          <Header className="header" style={{ justifyContent: "center", fontSize:'2rem'}}>
+          <Header
+            className="header"
+            style={{ justifyContent: "center", fontSize: "2rem" }}
+          >
             Style Quiz
           </Header>
-          <Bar pageNum={pageNum} maxNum={46} />
+          <Bar pageNum={sex === 0 ? pageNum - 2 : pageNum} maxNum={46} />
           <TransitionPage type="page" pagenum={pageNum}>
             <PageItems
-              options={styleQuizData.cody}
+              options={sex === 0 ? styleQuizData_M.cody : styleQuizData_W.cody}
               qText={"시도해보고 싶은 코디가 있으신가요?"}
               inputData={data_29}
               setInputData={setData_29}
@@ -652,13 +804,18 @@ const styleQuiz = () => {
     case 30:
       return (
         <>
-          <Header className="header" style={{ justifyContent: "center", fontSize:'2rem'}}>
+          <Header
+            className="header"
+            style={{ justifyContent: "center", fontSize: "2rem" }}
+          >
             Style Quiz
           </Header>
-          <Bar pageNum={pageNum} maxNum={46} />
+          <Bar pageNum={sex === 0 ? pageNum - 2 : pageNum} maxNum={46} />
           <TransitionPage type="page" pagenum={pageNum}>
             <PageItems
-              options={styleQuizData.brand}
+              options={
+                sex === 0 ? styleQuizData_M.brand : styleQuizData_W.brand
+              }
               qText={"선호하는 브랜드가 있으신가요?"}
               inputData={data_30}
               setInputData={setData_30}
@@ -673,14 +830,17 @@ const styleQuiz = () => {
     case 31:
       return (
         <>
-          <Header className="header" style={{ justifyContent: "center", fontSize:'2rem'}}>
+          <Header
+            className="header"
+            style={{ justifyContent: "center", fontSize: "2rem" }}
+          >
             Style Quiz
           </Header>
-          <Bar pageNum={pageNum} maxNum={46} />
+          <Bar pageNum={sex === 0 ? pageNum - 2 : pageNum} maxNum={46} />
           <TransitionPage type="page" pagenum={pageNum}>
             <PageBrand
               inputData={data_31}
-              placeholder="maje, Juun.J..."
+              placeholder={sex === 0 ? "maje, Juun.J..." : "maje, Juun.J..."}
               onBackClick={() => setPageNum(30)}
               onNextClick={() => setPageNum(32)}
             />
@@ -690,10 +850,13 @@ const styleQuiz = () => {
     case 32:
       return (
         <>
-          <Header className="header" style={{ justifyContent: "center", fontSize:'2rem'}}>
+          <Header
+            className="header"
+            style={{ justifyContent: "center", fontSize: "2rem" }}
+          >
             Style Quiz
           </Header>
-          <Bar pageNum={pageNum} maxNum={46} />
+          <Bar pageNum={sex === 0 ? pageNum - 2 : pageNum} maxNum={46} />
           <TransitionPage type="page" pagenum={pageNum}>
             <PageBodySize
               inputData_1={data_32_1}
@@ -707,15 +870,21 @@ const styleQuiz = () => {
     case 33:
       return (
         <>
-          <Header className="header" style={{ justifyContent: "center", fontSize:'2rem'}}>
+          <Header
+            className="header"
+            style={{ justifyContent: "center", fontSize: "2rem" }}
+          >
             Style Quiz
           </Header>
-          <Bar pageNum={pageNum} maxNum={46} />
+          <Bar pageNum={sex === 0 ? pageNum - 2 : pageNum} maxNum={46} />
           <TransitionPage type="page" pagenum={pageNum}>
             <PageTopSize
+              options={
+                sex === 0 ? styleQuizData_M.size_top : styleQuizData_W.size_top
+              }
               inputData={data_33}
               setInputData={setData_33}
-              options={styleQuizData.size_top}
+              props={sex === 0 ? props.size_top_M : props.size_top_W}
               onBackClick={() => setPageNum(32)}
               onNextClick={() => setPageNum(34)}
             />
@@ -725,15 +894,23 @@ const styleQuiz = () => {
     case 34:
       return (
         <>
-          <Header className="header" style={{ justifyContent: "center", fontSize:'2rem'}}>
+          <Header
+            className="header"
+            style={{ justifyContent: "center", fontSize: "2rem" }}
+          >
             Style Quiz
           </Header>
-          <Bar pageNum={pageNum} maxNum={46} />
+          <Bar pageNum={sex === 0 ? pageNum - 2 : pageNum} maxNum={46} />
           <TransitionPage type="page" pagenum={pageNum}>
             <PageBottomSize
+              options={
+                sex === 0
+                  ? styleQuizData_M.size_bottom
+                  : styleQuizData_W.size_bottom
+              }
               inputData={data_34}
               setInputData={setData_34}
-              options={styleQuizData.size_bottom}
+              props={props.size_bottom}
               onBackClick={() => setPageNum(33)}
               onNextClick={() => setPageNum(35)}
             />
@@ -743,13 +920,18 @@ const styleQuiz = () => {
     case 35:
       return (
         <>
-          <Header className="header" style={{ justifyContent: "center", fontSize:'2rem'}}>
+          <Header
+            className="header"
+            style={{ justifyContent: "center", fontSize: "2rem" }}
+          >
             Style Quiz
           </Header>
-          <Bar pageNum={pageNum} maxNum={46} />
+          <Bar pageNum={sex === 0 ? pageNum - 2 : pageNum} maxNum={46} />
           <TransitionPage type="page" pagenum={pageNum}>
             <PageItems
-              options={styleQuizData.page_35}
+              options={
+                sex === 0 ? styleQuizData_M.page_35 : styleQuizData_W.page_35
+              }
               qText={"어떤 기장의 상의를 선호하시나요?"}
               inputData={data_35}
               setInputData={setData_35}
@@ -764,13 +946,18 @@ const styleQuiz = () => {
     case 36:
       return (
         <>
-          <Header className="header" style={{ justifyContent: "center", fontSize:'2rem'}}>
+          <Header
+            className="header"
+            style={{ justifyContent: "center", fontSize: "2rem" }}
+          >
             Style Quiz
           </Header>
-          <Bar pageNum={pageNum} maxNum={46} />
+          <Bar pageNum={sex === 0 ? pageNum - 2 : pageNum} maxNum={46} />
           <TransitionPage type="page" pagenum={pageNum}>
             <PageItems
-              options={styleQuizData.page_36}
+              options={
+                sex === 0 ? styleQuizData_M.page_36 : styleQuizData_W.page_36
+              }
               qText={"어떤 핏의 상의를 선호하시나요?"}
               inputData={data_36}
               setInputData={setData_36}
@@ -785,13 +972,18 @@ const styleQuiz = () => {
     case 37:
       return (
         <>
-          <Header className="header" style={{ justifyContent: "center", fontSize:'2rem'}}>
+          <Header
+            className="header"
+            style={{ justifyContent: "center", fontSize: "2rem" }}
+          >
             Style Quiz
           </Header>
-          <Bar pageNum={pageNum} maxNum={46} />
+          <Bar pageNum={sex === 0 ? pageNum - 2 : pageNum} maxNum={46} />
           <TransitionPage type="page" pagenum={pageNum}>
             <PageItems
-              options={styleQuizData.page_37}
+              options={
+                sex === 0 ? styleQuizData_M.page_37 : styleQuizData_W.page_37
+              }
               qText={"어떤 핏의 바지를 선호하시나요?"}
               inputData={data_37}
               setInputData={setData_37}
@@ -807,20 +999,27 @@ const styleQuiz = () => {
     case 38:
       return (
         <>
-          <Header className="header" style={{ justifyContent: "center", fontSize:'2rem'}}>
+          <Header
+            className="header"
+            style={{ justifyContent: "center", fontSize: "2rem" }}
+          >
             Style Quiz
           </Header>
-          <Bar pageNum={pageNum} maxNum={46} />
+          <Bar pageNum={sex === 0 ? pageNum - 2 : pageNum} maxNum={46} />
           <TransitionPage type="page" pagenum={pageNum}>
             <PageItems
-              options={styleQuizData.page_38}
+              options={
+                sex === 0 ? styleQuizData_M.page_38 : styleQuizData_W.page_38
+              }
               qText={"어떤 핏의 밑위길이를 선호하시나요?"}
               inputData={data_38}
               setInputData={setData_38}
               isNoneGone={true}
               isLike={true}
               onBackClick={() => setPageNum(37)}
-              onNextClick={() => setPageNum(39)}
+              onNextClick={() => {
+                sex === 0 ? setPageNum(41) : setPageNum(39);
+              }}
             />
           </TransitionPage>
         </>
@@ -828,13 +1027,16 @@ const styleQuiz = () => {
     case 39:
       return (
         <>
-          <Header className="header" style={{ justifyContent: "center", fontSize:'2rem'}}>
+          <Header
+            className="header"
+            style={{ justifyContent: "center", fontSize: "2rem" }}
+          >
             Style Quiz
           </Header>
           <Bar pageNum={pageNum} maxNum={46} />
           <TransitionPage type="page" pagenum={pageNum}>
             <PageItems
-              options={styleQuizData.page_39}
+              options={styleQuizData_W.page_39}
               qText={"어떤 종류의 치마를 선호하시나요?"}
               inputData={data_39}
               setInputData={setData_39}
@@ -849,13 +1051,16 @@ const styleQuiz = () => {
     case 40:
       return (
         <>
-          <Header className="header" style={{ justifyContent: "center", fontSize:'2rem'}}>
+          <Header
+            className="header"
+            style={{ justifyContent: "center", fontSize: "2rem" }}
+          >
             Style Quiz
           </Header>
           <Bar pageNum={pageNum} maxNum={46} />
           <TransitionPage type="page" pagenum={pageNum}>
             <PageItems
-              options={styleQuizData.page_40}
+              options={styleQuizData_W.page_40}
               qText={"어떤 기장의 치마를 선호하시나요?"}
               inputData={data_40}
               setInputData={setData_40}
@@ -870,19 +1075,26 @@ const styleQuiz = () => {
     case 41:
       return (
         <>
-          <Header className="header" style={{ justifyContent: "center", fontSize:'2rem'}}>
+          <Header
+            className="header"
+            style={{ justifyContent: "center", fontSize: "2rem" }}
+          >
             Style Quiz
           </Header>
-          <Bar pageNum={pageNum} maxNum={46} />
+          <Bar pageNum={sex === 0 ? pageNum - 4 : pageNum} maxNum={46} />
           <TransitionPage type="page" pagenum={pageNum}>
             <PageItems
-              options={styleQuizData.page_41}
+              options={
+                sex === 0 ? styleQuizData_M.page_41 : styleQuizData_W.page_41
+              }
               qText={"어떤 종류의 신발을 선호하시나요?"}
               inputData={data_41}
               setInputData={setData_41}
               isNoneGone={true}
               isLike={true}
-              onBackClick={() => setPageNum(40)}
+              onBackClick={() => {
+                sex === 0 ? setPageNum(38) : setPageNum(40);
+              }}
               onNextClick={() => setPageNum(42)}
             />
           </TransitionPage>
@@ -891,15 +1103,19 @@ const styleQuiz = () => {
     case 42:
       return (
         <>
-          <Header className="header" style={{ justifyContent: "center", fontSize:'2rem'}}>
+          <Header
+            className="header"
+            style={{ justifyContent: "center", fontSize: "2rem" }}
+          >
             Style Quiz
           </Header>
-          <Bar pageNum={pageNum} maxNum={46} />
+          <Bar pageNum={sex === 0 ? pageNum - 2 : pageNum} maxNum={46} />
           <TransitionPage type="page" pagenum={pageNum}>
             <PageBodyType
-              options={styleQuizData.page_42}
+              options={styleQuizData_M.page_42}
               inputData={data_42}
               setInputData={setData_42}
+              props={props.body_type}
               onBackClick={() => setPageNum(41)}
               onNextClick={() => setPageNum(43)}
             />
@@ -909,13 +1125,16 @@ const styleQuiz = () => {
     case 43:
       return (
         <>
-          <Header className="header" style={{ justifyContent: "center", fontSize:'2rem'}}>
+          <Header
+            className="header"
+            style={{ justifyContent: "center", fontSize: "2rem" }}
+          >
             Style Quiz
           </Header>
-          <Bar pageNum={pageNum} maxNum={46} />
+          <Bar pageNum={sex === 0 ? pageNum - 2 : pageNum} maxNum={46} />
           <TransitionPage type="page" pagenum={pageNum}>
             <PageFaceType
-              options={styleQuizData.page_43}
+              options={styleQuizData_M.page_43}
               inputData={data_43}
               setInputData={setData_43}
               onBackClick={() => setPageNum(42)}
@@ -927,15 +1146,21 @@ const styleQuiz = () => {
     case 44:
       return (
         <>
-          <Header className="header" style={{ justifyContent: "center", fontSize:'2rem'}}>
+          <Header
+            className="header"
+            style={{ justifyContent: "center", fontSize: "2rem" }}
+          >
             Style Quiz
           </Header>
-          <Bar pageNum={pageNum} maxNum={46} />
+          <Bar pageNum={sex === 0 ? pageNum - 2 : pageNum} maxNum={46} />
           <TransitionPage type="page" pagenum={pageNum}>
             <PagePayment
-              options={styleQuizData.payment}
+              options={
+                sex === 0 ? styleQuizData_M.payment : styleQuizData_W.payment
+              }
               inputData={data_44}
               setInputData={setData_44}
+              props={props.payment}
               onBackClick={() => setPageNum(43)}
               onNextClick={() => setPageNum(45)}
             />
@@ -945,10 +1170,13 @@ const styleQuiz = () => {
     case 45:
       return (
         <>
-          <Header className="header" style={{ justifyContent: "center", fontSize:'2rem'}}>
+          <Header
+            className="header"
+            style={{ justifyContent: "center", fontSize: "2rem" }}
+          >
             Style Quiz
           </Header>
-          <Bar pageNum={pageNum} maxNum={46} />
+          <Bar pageNum={sex === 0 ? pageNum - 2 : pageNum} maxNum={46} />
           <TransitionPage type="page" pagenum={pageNum}>
             <PageUpload
               inputData={data_45}
@@ -962,13 +1190,16 @@ const styleQuiz = () => {
     case 46:
       return (
         <>
-          <Header className="header" style={{ justifyContent: "center", fontSize:'2rem'}}>
+          <Header
+            className="header"
+            style={{ justifyContent: "center", fontSize: "2rem" }}
+          >
             Style Quiz
           </Header>
-          <Bar pageNum={pageNum} maxNum={46} />
+          <Bar pageNum={sex === 0 ? pageNum - 2 : pageNum} maxNum={46} />
           <TransitionPage type="page" pagenum={pageNum}>
             <PageJob
-              options={styleQuizData.job}
+              options={styleQuizData_M.job}
               inputData={data_46}
               setInputData={setData_46}
               onBackClick={() => setPageNum(45)}

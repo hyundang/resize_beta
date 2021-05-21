@@ -2,13 +2,12 @@ import React, { useEffect, useState, useRef } from "react";
 import styled from "styled-components";
 // components
 import { Bottom, Options } from "../common";
-// for figuring the input data property
-import { props } from "../../lib/data/properties";
 
 const PageTopSize = ({
   options,
   inputData,
   setInputData,
+  props,
   onBackClick,
   onNextClick,
 }) => {
@@ -21,8 +20,8 @@ const PageTopSize = ({
 
   // for checking bottom btn active
   useEffect(() => {
-    for (let i = 0; i < props.size_top.length; i++) {
-      if (inputData[props.size_top[i]].length === 0) {
+    for (let i = 0; i < props.length; i++) {
+      if (inputData[props[i]].length === 0) {
         setIsActive(false);
         break;
       } else {
@@ -87,20 +86,20 @@ const PageTopSize = ({
                 정확하지 않아도 됩니다. 본인과 가까운 사이즈를 선택해주세요.
               </Text>
               <Options
-                options={item[props.size_top[idx]]}
+                options={item[props[idx]]}
                 text={item.text}
                 inputData={inputData}
                 setInputData={setInputData}
-                property={props.size_top[idx]}
+                property={props[idx]}
               />
             </>
           ) : (
             <Options
-              options={item[props.size_top[idx]]}
+              options={item[props[idx]]}
               text={item.text}
               inputData={inputData}
               setInputData={setInputData}
-              property={props.size_top[idx]}
+              property={props[idx]}
             />
           );
         })}

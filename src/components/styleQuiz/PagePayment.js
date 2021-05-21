@@ -2,13 +2,12 @@ import React, { useEffect, useState, useRef } from "react";
 import styled from "styled-components";
 // components
 import { Bottom, Options } from "../common";
-// for figuring the input data property
-import { props } from "../../lib/data/properties";
 
 const PagePayment = ({
   options,
   inputData,
   setInputData,
+  props,
   onBackClick,
   onNextClick,
 }) => {
@@ -22,8 +21,8 @@ const PagePayment = ({
   // for checking bottom btn active
   useEffect(() => {
     console.log(inputData);
-    for (let i = 0; i < props.payment.length; i++) {
-      if (inputData[props.payment[i]].length === 0) {
+    for (let i = 0; i < props.length; i++) {
+      if (inputData[props[i]].length === 0) {
         setIsActive(false);
         break;
       } else {
@@ -66,7 +65,7 @@ const PagePayment = ({
               text={item.text}
               inputData={inputData}
               setInputData={setInputData}
-              property={props.payment[idx]}
+              property={props[idx]}
             />
           );
         })}

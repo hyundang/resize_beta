@@ -2,13 +2,12 @@ import React, { useEffect, useState, useRef } from "react";
 import styled, { css } from "styled-components";
 // components
 import { Bottom } from "../common";
-// for figuring the input data property
-import { props } from "../../lib/data/properties";
 
 const PageBodyType = ({
   options,
   inputData,
   setInputData,
+  props,
   onBackClick,
   onNextClick,
 }) => {
@@ -22,8 +21,8 @@ const PageBodyType = ({
   // for checking bottom btn active
   useEffect(() => {
     console.log(inputData);
-    for (let i = 0; i < props.body_type.length; i++) {
-      if (inputData[props.body_type[i]] === -1) {
+    for (let i = 0; i < props.length; i++) {
+      if (inputData[props[i]] === -1) {
         setIsActive(false);
         break;
       } else {
@@ -77,7 +76,7 @@ const PageBodyType = ({
               options={item}
               inputData={inputData}
               setInputData={setInputData}
-              property={props.body_type[idx]}
+              property={props[idx]}
             />
           );
         })}
