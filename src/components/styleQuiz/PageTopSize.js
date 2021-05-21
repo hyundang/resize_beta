@@ -74,7 +74,7 @@ const PageTopSize = ({
                   marginBottom: "0.8rem",
                 }}
               >
-                어떤 사이즈의 상의를 착용하시나요?
+                어떤 사이즈의 속옷를 착용하시나요?
               </Text>
               <Text
                 style={{

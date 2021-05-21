@@ -44,8 +44,8 @@ const PageStyle = ({
         <StyleImg
           className="style_img"
           src={src}
-          width={158}
-          height={158}
+          width={208}
+          height={208}
           priority={true}
         />
         <style jsx global>
@@ -68,7 +68,6 @@ const PageStyle = ({
           <Btn
             id="soso"
             isActive={inputData === 1}
-            isGray={true}
             onClick={
               inputData === 1 ? () => setInputData(-1) : () => setInputData(1)
             }
@@ -78,7 +77,6 @@ const PageStyle = ({
           <Btn
             id="bad"
             isActive={inputData === 2}
-            isGray={true}
             onClick={
               inputData === 2 ? () => setInputData(-1) : () => setInputData(2)
             }
@@ -150,17 +148,11 @@ const Btn = styled.div`
 
   ${(props) =>
     props.isActive
-      ? props.isGray
-        ? css`
-            border: none;
-            background-color: ${({ theme }) => theme.colors.gray_4};
-            color: ${({ theme }) => theme.colors.white};
-          `
-        : css`
-            border: none;
-            background-color: ${({ theme }) => theme.colors.black};
-            color: ${({ theme }) => theme.colors.white};
-          `
+      ? css`
+          border: none;
+          background-color: ${({ theme }) => theme.colors.black};
+          color: ${({ theme }) => theme.colors.white};
+        `
       : css`
           border: solid 0.1rem ${({ theme }) => theme.colors.gray_3};
           background-color: ${({ theme }) => theme.colors.white};

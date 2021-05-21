@@ -1,6 +1,7 @@
 // for question options
 const page_1 = {
   1: [
+    "최근 유행하는 옷을 입고 싶어서",
     "원하는 스타일이 있지만 찾는게 어려워서",
     "나에게 어울리는 옷을 알고 싶어서",
     "새로운 코디를 시도해보고 싶어서",
@@ -17,7 +18,6 @@ const page_2 = [
   { src: "/imgs/item.png", text: "채도 낮은 색" },
   { src: "/imgs/item.png", text: "형광색" },
   { src: "/imgs/item.png", text: "메탈릭" },
-  { src: "/imgs/item.png", text: "없음" },
 ];
 
 const page_3 = [
@@ -34,10 +34,10 @@ const page_3 = [
   { src: "/imgs/item.png", text: "오렌지" },
   { src: "/imgs/item.png", text: "옐로우" },
   { src: "/imgs/item.png", text: "그린" },
+  { src: "/imgs/item.png", text: "스카이블루" },
   { src: "/imgs/item.png", text: "블루" },
   { src: "/imgs/item.png", text: "퍼플" },
   { src: "/imgs/item.png", text: "브라운" },
-  { src: "/imgs/item.png", text: "없음" },
 ];
 
 const page_4 = [
@@ -54,23 +54,20 @@ const page_4 = [
   { src: "/imgs/item.png", text: "밀리터리" },
   { src: "/imgs/item.png", text: "헤링본" },
   { src: "/imgs/item.png", text: "퀼팅" },
-  { src: "/imgs/item.png", text: "없음" },
 ];
 
 const page_5 = [
-  { src: "/imgs/item.png", text: "레이즈" },
+  { src: "/imgs/item.png", text: "레이스" },
   { src: "/imgs/item.png", text: "프릴" },
   { src: "/imgs/item.png", text: "진주" },
   { src: "/imgs/item.png", text: "셔링" },
   { src: "/imgs/item.png", text: "리본" },
   { src: "/imgs/item.png", text: "시스루" },
   { src: "/imgs/item.png", text: "퍼프" },
-  { src: "/imgs/item.png", text: "어깨패드" },
-  { src: "/imgs/item.png", text: "언발란스" },
-  { src: "/imgs/item.png", text: "트임" },
-  { src: "/imgs/item.png", text: "허리밴딩" },
   { src: "/imgs/item.png", text: "후드" },
-  { src: "/imgs/item.png", text: "없음" },
+  { src: "/imgs/item.png", text: "핀턱" },
+  { src: "/imgs/item.png", text: "롤업" },
+  { src: "/imgs/item.png", text: "랩" },
 ];
 
 const page_6 = [
@@ -84,7 +81,7 @@ const page_6 = [
   { src: "/imgs/item.png", text: "쉬폰" },
   { src: "/imgs/item.png", text: "트위드" },
   { src: "/imgs/item.png", text: "플리스" },
-  { src: "/imgs/item.png", text: "없음" },
+  { src: "/imgs/item.png", text: "데님" },
 ];
 
 const page_7 = [
@@ -101,7 +98,6 @@ const page_7 = [
   { src: "/imgs/item.png", text: "차이나칼라" },
   { src: "/imgs/item.png", text: "오픈칼라" },
   { src: "/imgs/item.png", text: "보우칼라" },
-  { src: "/imgs/item.png", text: "없음" },
 ];
 
 const style = [
@@ -263,7 +259,7 @@ const size_bottom = [
 ];
 
 const page_35 = [
-  { src: "/imgs/item.png", text: "크롬\n(허리에 위치)" },
+  { src: "/imgs/item.png", text: "크롭\n(허리에 위치)" },
   { src: "/imgs/item.png", text: "레귤러\n(엉덩이에 위치)" },
   { src: "/imgs/item.png", text: "롱\n(허벅지에 위치)" },
 ];
@@ -361,7 +357,7 @@ const page_42 = [
   },
   {
     text: "다리 길이",
-    options: ["다리이 짧다", "다리 길이가 보통", "다리이 길다"],
+    options: ["다리가 짧다", "다리 길이가 보통", "다리가 길다"],
   },
   {
     text: "상체 길이",
@@ -384,7 +380,6 @@ const page_43 = {
   ],
   skin: [
     { src: "/imgs/item.png", text: "웜톤" },
-    { src: "/imgs/item.png", text: "중간톤" },
     { src: "/imgs/item.png", text: "쿨톤" },
   ],
   shoulder: [

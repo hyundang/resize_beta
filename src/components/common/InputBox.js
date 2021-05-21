@@ -18,7 +18,7 @@ const InputBox = ({ placeholder, input, type, maxLength, unit }) => {
         onChange={input.onChange}
         value={input.value}
         type={type === "number" ? "number" : "text"}
-        pattern={type === "number" ? "d*" : "none"}
+        pattern={type === "number" ? "\d*" : "none"}
         maxLength={maxLength ? maxLength : "none"}
       />
       {type === "number" ? (
