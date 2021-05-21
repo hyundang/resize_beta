@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import styled from "styled-components";
 // components
-import { Bottom, ItemsSmall } from "../common";
+import { Bottom, Items } from "../common";
 
 const PagePayment = ({
   options,
@@ -45,7 +45,7 @@ const PagePayment = ({
     <>
       <Container className="container">
         <Text>얼굴형이 어떠신가요?</Text>
-        <ItemsSmall
+        <Items
           items={options.face}
           data={inputData.face}
           setData={(data) =>
@@ -56,10 +56,11 @@ const PagePayment = ({
           }
           isNoneGone={true}
           isOne={true}
+          isLike={true}
         />
         <div style={{ height: "4rem" }} />
         <Text>피부색이 어떠신가요?</Text>
-        <ItemsSmall
+        <Items
           items={options.skin}
           data={inputData.skin}
           setData={(data) =>
@@ -70,10 +71,11 @@ const PagePayment = ({
           }
           isNoneGone={true}
           isOne={true}
+          isLike={true}
         />
         <div style={{ height: "4rem" }} />
         <Text>어깨모양이 어떠신가요?</Text>
-        <ItemsSmall
+        <Items
           items={options.shoulder}
           data={inputData.shoulder}
           setData={(data) =>
@@ -84,6 +86,7 @@ const PagePayment = ({
           }
           isNoneGone={true}
           isOne={true}
+          isLike={true}
         />
         <div style={{ marginTop: "7.2rem", height: "1px" }} ref={target} />
       </Container>

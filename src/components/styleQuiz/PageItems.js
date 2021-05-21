@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import styled from "styled-components";
 // components
-import { ItemsSmall, Bottom } from "../common";
+import { Items, Bottom } from "../common";
 
 const PageItems = ({
   options,
@@ -11,6 +11,8 @@ const PageItems = ({
   onBackClick,
   onNextClick,
   isNoneGone,
+  isLike,
+  isBig,
 }) => {
   // for bottom btn active
   const [isActive, setIsActive] = useState(false);
@@ -21,6 +23,7 @@ const PageItems = ({
 
   // for checking bottom btn active
   useEffect(() => {
+    console.log(inputData);
     inputData.length !== 0 ? setIsActive(true) : setIsActive(false);
   }, [inputData]);
 
@@ -42,11 +45,14 @@ const PageItems = ({
     <>
       <Container className="container">
         <Text>{qText}</Text>
-        <ItemsSmall
+        <Items
           items={options}
           data={inputData}
           setData={setInputData}
+          text={qText}
           isNoneGone={isNoneGone}
+          isLike={isLike}
+          isBig={isBig}
         />
         <div style={{ marginTop: "9.2rem", height: "1px" }} ref={target} />
       </Container>

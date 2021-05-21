@@ -6,6 +6,6 @@ export { default as Modal } from "./Modal";
 export { default as Radio } from "./RadioBtn";
 export { default as Bottom } from "./Bottom";
 export { default as BottomBlack } from "./BottomBlack";
-export { default as ItemsSmall } from "./ItemsSmall";
+export { default as Items } from "./Items";
 export { default as Bar } from "./Bar";
 export { default as Options } from "./Options";
