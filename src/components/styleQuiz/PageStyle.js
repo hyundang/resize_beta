@@ -59,27 +59,30 @@ const PageStyle = ({
           <Btn
             id="good"
             isActive={inputData === 0}
-            onClick={
-              inputData === 0 ? () => setInputData(-1) : () => setInputData(0)
-            }
+            onClick={() => {
+              setInputData(0);
+              onNextClick();
+            }}
           >
             좋아요
           </Btn>
           <Btn
             id="soso"
             isActive={inputData === 1}
-            onClick={
-              inputData === 1 ? () => setInputData(-1) : () => setInputData(1)
-            }
+            onClick={() => {
+              setInputData(1);
+              onNextClick();
+            }}
           >
             나쁘지 않아요
           </Btn>
           <Btn
             id="bad"
             isActive={inputData === 2}
-            onClick={
-              inputData === 2 ? () => setInputData(-1) : () => setInputData(2)
-            }
+            onClick={() => {
+              setInputData(2);
+              onNextClick();
+            }}
           >
             싫어요
           </Btn>
