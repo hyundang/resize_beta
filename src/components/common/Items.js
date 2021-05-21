@@ -126,6 +126,7 @@ const ItemBox = ({
         className="item_img"
         src={src}
         priority={true}
+        // loading="eager"
         // loading="lazy"
         width={90}
         height={props.isBig ? 180 : 90}
