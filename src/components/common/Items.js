@@ -57,6 +57,7 @@ const Items = ({
         <CheckBox
           isClick={isNoneClick}
           setIsClick={setIsNoneClick}
+          setData={setData}
           text={text.replace("있으신가요?", "없음")}
         />
       )}
@@ -198,19 +199,20 @@ const ItemHover = styled.div`
 `;
 
 
-const CheckBox = ({ isClick, setIsClick, text }) => {
-  const [data, setData] = useState([]);
+const CheckBox = ({ isClick, setIsClick, setData, text }) => {
+  const [checkedList, setCheckedList] = useState([]);
 
   useEffect(() => {
-    isClick ? setData([0]) : setData([]);
+    isClick ? setCheckedList([0]) : setCheckedList([]);
   }, [isClick]);
 
   const handleCheckClick = () => {
     if (isClick) {
-      setData([]);
+      setCheckedList([]);
       setIsClick(false);
+      setData([]);
     } else {
-      setData([0]);
+      setCheckedList([0]);
       setIsClick(true);
     }
   };
@@ -219,7 +221,7 @@ const CheckBox = ({ isClick, setIsClick, text }) => {
     <CheckContainer>
       <Check
         id={0}
-        checkedList={data}
+        checkedList={checkedList}
         handleCheckClick={handleCheckClick}
         text={text}
       />
