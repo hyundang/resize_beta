@@ -4,22 +4,26 @@ import styled, { css } from "styled-components";
 import ic_delete from "../../assets/icons/ic-delete.svg";
 import ic_plus from "../../assets/icons/ic-plus.svg";
 
-const Tags = ({ qtext, datas }) => {
+const Tags = ({ qtext, datas, options }) => {
+  const handleAddClick = () => {
+
+  }
+  
   return (
     <>
       <Title>{qtext}</Title>
       <TagContainer>
-        <TagBox isFirst={true}>
+        <TagBox isFirst={true} onClick={handleAddClick}>
           <img src={ic_plus} />
           {qtext.replace("싫어하는 ", "") + " 추가하기"}
         </TagBox>
-        {datas.map((item, idx) => {
+        {datas.map((item) => {
           return (
-            <TagBox key={idx} id={idx}>
-              {item}
+            <TagBox key={item} id={item}>
+              {options[item].text}
               <img
                 src={ic_delete}
-                style={{ width: "1.5rem", marginLeft: "0.7rem" }}
+                style={{ width: "1.5rem", marginLeft: "0.8rem" }}
               />
             </TagBox>
           );
@@ -54,7 +58,7 @@ const TagBox = styled.div`
   height: 4rem;
   margin-right: 0.4rem;
   margin-bottom: 1rem;
-  padding: 0 1.2rem;
+  padding: 0 1.5rem;
   ${(props) =>
     props.isFirst
       ? css`
