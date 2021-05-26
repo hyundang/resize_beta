@@ -1,7 +1,13 @@
 // for question options
 const page_4 = [
-  { src: "/imgs/styleQuiz/patterns/horizontal_stripe.png", text: "가로 스트라이프" },
-  { src: "/imgs/styleQuiz/patterns/vertical_stripe.png", text: "세로 스트라이프" },
+  {
+    src: "/imgs/styleQuiz/patterns/horizontal_stripe.png",
+    text: "가로 스트라이프",
+  },
+  {
+    src: "/imgs/styleQuiz/patterns/vertical_stripe.png",
+    text: "세로 스트라이프",
+  },
   { src: "/imgs/styleQuiz/patterns/floral.png", text: "플로럴" },
   { src: "/imgs/styleQuiz/patterns/dot.png", text: "도트" },
   { src: "/imgs/styleQuiz/patterns/leopard.png", text: "레오파드" },
@@ -168,50 +174,113 @@ const brand = [
 ];
 
 const size_top = [
-  { top_1: ["XXS 이하", "XS", "S", "M", "L", "XL", "XXL"], text: "항목 1" },
   {
-    top_2: ["80 이하", "85", "90", "95", "100", "110", "110 이상"],
+    top_1: [
+      { value: 0, label: "XXS 이하" },
+      { value: 1, label: "XS" },
+      { value: 2, label: "S" },
+      { value: 3, label: "M" },
+      { value: 4, label: "L" },
+      { value: 5, label: "XL" },
+      { value: 6, label: "XXL" },
+    ],
+    text: "항목 1",
+  },
+  {
+    top_2: [
+      { value: 0, label: "80 이하" },
+      { value: 1, label: "85" },
+      { value: 2, label: "90" },
+      { value: 3, label: "95" },
+      { value: 4, label: "100" },
+      { value: 5, label: "110" },
+      { value: 6, label: "110 이상" },
+    ],
     text: "항목 2",
   },
-  { top_3: ["33 이하", "44", "55", "66", "77 이상"], text: "항목 3" },
   {
-    bra_1: ["65 이하", "70", "75", "80", "85", "90", "95"],
+    top_3: [
+      { value: 0, label: "33 이하" },
+      { value: 1, label: "44" },
+      { value: 2, label: "55" },
+      { value: 3, label: "66" },
+      { value: 4, label: "77 이상" },
+    ],
+    text: "항목 3",
+  },
+  {
+    bra_1: [
+      { value: 0, label: "65 이하" },
+      { value: 1, label: "70" },
+      { value: 2, label: "75" },
+      { value: 3, label: "80" },
+      { value: 4, label: "85" },
+      { value: 5, label: "90" },
+      { value: 6, label: "95" },
+    ],
     text: "밑가슴둘레",
   },
-  { bra_2: ["AA 이하", "A", "B", "C", "D", "E", "F 이상"], text: "컵 사이즈" },
+  {
+    bra_2: [
+      { value: 0, label: "AA 이하" },
+      { value: 1, label: "A" },
+      { value: 2, label: "B" },
+      { value: 3, label: "C" },
+      { value: 4, label: "D" },
+      { value: 5, label: "E" },
+      { value: 6, label: "F 이상" },
+    ],
+    text: "컵 사이즈",
+  },
 ];
 
 const size_bottom = [
   {
     pants_1: [
-      "22 이하",
-      "23",
-      "24",
-      "25",
-      "26",
-      "27",
-      "28",
-      "29",
-      "30",
-      "31",
-      "32",
+      { value: 0, label: "22 이하" },
+      { value: 1, label: "23" },
+      { value: 2, label: "24" },
+      { value: 3, label: "25" },
+      { value: 4, label: "26" },
+      { value: 5, label: "27" },
+      { value: 6, label: "28" },
+      { value: 7, label: "29" },
+      { value: 8, label: "30" },
+      { value: 9, label: "31" },
+      { value: 10, label: "32" },
     ],
     text: "항목 1",
   },
-  { pants_2: ["XS 이하", "S", "M", "L", "XL", "XXL 이상"], text: "항목 2" },
-  { pants_3: ["허리에 맞춘다", "허벅지에 맞춘다"], text: "항목 3" },
+  {
+    pants_2: [
+      { value: 0, label: "XS 이하" },
+      { value: 1, label: "S" },
+      { value: 2, label: "M" },
+      { value: 3, label: "L" },
+      { value: 4, label: "XL" },
+      { value: 5, label: "XXL 이상" },
+    ],
+    text: "항목 2",
+  },
+  {
+    pants_3: [
+      { value: 0, label: "허리에 맞춘다" },
+      { value: 1, label: "허벅지에 맞춘다" },
+    ],
+    text: "항목 3",
+  },
   {
     shoes: [
-      "215 이하",
-      "220",
-      "225",
-      "230",
-      "235",
-      "240",
-      "245",
-      "250",
-      "255",
-      "260 이상",
+      { value: 0, label: "215 이하" },
+      { value: 1, label: "220" },
+      { value: 2, label: "225" },
+      { value: 3, label: "230" },
+      { value: 4, label: "235" },
+      { value: 5, label: "240" },
+      { value: 6, label: "245" },
+      { value: 7, label: "250" },
+      { value: 8, label: "255" },
+      { value: 9, label: "260 이상" },
     ],
     text: "신발 사이즈",
   },
@@ -276,35 +345,75 @@ const page_41 = [
 const payment = [
   {
     text: "티셔츠",
-    options: ["5만원 이하", "5-10만원", "10-30만원", "30만원 이상"],
+    options: [
+      { value: 0, label: "5만원 이하" },
+      { value: 1, label: "5-10만원" },
+      { value: 2, label: "10-30만원" },
+      { value: 3, label: "30만원 이상" },
+    ],
   },
   {
     text: "블라우스/셔츠",
-    options: ["10만원 이하", "10-20만원", "20-50만원", "50만원 이상"],
+    options: [
+      { value: 0, label: "10만원 이하" },
+      { value: 1, label: "10-20만원" },
+      { value: 2, label: "20-50만원" },
+      { value: 3, label: "50만원 이상" },
+    ],
   },
   {
     text: "니트",
-    options: ["10만원 이하", "10-20만원", "20-50만원", "50만원 이상"],
+    options: [
+      { value: 0, label: "10만원 이하" },
+      { value: 1, label: "10-20만원" },
+      { value: 2, label: "20-50만원" },
+      { value: 3, label: "50만원 이상" },
+    ],
   },
   {
     text: "바지/스커트",
-    options: ["10만원 이하", "10-20만원", "20-50만원", "50만원 이상"],
+    options: [
+      { value: 0, label: "10만원 이하" },
+      { value: 1, label: "10-20만원" },
+      { value: 2, label: "20-50만원" },
+      { value: 3, label: "50만원 이상" },
+    ],
   },
   {
     text: "자켓",
-    options: ["10만원 이하", "10-20만원", "20-50만원", "50만원 이상"],
+    options: [
+      { value: 0, label: "10만원 이하" },
+      { value: 1, label: "10-20만원" },
+      { value: 2, label: "20-50만원" },
+      { value: 3, label: "50만원 이상" },
+    ],
   },
   {
     text: "코트",
-    options: ["20만원 이하", "20-50만원", "50-100만원", "100만원 이상"],
+    options: [
+      { value: 0, label: "20만원 이하" },
+      { value: 1, label: "20-50만원" },
+      { value: 2, label: "50-100만원" },
+      { value: 3, label: "100만원 이상" },
+    ],
   },
   {
     text: "신발",
-    options: ["10만원 이하", "10-20만원", "20-50만원", "50만원 이상"],
+    options: [
+      { value: 0, label: "10만원 이하" },
+      { value: 1, label: "10-20만원" },
+      { value: 2, label: "20-50만원" },
+      { value: 3, label: "50만원 이상" },
+    ],
   },
   {
     text: "가방",
-    options: ["50만원 이하", "50-100만원", "100-200만원", "200만원 이상"],
+    options: [
+      { value: 0, label: "50만원 이하" },
+      { value: 1, label: "50-100만원" },
+      { value: 2, label: "100-200만원" },
+      { value: 3, label: "200만원 이상" },
+    ],
   },
 ];
 

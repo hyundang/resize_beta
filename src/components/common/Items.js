@@ -27,11 +27,11 @@ const Items = ({
 
   if (!props.isNoneGone) {
     useEffect(() => {
-      data.includes("none") ? setIsNoneClick(true) : setIsNoneClick(false);
+      data.length === 0 ? setIsNoneClick(true) : setIsNoneClick(false);
     }, []);
 
     useEffect(() => {
-      if (isNoneClick) setData(["none"]);
+      if (isNoneClick) setData([]);
     }, [isNoneClick]);
   }
 
@@ -42,7 +42,7 @@ const Items = ({
           return (
             <ItemBox
               key={idx}
-              id={item.text != undefined ? item.text : idx}
+              id={idx}
               src={item.src}
               text={item.text}
               data={data}
@@ -78,22 +78,13 @@ const Container = styled.div`
   justify-content: space-between;
 `;
 
-
-const ItemBox = ({
-  id,
-  src,
-  text,
-  data,
-  setData,
-  props,
-  setIsNoneClick,
-}) => {
+const ItemBox = ({ id, src, text, data, setData, props, setIsNoneClick }) => {
   const [isClick, setIsClick] = useState(false);
 
   const handleImgClick = () => {
     if (!props.isOne) {
-      if (data.includes("none")) {
-        setData(data.filter((item) => item !== "none").concat([id]));
+      if (data.length === 0) {
+        setData(data.concat([id]));
         setIsNoneClick(false);
       } else {
         setData(data.concat([id]));
@@ -198,7 +189,6 @@ const ItemHover = styled.div`
   align-items: center;
   justify-content: center;
 `;
-
 
 const CheckBox = ({ isClick, setIsClick, setData, text }) => {
   const [checkedList, setCheckedList] = useState([]);

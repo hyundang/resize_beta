@@ -20,6 +20,7 @@ const PageStyle = ({
 
   // for checking bottom btn active
   useEffect(() => {
+    console.log(inputData);
     inputData !== -1 ? setIsActive(true) : setIsActive(false);
   }, [inputData]);
 

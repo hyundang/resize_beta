@@ -20,6 +20,7 @@ const PageTopSize = ({
 
   // for checking bottom btn active
   useEffect(() => {
+    console.log(inputData);
     for (let i = 0; i < props.length; i++) {
       if (inputData[props[i]].length === 0) {
         setIsActive(false);

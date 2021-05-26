@@ -9,3 +9,4 @@ export { default as BottomBlack } from "./BottomBlack";
 export { default as Items } from "./Items";
 export { default as Bar } from "./Bar";
 export { default as Options } from "./Options";
+export { default as Picker } from "./Picker";

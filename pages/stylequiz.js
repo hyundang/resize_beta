@@ -33,6 +33,7 @@ import {
   StyleQuizInputState_44,
   StyleQuizInputState_45,
   StyleQuizInputState_46,
+  StyleQuizInputState_Cody,
 } from "../src/states/styleQuiz";
 // data
 import { styleQuizData_M } from "../src/lib/data/styleQuiz_M";
@@ -55,26 +56,12 @@ const styleQuiz = () => {
   const [data_5, setData_5] = useRecoilState(StyleQuizInputState_arr(3));
   const [data_6, setData_6] = useRecoilState(StyleQuizInputState_arr(4));
   const [data_7, setData_7] = useRecoilState(StyleQuizInputState_arr(5));
-  const [data_8, setData_8] = useRecoilState(StyleQuizInputState_num(0));
-  const [data_9, setData_9] = useRecoilState(StyleQuizInputState_num(1));
-  const [data_10, setData_10] = useRecoilState(StyleQuizInputState_num(2));
-  const [data_11, setData_11] = useRecoilState(StyleQuizInputState_num(3));
-  const [data_12, setData_12] = useRecoilState(StyleQuizInputState_num(4));
-  const [data_13, setData_13] = useRecoilState(StyleQuizInputState_num(5));
-  const [data_14, setData_14] = useRecoilState(StyleQuizInputState_num(6));
-  const [data_15, setData_15] = useRecoilState(StyleQuizInputState_num(7));
-  const [data_16, setData_16] = useRecoilState(StyleQuizInputState_num(8));
-  const [data_17, setData_17] = useRecoilState(StyleQuizInputState_num(9));
-  const [data_18, setData_18] = useRecoilState(StyleQuizInputState_num(10));
-  const [data_19, setData_19] = useRecoilState(StyleQuizInputState_num(11));
-  const [data_20, setData_20] = useRecoilState(StyleQuizInputState_num(12));
-  const [data_21, setData_21] = useRecoilState(StyleQuizInputState_num(13));
-  const [data_22, setData_22] = useRecoilState(StyleQuizInputState_num(14));
+  const [data_cody, setData_cody] = useRecoilState(StyleQuizInputState_Cody);
   const [data_23, setData_23] = useRecoilState(StyleQuizInputState_arr(6));
   const [data_24, setData_24] = useRecoilState(StyleQuizInputState_arr(7));
   const [data_25, setData_25] = useRecoilState(StyleQuizInputState_arr(8));
   const [data_26, setData_26] = useRecoilState(StyleQuizInputState_arr(9));
-  const [data_27, setData_27] = useRecoilState(StyleQuizInputState_num(15));
+  const [data_27, setData_27] = useRecoilState(StyleQuizInputState_num(0));
   const [data_28, setData_28] = useRecoilState(StyleQuizInputState_arr(10));
   const [data_29, setData_29] = useRecoilState(StyleQuizInputState_arr(11));
   const [data_30, setData_30] = useRecoilState(StyleQuizInputState_arr(12));
@@ -285,8 +272,13 @@ const styleQuiz = () => {
               src={
                 sex === 0 ? styleQuizData_M.style[0] : styleQuizData_W.style[0]
               }
-              inputData={data_8}
-              setInputData={setData_8}
+              inputData={data_cody[0]}
+              setInputData={(param) =>
+                setData_cody({
+                  ...data_cody,
+                  0: param,
+                })
+              }
               onBackClick={() => setPageNum(7)}
               onNextClick={() => setPageNum(9)}
             />
@@ -308,8 +300,13 @@ const styleQuiz = () => {
               src={
                 sex === 0 ? styleQuizData_M.style[1] : styleQuizData_W.style[1]
               }
-              inputData={data_9}
-              setInputData={setData_9}
+              inputData={data_cody[1]}
+              setInputData={(param) =>
+                setData_cody({
+                  ...data_cody,
+                  1: param,
+                })
+              }
               onBackClick={() => setPageNum(8)}
               onNextClick={() => setPageNum(10)}
             />
@@ -331,8 +328,13 @@ const styleQuiz = () => {
               src={
                 sex === 0 ? styleQuizData_M.style[2] : styleQuizData_W.style[2]
               }
-              inputData={data_10}
-              setInputData={setData_10}
+              inputData={data_cody[2]}
+              setInputData={(param) =>
+                setData_cody({
+                  ...data_cody,
+                  2: param,
+                })
+              }
               onBackClick={() => setPageNum(9)}
               onNextClick={() => setPageNum(11)}
             />
@@ -354,8 +356,13 @@ const styleQuiz = () => {
               src={
                 sex === 0 ? styleQuizData_M.style[3] : styleQuizData_W.style[3]
               }
-              inputData={data_11}
-              setInputData={setData_11}
+              inputData={data_cody[3]}
+              setInputData={(param) =>
+                setData_cody({
+                  ...data_cody,
+                  3: param,
+                })
+              }
               onBackClick={() => setPageNum(10)}
               onNextClick={() => setPageNum(12)}
             />
@@ -377,8 +384,13 @@ const styleQuiz = () => {
               src={
                 sex === 0 ? styleQuizData_M.style[4] : styleQuizData_W.style[4]
               }
-              inputData={data_12}
-              setInputData={setData_12}
+              inputData={data_cody[4]}
+              setInputData={(param) =>
+                setData_cody({
+                  ...data_cody,
+                  4: param,
+                })
+              }
               onBackClick={() => setPageNum(11)}
               onNextClick={() => setPageNum(13)}
             />
@@ -400,8 +412,13 @@ const styleQuiz = () => {
               src={
                 sex === 0 ? styleQuizData_M.style[5] : styleQuizData_W.style[5]
               }
-              inputData={data_13}
-              setInputData={setData_13}
+              inputData={data_cody[5]}
+              setInputData={(param) =>
+                setData_cody({
+                  ...data_cody,
+                  5: param,
+                })
+              }
               onBackClick={() => setPageNum(12)}
               onNextClick={() => setPageNum(14)}
             />
@@ -423,8 +440,13 @@ const styleQuiz = () => {
               src={
                 sex === 0 ? styleQuizData_M.style[6] : styleQuizData_W.style[6]
               }
-              inputData={data_14}
-              setInputData={setData_14}
+              inputData={data_cody[6]}
+              setInputData={(param) =>
+                setData_cody({
+                  ...data_cody,
+                  6: param,
+                })
+              }
               onBackClick={() => setPageNum(13)}
               onNextClick={() => setPageNum(15)}
             />
@@ -446,8 +468,13 @@ const styleQuiz = () => {
               src={
                 sex === 0 ? styleQuizData_M.style[7] : styleQuizData_W.style[7]
               }
-              inputData={data_15}
-              setInputData={setData_15}
+              inputData={data_cody[7]}
+              setInputData={(param) =>
+                setData_cody({
+                  ...data_cody,
+                  7: param,
+                })
+              }
               onBackClick={() => setPageNum(14)}
               onNextClick={() => setPageNum(16)}
             />
@@ -469,8 +496,13 @@ const styleQuiz = () => {
               src={
                 sex === 0 ? styleQuizData_M.style[8] : styleQuizData_W.style[8]
               }
-              inputData={data_16}
-              setInputData={setData_16}
+              inputData={data_cody[8]}
+              setInputData={(param) =>
+                setData_cody({
+                  ...data_cody,
+                  8: param,
+                })
+              }
               onBackClick={() => setPageNum(15)}
               onNextClick={() => setPageNum(17)}
             />
@@ -492,8 +524,13 @@ const styleQuiz = () => {
               src={
                 sex === 0 ? styleQuizData_M.style[9] : styleQuizData_W.style[9]
               }
-              inputData={data_17}
-              setInputData={setData_17}
+              inputData={data_cody[9]}
+              setInputData={(param) =>
+                setData_cody({
+                  ...data_cody,
+                  9: param,
+                })
+              }
               onBackClick={() => setPageNum(16)}
               onNextClick={() => setPageNum(18)}
             />
@@ -517,8 +554,13 @@ const styleQuiz = () => {
                   ? styleQuizData_M.style[10]
                   : styleQuizData_W.style[10]
               }
-              inputData={data_18}
-              setInputData={setData_18}
+              inputData={data_cody[10]}
+              setInputData={(param) =>
+                setData_cody({
+                  ...data_cody,
+                  10: param,
+                })
+              }
               onBackClick={() => setPageNum(17)}
               onNextClick={() => setPageNum(19)}
             />
@@ -542,8 +584,13 @@ const styleQuiz = () => {
                   ? styleQuizData_M.style[11]
                   : styleQuizData_W.style[11]
               }
-              inputData={data_19}
-              setInputData={setData_19}
+              inputData={data_cody[11]}
+              setInputData={(param) =>
+                setData_cody({
+                  ...data_cody,
+                  11: param,
+                })
+              }
               onBackClick={() => setPageNum(18)}
               onNextClick={() => setPageNum(20)}
             />
@@ -567,8 +614,13 @@ const styleQuiz = () => {
                   ? styleQuizData_M.style[12]
                   : styleQuizData_W.style[12]
               }
-              inputData={data_20}
-              setInputData={setData_20}
+              inputData={data_cody[12]}
+              setInputData={(param) =>
+                setData_cody({
+                  ...data_cody,
+                  12: param,
+                })
+              }
               onBackClick={() => setPageNum(19)}
               onNextClick={() => setPageNum(21)}
             />
@@ -592,8 +644,13 @@ const styleQuiz = () => {
                   ? styleQuizData_M.style[13]
                   : styleQuizData_W.style[13]
               }
-              inputData={data_21}
-              setInputData={setData_21}
+              inputData={data_cody[13]}
+              setInputData={(param) =>
+                setData_cody({
+                  ...data_cody,
+                  13: param,
+                })
+              }
               onBackClick={() => setPageNum(20)}
               onNextClick={() => setPageNum(22)}
             />
@@ -617,8 +674,13 @@ const styleQuiz = () => {
                   ? styleQuizData_M.style[14]
                   : styleQuizData_W.style[14]
               }
-              inputData={data_22}
-              setInputData={setData_22}
+              inputData={data_cody[14]}
+              setInputData={(param) =>
+                setData_cody({
+                  ...data_cody,
+                  14: param,
+                })
+              }
               onBackClick={() => setPageNum(21)}
               onNextClick={() => setPageNum(23)}
             />

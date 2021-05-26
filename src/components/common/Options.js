@@ -24,9 +24,9 @@ const Options = ({ options, inputData, setInputData, text, property }) => {
         {options.map((item, idx) => {
           return (
             <CheckBox
-              id={idx}
+              id={item.value}
               key={idx}
-              text={item}
+              text={item.label}
               checkedList={inputData[property]}
               handleCheckClick={handleCheckClick}
             />

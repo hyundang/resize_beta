@@ -39,6 +39,7 @@ const Page_1 = ({
 
   // for checking bottom btn active
   useEffect(() => {
+    console.log(inputData);
     (inputData.purpose.length !== 0) & (inputData.age !== -1)
       ? setIsActive(true)
       : setIsActive(false);
@@ -89,7 +90,7 @@ const Page_1 = ({
                   value={idx}
                   data={inputData.age}
                   onChange={handleRadioChange}
-                  text={item}
+                  text={item.label}
                 />
                 <div style={{ height: "1.6rem" }} />
               </>

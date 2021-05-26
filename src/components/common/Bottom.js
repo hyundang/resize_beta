@@ -1,15 +1,28 @@
 import React, { useState } from "react/cjs/react.development";
 import styled, { css } from "styled-components";
 
-const Bottom = ({ isShow, isActive, onBackClick, onNextClick }) => {
+const Bottom = ({
+  isShow,
+  isActive,
+  onlyNext,
+  isSubmit,
+  onBackClick,
+  onNextClick,
+}) => {
   return (
     <Container isShow={isShow}>
-      <Text onClick={onBackClick}>Back</Text>
+      {onlyNext ? (
+        <div style={{ width: "1px" }} />
+      ) : (
+        <Text onClick={onBackClick}>Back</Text>
+      )}
       <BtnContainer
         isActive={isActive}
         onClick={isActive ? onNextClick : () => {}}
       >
-        <Text style={{ borderBottom: "none" }}>Next</Text>
+        <Text style={{ borderBottom: "none" }}>
+          {isSubmit ? "Submit" : "Next"}
+        </Text>
       </BtnContainer>
     </Container>
   );

@@ -81,8 +81,8 @@ const PageBottomSize = ({
                     <>
                       <Radio
                         id={index}
-                        value={index}
-                        text={e}
+                        value={e.value}
+                        text={e.label}
                         data={inputData[props[idx]]}
                         onChange={(e) =>
                           setInputData({
