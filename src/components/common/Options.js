@@ -4,17 +4,13 @@ import { Check } from ".";
 
 const Options = ({ options, inputData, setInputData, text, property }) => {
   const handleCheckClick = (e) => {
-    inputData[property].includes(Number(e.target.id))
-      ? setInputData({
-          ...inputData,
-          [property]: inputData[property].filter(
-            (item) => item !== Number(e.target.id)
-          ),
-        })
-      : setInputData({
-          ...inputData,
-          [property]: inputData[property].concat([Number(e.target.id)]),
-        });
+    let sorted = inputData[property].includes(Number(e.target.id))
+      ? inputData[property].filter((item) => item !== Number(e.target.id))
+      : inputData[property].concat([Number(e.target.id)]);
+    setInputData({
+      ...inputData,
+      [property]: sorted.sort(),
+    });
   };
 
   return (

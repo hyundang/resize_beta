@@ -21,11 +21,12 @@ const Page_1 = ({
   // for check btn click
   const handleCheckClick = (e) => {
     const id = Number(e.target.id);
+    let sorted = inputData.purpose.includes(id)
+      ? inputData.purpose.filter((item) => id !== item)
+      : inputData.purpose.concat([id]);
     setInputData({
       ...inputData,
-      purpose: inputData.purpose.includes(id)
-        ? inputData.purpose.filter((item) => id !== item)
-        : inputData.purpose.concat([id]),
+      purpose: sorted.sort(),
     });
   };
 
@@ -55,7 +56,7 @@ const Page_1 = ({
       threshold: 1,
     };
     const handleIntersection = ([entry], observer) => {
-      entry.isIntersecting? setIsShow(false) : setIsShow(true)
+      entry.isIntersecting ? setIsShow(false) : setIsShow(true);
     };
     const io = new IntersectionObserver(handleIntersection, option);
     io.observe(target.current);
@@ -97,7 +98,7 @@ const Page_1 = ({
             );
           })}
         </RadioContainer>
-        <div style={{ marginTop: "5.9rem",height:'1px' }} ref={target}/>
+        <div style={{ marginTop: "5.9rem", height: "1px" }} ref={target} />
       </Container>
       <Bottom
         ref={viewport}

@@ -1273,7 +1273,7 @@ const styleQuiz = () => {
               inputData={data_46}
               setInputData={setData_46}
               onBackClick={() => setPageNum(45)}
-              onNextClick={() => router.push('/styleupdate')}
+              onNextClick={() => router.replace('/styleupdate')}
             />
           </TransitionPage>
         </>

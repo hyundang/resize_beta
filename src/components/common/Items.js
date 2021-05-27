@@ -87,7 +87,8 @@ const ItemBox = ({ id, src, text, data, setData, props, setIsNoneClick }) => {
         setData([id]);
         setIsNoneClick(false);
       } else {
-        setData(data.concat([id]));
+        let sorted = data.concat([id]);
+        setData(sorted.sort());
       }
     } else setData(id);
   };

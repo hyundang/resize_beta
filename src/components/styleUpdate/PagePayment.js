@@ -88,6 +88,9 @@ const PagePayment = ({ onBackClick, onNextClick }) => {
           isSearchable={true}
           inputData={tshirts}
           setInputData={(e) => {
+            e.sort((a, b) => {
+              return a.value - b.value;
+            });
             setTshirts(e);
             setData_44({
               ...data_44,
@@ -106,6 +109,9 @@ const PagePayment = ({ onBackClick, onNextClick }) => {
           isSearchable={true}
           inputData={shirts}
           setInputData={(e) => {
+            e.sort((a, b) => {
+              return a.value - b.value;
+            });
             setShirts(e);
             setData_44({
               ...data_44,
@@ -124,6 +130,9 @@ const PagePayment = ({ onBackClick, onNextClick }) => {
           isSearchable={true}
           inputData={neat}
           setInputData={(e) => {
+            e.sort((a, b) => {
+              return a.value - b.value;
+            });
             setNeat(e);
             setData_44({
               ...data_44,
@@ -142,6 +151,9 @@ const PagePayment = ({ onBackClick, onNextClick }) => {
           isSearchable={true}
           inputData={pants}
           setInputData={(e) => {
+            e.sort((a, b) => {
+              return a.value - b.value;
+            });
             setPants(e);
             setData_44({
               ...data_44,
@@ -160,6 +172,9 @@ const PagePayment = ({ onBackClick, onNextClick }) => {
           isSearchable={true}
           inputData={jacket}
           setInputData={(e) => {
+            e.sort((a, b) => {
+              return a.value - b.value;
+            });
             setJacket(e);
             setData_44({
               ...data_44,
@@ -178,6 +193,9 @@ const PagePayment = ({ onBackClick, onNextClick }) => {
           isSearchable={true}
           inputData={coat}
           setInputData={(e) => {
+            e.sort((a, b) => {
+              return a.value - b.value;
+            });
             setCoat(e);
             setData_44({
               ...data_44,
@@ -196,6 +214,9 @@ const PagePayment = ({ onBackClick, onNextClick }) => {
           isSearchable={true}
           inputData={shoes}
           setInputData={(e) => {
+            e.sort((a, b) => {
+              return a.value - b.value;
+            });
             setShoes(e);
             setData_44({
               ...data_44,
@@ -214,6 +235,9 @@ const PagePayment = ({ onBackClick, onNextClick }) => {
           isSearchable={true}
           inputData={bag}
           setInputData={(e) => {
+            e.sort((a, b) => {
+              return a.value - b.value;
+            });
             setBag(e);
             setData_44({
               ...data_44,

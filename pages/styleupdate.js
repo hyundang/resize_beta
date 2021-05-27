@@ -34,7 +34,7 @@ const styleUpdate = () => {
       { Authorization: localStorage.getItem("userToken") },
       postData
     );
-    router.push("/");
+    router.replace("/");
   };
 
   switch (pageNum) {

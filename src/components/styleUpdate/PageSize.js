@@ -96,6 +96,9 @@ const PageSize = ({ onNextClick, onBackClick }) => {
           isSearchable={true}
           inputData={top1Data}
           setInputData={(e) => {
+            e.sort((a, b) => {
+              return a.value - b.value;
+            });
             setTop1Data(e);
             setData_33({
               ...data_33,
@@ -110,6 +113,9 @@ const PageSize = ({ onNextClick, onBackClick }) => {
           isSearchable={true}
           inputData={top2Data}
           setInputData={(e) => {
+            e.sort((a, b) => {
+              return a.value - b.value;
+            });
             setTop2Data(e);
             setData_33({
               ...data_33,
@@ -124,6 +130,9 @@ const PageSize = ({ onNextClick, onBackClick }) => {
           isSearchable={true}
           inputData={top3Data}
           setInputData={(e) => {
+            e.sort((a, b) => {
+              return a.value - b.value;
+            });
             setTop3Data(e);
             setData_33({
               ...data_33,
@@ -140,6 +149,9 @@ const PageSize = ({ onNextClick, onBackClick }) => {
           isSearchable={true}
           inputData={pants1Data}
           setInputData={(e) => {
+            e.sort((a, b) => {
+              return a.value - b.value;
+            });
             setPants1Data(e);
             setData_34({
               ...data_34,
@@ -154,6 +166,9 @@ const PageSize = ({ onNextClick, onBackClick }) => {
           isSearchable={true}
           inputData={pants2Data}
           setInputData={(e) => {
+            e.sort((a, b) => {
+              return a.value - b.value;
+            });
             setPants2Data(e);
             setData_34({
               ...data_34,
@@ -200,6 +215,9 @@ const PageSize = ({ onNextClick, onBackClick }) => {
           isSearchable={true}
           inputData={shoesData}
           setInputData={(e) => {
+            e.sort((a, b) => {
+              return a.value - b.value;
+            });
             setShoesData(e);
             setData_34({
               ...data_34,

@@ -16,7 +16,7 @@ import { styleQuizData_M } from "../../lib/data/styleQuiz_M";
 const PageMy = ({ onNextClick }) => {
   const data_32_1 = useRecoilInput(StyleQuizInputState_str(1));
   const [data_1, setData_1] = useRecoilState(StyleQuizInputState_1);
-  const [purpose, setPurpose] = useState(styleQuizData_M.page_1[2][data_1]);
+  const [purpose, setPurpose] = useState(styleQuizData_M.page_1[2][data_1.age]);
   // for bottom shadow
   const viewport = useRef(null);
   const target = useRef(null);

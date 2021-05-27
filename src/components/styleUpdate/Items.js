@@ -9,7 +9,7 @@ const Items = ({ options, inputData, setInputData, qtext, setIsOpen }) => {
     <div
       style={{
         width: "100%",
-        height:'18rem',
+        height: "18rem",
         marginBottom: "1.6rem",
         display: "flex",
         flexDirection: "column",
@@ -55,7 +55,7 @@ const Items = ({ options, inputData, setInputData, qtext, setIsOpen }) => {
 export default Items;
 
 const Text = styled.div`
-position: absolute;
+  position: absolute;
   margin-bottom: 1.6rem;
 
   font-size: 1.4rem;
