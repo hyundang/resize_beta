@@ -2,9 +2,10 @@ import axios from "axios";
 
 const login = async (body) => {
   try {
-    const { data } = await axios.post({
+    const { data } = await axios({
       baseURL: API_DOMAIN,
       url: `/api/token/`,
+      method: "post",
       data: body,
     });
     console.log("[SUCCESS] LOGIN", data);
@@ -120,6 +121,7 @@ const postApi = {
   codeCheck,
   postStyleQuiz,
   getUserID,
+  login,
 };
 
 export default postApi;
