@@ -2,7 +2,7 @@ import axios from "axios";
 
 const login = async (body) => {
   try {
-    const { data } = await axios.post({
+    const { data } = await axios({
       baseURL: API_DOMAIN,
       url: `/api/token/`,
       data: body,
