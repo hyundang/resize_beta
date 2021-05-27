@@ -5,6 +5,7 @@ const login = async (body) => {
     const { data } = await axios({
       baseURL: API_DOMAIN,
       url: `/api/token/`,
+      method: "post",
       data: body,
     });
     console.log("[SUCCESS] LOGIN", data);
