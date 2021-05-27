@@ -10,7 +10,7 @@ export const getUserSelector = selector({
   get: async () => {
     const { data } = await axios.post({
       baseURL: API_DOMAIN,
-      header: localStorage.getItem("token"),
+      header: localStorage.getItem("userToken"),
       url: `/api/user/getUserID`,
       data: { phone: localStorage.getItem("phone") },
     });

@@ -1,5 +1,17 @@
 import axios from "axios";
 
+const login = async (body) => {
+  try {
+    const { data } = await axios.post({
+      baseURL: API_DOMAIN,
+      url: `/api/token/`,
+      data: body,
+    });
+    console.log("[SUCCESS] LOGIN", data);
+    return data;
+  } catch (e) {
+    console.log("[FAIL] LOGIN", e);
+
 const signup = async (body) => {
   try {
     const { data } = await axios({
@@ -105,6 +117,7 @@ const postApi = {
   codeCheck,
   postStyleQuiz,
   getUserID,
+  login,
 };
 
 export default postApi;

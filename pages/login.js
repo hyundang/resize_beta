@@ -4,6 +4,8 @@ import Link from "next/link";
 // components
 import { Header } from "../src/components/common";
 import { InputBox } from "../src/components/register";
+// api
+import { postApi } from "../src/lib/api";
 
 const LoginPage = () => {
   // for input
@@ -26,6 +28,12 @@ const LoginPage = () => {
     });
   };
 
+  const handleLoginClick = async () => {
+    const data = await postApi.login(inputData);
+    localStorage.setItem("userToken", data.access);
+    localStorage.setItem("phone", inputData.phone);
+  };
+
   // phone number format check
   useEffect(() => {
     inputData.phone.length === 0
@@ -37,12 +45,22 @@ const LoginPage = () => {
 
   // password format check
   useEffect(() => {
-    //  8 ~ 16자 영문, 숫자 조합
-    const regExp = /^(?=.*\d)(?=.*[a-zA-Z])[0-9a-zA-Z]{10,16}$/;
+    //  10 ~ 16자 영문, 숫자 조합
+    const regExp = /^(?=.*\d)(?=.*[a-zA-Z])[0-9a-zA-Z!@#$%^&*]{10,16}$/;
     inputData.password.length === 0
       ? setPwFormat(true)
       : setPwFormat(regExp.test(inputData.password));
   }, [inputData.password]);
+
+  useEffect(() => {
+    setInputData({
+      ...inputData,
+      phone:
+        localStorage.getItem("phone") !== null
+          ? localStorage.getItem("phone")
+          : "",
+    });
+  }, []);
 
   return (
     <>
@@ -81,7 +99,9 @@ const LoginPage = () => {
         {!pwFormat && <DescText>올바른 비밀번호를 입력해주세요</DescText>}
         <div style={{ height: "4.25rem" }} />
         <Link href="/">
-          <Btn isLogin={true}>로그인</Btn>
+          <Btn isLogin={true} onClick={handleLoginClick}>
+            로그인
+          </Btn>
         </Link>
         <div style={{ height: "2.4rem" }} />
         <Link href="password">
