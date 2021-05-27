@@ -44,6 +44,10 @@ const page_3 = [
   { value: 14, src: "/imgs/item.png", label: "블루" },
   { value: 15, src: "/imgs/item.png", label: "퍼플" },
   { value: 16, src: "/imgs/item.png", label: "브라운" },
+  { value: 17, src: "/imgs/item.png", label: "연청" },
+  { value: 18, src: "/imgs/item.png", label: "중청" },
+  { value: 19, src: "/imgs/item.png", label: "진청" },
+  { value: 20, src: "/imgs/item.png", label: "흑청" },
 ];
 
 const page_4 = [

@@ -1,68 +1,82 @@
 // for question options
 const page_4 = [
   {
+    value: 0,
     src: "/imgs/styleQuiz/patterns/horizontal_stripe.png",
-    text: "가로 스트라이프",
+    label: "가로 스트라이프",
   },
   {
+    value: 1,
     src: "/imgs/styleQuiz/patterns/vertical_stripe.png",
-    text: "세로 스트라이프",
+    label: "세로 스트라이프",
   },
-  { src: "/imgs/styleQuiz/patterns/floral.png", text: "플로럴" },
-  { src: "/imgs/styleQuiz/patterns/dot.png", text: "도트" },
-  { src: "/imgs/styleQuiz/patterns/leopard.png", text: "레오파드" },
-  { src: "/imgs/styleQuiz/patterns/paisley.png", text: "페이즐리" },
-  { src: "/imgs/styleQuiz/patterns/small_check.png", text: "스몰 체크" },
-  { src: "/imgs/styleQuiz/patterns/big_check.png", text: "빅 체크" },
-  { src: "/imgs/styleQuiz/patterns/argyle.png", text: "아가일" },
-  { src: "/imgs/styleQuiz/patterns/twist.png", text: "꽈배기" },
-  { src: "/imgs/styleQuiz/patterns/military.png", text: "밀리터리" },
-  { src: "/imgs/styleQuiz/patterns/herringbone.png", text: "헤링본" },
-  { src: "/imgs/styleQuiz/patterns/quilting.png", text: "퀼팅" },
+  { value: 2, src: "/imgs/styleQuiz/patterns/floral.png", label: "플로럴" },
+  { value: 3, src: "/imgs/styleQuiz/patterns/dot.png", label: "도트" },
+  { value: 4, src: "/imgs/styleQuiz/patterns/leopard.png", label: "레오파드" },
+  { value: 5, src: "/imgs/styleQuiz/patterns/paisley.png", label: "페이즐리" },
+  {
+    value: 6,
+    src: "/imgs/styleQuiz/patterns/small_check.png",
+    label: "스몰 체크",
+  },
+  { value: 7, src: "/imgs/styleQuiz/patterns/big_check.png", label: "빅 체크" },
+  { value: 8, src: "/imgs/styleQuiz/patterns/argyle.png", label: "아가일" },
+  { value: 9, src: "/imgs/styleQuiz/patterns/twist.png", label: "꽈배기" },
+  {
+    value: 10,
+    src: "/imgs/styleQuiz/patterns/military.png",
+    label: "밀리터리",
+  },
+  {
+    value: 11,
+    src: "/imgs/styleQuiz/patterns/herringbone.png",
+    label: "헤링본",
+  },
+  { value: 12, src: "/imgs/styleQuiz/patterns/quilting.png", label: "퀼팅" },
 ];
 
 const page_5 = [
-  { src: "/imgs/styleQuiz/details/lace.png", text: "레이스" },
-  { src: "/imgs/styleQuiz/details/frill.png", text: "프릴" },
-  { src: "/imgs/styleQuiz/details/pearl.png", text: "진주" },
-  { src: "/imgs/styleQuiz/details/shirring.png", text: "셔링" },
-  { src: "/imgs/styleQuiz/details/ribbon.png", text: "리본" },
-  { src: "/imgs/styleQuiz/details/seethrough.png", text: "시스루" },
-  { src: "/imgs/styleQuiz/details/puff.png", text: "퍼프" },
-  { src: "/imgs/styleQuiz/details/hood.png", text: "후드" },
-  { src: "/imgs/styleQuiz/details/item.png", text: "핀턱" },
-  { src: "/imgs/styleQuiz/details/item.png", text: "롤업" },
-  { src: "/imgs/styleQuiz/details/item.png", text: "랩" },
+  { value: 0, src: "/imgs/styleQuiz/details/lace.png", label: "레이스" },
+  { value: 1, src: "/imgs/styleQuiz/details/frill.png", label: "프릴" },
+  { value: 2, src: "/imgs/styleQuiz/details/pearl.png", label: "진주" },
+  { value: 3, src: "/imgs/styleQuiz/details/shirring.png", label: "셔링" },
+  { value: 4, src: "/imgs/styleQuiz/details/ribbon.png", label: "리본" },
+  { value: 5, src: "/imgs/styleQuiz/details/seethrough.png", label: "시스루" },
+  { value: 6, src: "/imgs/styleQuiz/details/puff.png", label: "퍼프" },
+  { value: 7, src: "/imgs/styleQuiz/details/hood.png", label: "후드" },
+  { value: 8, src: "/imgs/styleQuiz/details/item.png", label: "핀턱" },
+  { value: 9, src: "/imgs/styleQuiz/details/item.png", label: "롤업" },
+  { value: 10, src: "/imgs/styleQuiz/details/item.png", label: "랩" },
 ];
 
 const page_6 = [
-  { src: "/imgs/styleQuiz/materials/leather.png", text: "가죽" },
-  { src: "/imgs/styleQuiz/materials/angora.png", text: "앙고라" },
-  { src: "/imgs/styleQuiz/materials/nylon.png", text: "나일론" },
-  { src: "/imgs/styleQuiz/materials/corduroy.png", text: "코듀로이" },
-  { src: "/imgs/styleQuiz/materials/velvet.png", text: "벨벳" },
-  { src: "/imgs/styleQuiz/materials/linen.png", text: "린넨" },
-  { src: "/imgs/styleQuiz/materials/silk.png", text: "실크(새틴)" },
-  { src: "/imgs/styleQuiz/materials/chiffon.png", text: "쉬폰" },
-  { src: "/imgs/styleQuiz/materials/tweed.png", text: "트위드" },
-  { src: "/imgs/styleQuiz/materials/fleece.png", text: "플리스" },
-  { src: "/imgs/styleQuiz/materials/item.png", text: "데님" },
+  { value: 0, src: "/imgs/styleQuiz/materials/leather.png", label: "가죽" },
+  { value: 1, src: "/imgs/styleQuiz/materials/angora.png", label: "앙고라" },
+  { value: 2, src: "/imgs/styleQuiz/materials/nylon.png", label: "나일론" },
+  { value: 3, src: "/imgs/styleQuiz/materials/corduroy.png", label: "코듀로이" },
+  { value: 4, src: "/imgs/styleQuiz/materials/velvet.png", label: "벨벳" },
+  { value: 5, src: "/imgs/styleQuiz/materials/linen.png", label: "린넨" },
+  { value: 6, src: "/imgs/styleQuiz/materials/silk.png", label: "실크(새틴)" },
+  { value: 7, src: "/imgs/styleQuiz/materials/chiffon.png", label: "쉬폰" },
+  { value: 8, src: "/imgs/styleQuiz/materials/tweed.png", label: "트위드" },
+  { value: 9, src: "/imgs/styleQuiz/materials/fleece.png", label: "플리스" },
+  { value: 10, src: "/imgs/styleQuiz/materials/item.png", label: "데님" },
 ];
 
 const page_7 = [
-  { src: "/imgs/item.png", text: "U넥" },
-  { src: "/imgs/item.png", text: "크루넥(시보리)" },
-  { src: "/imgs/item.png", text: "V넥" },
-  { src: "/imgs/item.png", text: "스퀘어넥" },
-  { src: "/imgs/item.png", text: "보트넥" },
-  { src: "/imgs/item.png", text: "반폴라(모크넥)" },
-  { src: "/imgs/item.png", text: "목폴라(터틀넥)" },
-  { src: "/imgs/item.png", text: "오프숄더" },
-  { src: "/imgs/item.png", text: "홀터넥" },
-  { src: "/imgs/item.png", text: "칼라" },
-  { src: "/imgs/item.png", text: "차이나칼라" },
-  { src: "/imgs/item.png", text: "오픈칼라" },
-  { src: "/imgs/item.png", text: "보우칼라" },
+  { value: 0, src: "/imgs/item.png", label: "U넥" },
+  { value: 1, src: "/imgs/item.png", label: "크루넥(시보리)" },
+  { value: 2, src: "/imgs/item.png", label: "V넥" },
+  { value: 3, src: "/imgs/item.png", label: "스퀘어넥" },
+  { value: 4, src: "/imgs/item.png", label: "보트넥" },
+  { value: 5, src: "/imgs/item.png", label: "반폴라(모크넥)" },
+  { value: 6, src: "/imgs/item.png", label: "목폴라(터틀넥)" },
+  { value: 7, src: "/imgs/item.png", label: "오프숄더" },
+  { value: 8, src: "/imgs/item.png", label: "홀터넥" },
+  { value: 9, src: "/imgs/item.png", label: "칼라" },
+  { value: 10, src: "/imgs/item.png", label: "차이나칼라" },
+  { value: 11, src: "/imgs/item.png", label: "오픈칼라" },
+  { value: 12, src: "/imgs/item.png", label: "보우칼라" },
 ];
 
 const style = [
@@ -160,12 +174,12 @@ const outer = [
 ];
 
 const brand = [
-  { src: "/imgs/item.png", text: "캐주얼" },
-  { src: "/imgs/item.png", text: "클래식포멀" },
-  { src: "/imgs/item.png", text: "로맨틱페미닌" },
-  { src: "/imgs/item.png", text: "러블리" },
-  { src: "/imgs/item.png", text: "럭셔리" },
-  { src: "/imgs/item.png", text: "기타" },
+  { src: "/imgs/item.png", label: "캐주얼" },
+  { src: "/imgs/item.png", label: "클래식포멀" },
+  { src: "/imgs/item.png", label: "로맨틱페미닌" },
+  { src: "/imgs/item.png", label: "러블리" },
+  { src: "/imgs/item.png", label: "럭셔리" },
+  { src: "/imgs/item.png", label: "기타" },
 ];
 
 const size_top = [
@@ -282,59 +296,59 @@ const size_bottom = [
 ];
 
 const page_35 = [
-  { src: "/imgs/item.png", text: "크롭\n(허리에 위치)" },
-  { src: "/imgs/item.png", text: "레귤러\n(엉덩이에 위치)" },
-  { src: "/imgs/item.png", text: "롱\n(허벅지에 위치)" },
+  { value: 0, src: "/imgs/item.png", label: "크롭\n(허리에 위치)" },
+  { value: 1, src: "/imgs/item.png", label: "레귤러\n(엉덩이에 위치)" },
+  { value: 2, src: "/imgs/item.png", label: "롱\n(허벅지에 위치)" },
 ];
 
 const page_36 = [
-  { src: "/imgs/item.png", text: "타이트핏" },
-  { src: "/imgs/item.png", text: "레귤러핏" },
-  { src: "/imgs/item.png", text: "루즈핏" },
-  { src: "/imgs/item.png", text: "오버핏" },
+  { value: 0, src: "/imgs/item.png", label: "타이트핏" },
+  { value: 1, src: "/imgs/item.png", label: "레귤러핏" },
+  { value: 2, src: "/imgs/item.png", label: "루즈핏" },
+  { value: 3, src: "/imgs/item.png", label: "오버핏" },
 ];
 
 const page_37 = [
-  { src: "/imgs/item.png", text: "스키니핏" },
-  { src: "/imgs/item.png", text: "슬림핏" },
-  { src: "/imgs/item.png", text: "스트레이트핏" },
-  { src: "/imgs/item.png", text: "와이드핏" },
-  { src: "/imgs/item.png", text: "테이퍼드핏\n(배기핏)" },
-  { src: "/imgs/item.png", text: "부츠컷" },
-  { src: "/imgs/item.png", text: "벌룬핏" },
+  { value: 0, src: "/imgs/item.png", label: "스키니핏" },
+  { value: 1, src: "/imgs/item.png", label: "슬림핏" },
+  { value: 2, src: "/imgs/item.png", label: "스트레이트핏" },
+  { value: 3, src: "/imgs/item.png", label: "와이드핏" },
+  { value: 4, src: "/imgs/item.png", label: "테이퍼드핏\n(배기핏)" },
+  { value: 5, src: "/imgs/item.png", label: "부츠컷" },
+  { value: 6, src: "/imgs/item.png", label: "벌룬핏" },
 ];
 
 const page_38 = [
-  { src: "/imgs/item.png", text: "골반에 위치\n(밑위길이 짧음)" },
-  { src: "/imgs/item.png", text: "골반과 허리\n사이에 위치\n(밑위길이 중간)" },
-  { src: "/imgs/item.png", text: "허리에 위치\n(밑위길이 긺)" },
+  { value: 0, src: "/imgs/item.png", label: "골반에 위치\n(밑위길이 짧음)" },
+  { value: 1, src: "/imgs/item.png", label: "골반과 허리\n사이에 위치\n(밑위길이 중간)" },
+  { value: 2, src: "/imgs/item.png", label: "허리에 위치\n(밑위길이 긺)" },
 ];
 
 const page_39 = [
-  { src: "/imgs/item.png", text: "A라인" },
-  { src: "/imgs/item.png", text: "H라인" },
-  { src: "/imgs/item.png", text: "머메이드 라인" },
-  { src: "/imgs/item.png", text: "플레어" },
-  { src: "/imgs/item.png", text: "플리츠" },
+  { value: 0, src: "/imgs/item.png", label: "A라인" },
+  { value: 1, src: "/imgs/item.png", label: "H라인" },
+  { value: 2, src: "/imgs/item.png", label: "머메이드 라인" },
+  { value: 3, src: "/imgs/item.png", label: "플레어" },
+  { value: 4, src: "/imgs/item.png", label: "플리츠" },
 ];
 
 const page_40 = [
-  { src: "/imgs/item.png", text: "미니스커트\n(허벅지 중간 위치)" },
-  { src: "/imgs/item.png", text: "미디스커트\n(무릎 위치)" },
-  { src: "/imgs/item.png", text: "롱 스커트\n(종아리 중간 위치)" },
-  { src: "/imgs/item.png", text: "맥시 롱스커트\n(발목 위치)" },
+  { value: 0, src: "/imgs/item.png", label: "미니스커트\n(허벅지 중간 위치)" },
+  { value: 1, src: "/imgs/item.png", label: "미디스커트\n(무릎 위치)" },
+  { value: 2, src: "/imgs/item.png", label: "롱 스커트\n(종아리 중간 위치)" },
+  { value: 3, src: "/imgs/item.png", label: "맥시 롱스커트\n(발목 위치)" },
 ];
 
 const page_41 = [
-  { src: "/imgs/item.png", text: "펌프스" },
-  { src: "/imgs/item.png", text: "플랫" },
-  { src: "/imgs/item.png", text: "앵클부츠" },
-  { src: "/imgs/item.png", text: "샌들" },
-  { src: "/imgs/item.png", text: "힐" },
-  { src: "/imgs/item.png", text: "스니커즈" },
-  { src: "/imgs/item.png", text: "운동화" },
-  { src: "/imgs/item.png", text: "로퍼" },
-  { src: "/imgs/item.png", text: "롱부츠" },
+  { value: 0, src: "/imgs/item.png", label: "펌프스" },
+  { value: 1, src: "/imgs/item.png", label: "플랫" },
+  { value: 2, src: "/imgs/item.png", label: "앵클부츠" },
+  { value: 3, src: "/imgs/item.png", label: "샌들" },
+  { value: 4, src: "/imgs/item.png", label: "힐" },
+  { value: 5, src: "/imgs/item.png", label: "스니커즈" },
+  { value: 6, src: "/imgs/item.png", label: "운동화" },
+  { value: 7, src: "/imgs/item.png", label: "로퍼" },
+  { value: 8, src: "/imgs/item.png", label: "롱부츠" },
 ];
 
 const payment = [
