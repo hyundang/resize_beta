@@ -113,6 +113,10 @@ const getUserID = async (header, body) => {
 };
 
 const postApi = {
+  signup,
+  phoneCheck,
+  reqCode,
+  codeCheck,
   postStyleQuiz,
   getUserID,
 };
