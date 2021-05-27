@@ -5,7 +5,6 @@ const login = async (body) => {
     const { data } = await axios({
       baseURL: API_DOMAIN,
       url: `/api/token/`,
-      method: "post",
       data: body,
     });
     console.log("[SUCCESS] LOGIN", data);
@@ -100,8 +99,8 @@ const getUserID = async (header, body) => {
   try {
     const { data } = await axios({
       baseURL: API_DOMAIN,
-      header: header,
-      url: `/api/user/getUserID`,
+      header,
+      url: `/api/user/getUserID/`,
       method: "post",
       data: body,
     });
