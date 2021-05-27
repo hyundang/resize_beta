@@ -26,7 +26,9 @@ const Page_1 = ({
       : inputData.purpose.concat([id]);
     setInputData({
       ...inputData,
-      purpose: sorted.sort(),
+      purpose: sorted.sort((a, b) => {
+        return a - b;
+      }),
     });
   };
 

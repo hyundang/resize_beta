@@ -19,7 +19,9 @@ const Options = ({
       : inputData[property].concat([Number(e.target.id)]);
     setInputData({
       ...inputData,
-      [property]: sorted.sort(),
+      [property]: sorted.sort((a, b) => {
+        return a - b;
+      }),
     });
   };
 
