@@ -14,6 +14,22 @@ export const StyleQuizInputState_1 = atom({
   },
 });
 
+export const StyleQuizInputState_28 = atom({
+  key: "StyleQuizInputState_28",
+  default: {
+    looks: [],
+    looks_ect: "",
+  },
+});
+
+export const StyleQuizInputState_29 = atom({
+  key: "StyleQuizInputState_29",
+  default: {
+    goods: [],
+    goods_ect: "",
+  },
+});
+
 export const StyleQuizInputState_Cody = atom({
   key: "StyleQuizInputState_Cody",
   default: {

@@ -1,8 +1,18 @@
+import { useState } from "react/cjs/react.development";
 import styled from "styled-components";
 // components
-import { Check } from ".";
+import { Check, InputBox } from ".";
 
-const Options = ({ options, inputData, setInputData, text, property }) => {
+const Options = ({
+  options,
+  inputData,
+  setInputData,
+  text,
+  property,
+  isEct,
+  text_2,
+  placeholder,
+}) => {
   const handleCheckClick = (e) => {
     let sorted = inputData[property].includes(Number(e.target.id))
       ? inputData[property].filter((item) => item !== Number(e.target.id))
@@ -11,6 +21,29 @@ const Options = ({ options, inputData, setInputData, text, property }) => {
       ...inputData,
       [property]: sorted.sort(),
     });
+  };
+
+  const onChange = (e) => {
+    const {
+      target: { value },
+    } = e;
+    setInputData({
+      ...inputData,
+      [property + "_ect"]: value,
+    });
+  };
+
+  const setValue = (e) => {
+    setInputData({
+      ...inputData,
+      [property + "_ect"]: e,
+    });
+  };
+
+  const input = {
+    value: inputData[property + "_ect"],
+    onChange: onChange,
+    setValue: setValue,
   };
 
   return (
@@ -29,6 +62,22 @@ const Options = ({ options, inputData, setInputData, text, property }) => {
           );
         })}
       </CheckBoxContainer>
+      {isEct & inputData[property].includes(options.length - 1) ? (
+        <>
+          <Text
+            style={{
+              fontSize: "1.6rem",
+              fontWeight: "700",
+              letterSpacing: "-0.04rem",
+            }}
+          >
+            {text_2}
+          </Text>
+          <InputBox placeholder={placeholder} input={input} type="text" />
+        </>
+      ) : (
+        <></>
+      )}
     </>
   );
 };
@@ -46,7 +95,7 @@ const Text = styled.div`
 
 const CheckBoxContainer = styled.div`
   width: 100%;
-  margin-bottom: 2.4rem;
+  margin-bottom: 4rem;
 
   display: grid;
   grid-template-columns: 47% 47%;

@@ -3,9 +3,11 @@ import React, { useEffect } from "react";
 import {
   Page_0,
   Page_1,
+  Page_28,
+  Page_29,
   PageItems,
   PagePreferSorP,
-  PageStyle,
+  PageCody,
   PageBrand,
   PageBodySize,
   PageTopSize,
@@ -26,6 +28,8 @@ import {
   StyleQuizInputState_num,
   StyleQuizInputState_str,
   StyleQuizInputState_1,
+  StyleQuizInputState_28,
+  StyleQuizInputState_29,
   StyleQuizInputState_33,
   StyleQuizInputState_34,
   StyleQuizInputState_42,
@@ -45,7 +49,7 @@ import { useRecoilInput } from "../src/hooks";
 // router
 import {useRouter} from 'next/router';
 
-const sex = 1; // only man
+const sex = 0; // only man
 
 const styleQuiz = () => {
   // for page
@@ -64,8 +68,8 @@ const styleQuiz = () => {
   const [data_25, setData_25] = useRecoilState(StyleQuizInputState_arr(8));
   const [data_26, setData_26] = useRecoilState(StyleQuizInputState_arr(9));
   const [data_27, setData_27] = useRecoilState(StyleQuizInputState_num(0));
-  const [data_28, setData_28] = useRecoilState(StyleQuizInputState_arr(10));
-  const [data_29, setData_29] = useRecoilState(StyleQuizInputState_arr(11));
+  const [data_28, setData_28] = useRecoilState(StyleQuizInputState_28);
+  const [data_29, setData_29] = useRecoilState(StyleQuizInputState_29);
   const [data_30, setData_30] = useRecoilState(StyleQuizInputState_arr(12));
   const data_31_1 = useRecoilInput(StyleQuizInputState_str(0));
   const [data_31_2, setData_31_2] = useRecoilState(StyleQuizInputState_num(1));
@@ -274,7 +278,7 @@ const styleQuiz = () => {
           </Header>
           <Bar pageNum={pageNum} maxNum={46} />
           <TransitionPage type="page" pagenum={pageNum}>
-            <PageStyle
+            <PageCody
               src={
                 sex === 0 ? styleQuizData_M.style[0] : styleQuizData_W.style[0]
               }
@@ -302,7 +306,7 @@ const styleQuiz = () => {
           </Header>
           <Bar pageNum={pageNum} maxNum={46} />
           <TransitionPage type="page" pagenum={pageNum}>
-            <PageStyle
+            <PageCody
               src={
                 sex === 0 ? styleQuizData_M.style[1] : styleQuizData_W.style[1]
               }
@@ -330,7 +334,7 @@ const styleQuiz = () => {
           </Header>
           <Bar pageNum={pageNum} maxNum={46} />
           <TransitionPage type="page" pagenum={pageNum}>
-            <PageStyle
+            <PageCody
               src={
                 sex === 0 ? styleQuizData_M.style[2] : styleQuizData_W.style[2]
               }
@@ -358,7 +362,7 @@ const styleQuiz = () => {
           </Header>
           <Bar pageNum={pageNum} maxNum={46} />
           <TransitionPage type="page" pagenum={pageNum}>
-            <PageStyle
+            <PageCody
               src={
                 sex === 0 ? styleQuizData_M.style[3] : styleQuizData_W.style[3]
               }
@@ -386,7 +390,7 @@ const styleQuiz = () => {
           </Header>
           <Bar pageNum={pageNum} maxNum={46} />
           <TransitionPage type="page" pagenum={pageNum}>
-            <PageStyle
+            <PageCody
               src={
                 sex === 0 ? styleQuizData_M.style[4] : styleQuizData_W.style[4]
               }
@@ -414,7 +418,7 @@ const styleQuiz = () => {
           </Header>
           <Bar pageNum={pageNum} maxNum={46} />
           <TransitionPage type="page" pagenum={pageNum}>
-            <PageStyle
+            <PageCody
               src={
                 sex === 0 ? styleQuizData_M.style[5] : styleQuizData_W.style[5]
               }
@@ -442,7 +446,7 @@ const styleQuiz = () => {
           </Header>
           <Bar pageNum={pageNum} maxNum={46} />
           <TransitionPage type="page" pagenum={pageNum}>
-            <PageStyle
+            <PageCody
               src={
                 sex === 0 ? styleQuizData_M.style[6] : styleQuizData_W.style[6]
               }
@@ -470,7 +474,7 @@ const styleQuiz = () => {
           </Header>
           <Bar pageNum={pageNum} maxNum={46} />
           <TransitionPage type="page" pagenum={pageNum}>
-            <PageStyle
+            <PageCody
               src={
                 sex === 0 ? styleQuizData_M.style[7] : styleQuizData_W.style[7]
               }
@@ -498,7 +502,7 @@ const styleQuiz = () => {
           </Header>
           <Bar pageNum={pageNum} maxNum={46} />
           <TransitionPage type="page" pagenum={pageNum}>
-            <PageStyle
+            <PageCody
               src={
                 sex === 0 ? styleQuizData_M.style[8] : styleQuizData_W.style[8]
               }
@@ -526,7 +530,7 @@ const styleQuiz = () => {
           </Header>
           <Bar pageNum={pageNum} maxNum={46} />
           <TransitionPage type="page" pagenum={pageNum}>
-            <PageStyle
+            <PageCody
               src={
                 sex === 0 ? styleQuizData_M.style[9] : styleQuizData_W.style[9]
               }
@@ -554,7 +558,7 @@ const styleQuiz = () => {
           </Header>
           <Bar pageNum={pageNum} maxNum={46} />
           <TransitionPage type="page" pagenum={pageNum}>
-            <PageStyle
+            <PageCody
               src={
                 sex === 0
                   ? styleQuizData_M.style[10]
@@ -584,7 +588,7 @@ const styleQuiz = () => {
           </Header>
           <Bar pageNum={pageNum} maxNum={46} />
           <TransitionPage type="page" pagenum={pageNum}>
-            <PageStyle
+            <PageCody
               src={
                 sex === 0
                   ? styleQuizData_M.style[11]
@@ -614,7 +618,7 @@ const styleQuiz = () => {
           </Header>
           <Bar pageNum={pageNum} maxNum={46} />
           <TransitionPage type="page" pagenum={pageNum}>
-            <PageStyle
+            <PageCody
               src={
                 sex === 0
                   ? styleQuizData_M.style[12]
@@ -644,7 +648,7 @@ const styleQuiz = () => {
           </Header>
           <Bar pageNum={pageNum} maxNum={46} />
           <TransitionPage type="page" pagenum={pageNum}>
-            <PageStyle
+            <PageCody
               src={
                 sex === 0
                   ? styleQuizData_M.style[13]
@@ -674,7 +678,7 @@ const styleQuiz = () => {
           </Header>
           <Bar pageNum={pageNum} maxNum={46} />
           <TransitionPage type="page" pagenum={pageNum}>
-            <PageStyle
+            <PageCody
               src={
                 sex === 0
                   ? styleQuizData_M.style[14]
@@ -711,6 +715,7 @@ const styleQuiz = () => {
               setInputData={setData_23}
               isNoneGone={true}
               isLike={true}
+              isTwo={true}
               onBackClick={() => setPageNum(22)}
               onNextClick={() => setPageNum(24)}
             />
@@ -737,6 +742,7 @@ const styleQuiz = () => {
               setInputData={setData_24}
               isNoneGone={true}
               isLike={true}
+              isTwo={true}
               onBackClick={() => setPageNum(23)}
               onNextClick={() => {
                 sex === 0 ? setPageNum(26) : setPageNum(25);
@@ -763,6 +769,7 @@ const styleQuiz = () => {
               setInputData={setData_25}
               isNoneGone={true}
               isLike={true}
+              isTwo={true}
               onBackClick={() => setPageNum(24)}
               onNextClick={() => setPageNum(26)}
             />
@@ -789,6 +796,7 @@ const styleQuiz = () => {
               setInputData={setData_26}
               isNoneGone={true}
               isLike={true}
+              isTwo={true}
               onBackClick={() => {
                 sex === 0 ? setPageNum(24) : setPageNum(25);
               }}
@@ -830,13 +838,10 @@ const styleQuiz = () => {
           </Header>
           <Bar pageNum={sex === 0 ? pageNum - 2 : pageNum} maxNum={46} />
           <TransitionPage type="page" pagenum={pageNum}>
-            <PageItems
-              options={sex === 0 ? styleQuizData_M.cody : styleQuizData_W.cody}
-              qText={"평소 자주 착용하는 코디가 있으신가요?"}
+            <Page_28
+              options={styleQuizData_M.look}
               inputData={data_28}
               setInputData={setData_28}
-              isNoneGone={true}
-              isLike={true}
               onBackClick={() => {
                 sex === 0 ? setPageNum(26) : setPageNum(27);
               }}
@@ -856,13 +861,10 @@ const styleQuiz = () => {
           </Header>
           <Bar pageNum={sex === 0 ? pageNum - 2 : pageNum} maxNum={46} />
           <TransitionPage type="page" pagenum={pageNum}>
-            <PageItems
-              options={sex === 0 ? styleQuizData_M.cody : styleQuizData_W.cody}
-              qText={"시도해보고 싶은 코디가 있으신가요?"}
+            <Page_29
+              options={styleQuizData_M.goods}
               inputData={data_29}
               setInputData={setData_29}
-              isNoneGone={true}
-              isLike={true}
               onBackClick={() => setPageNum(28)}
               onNextClick={() => setPageNum(30)}
             />
@@ -1081,7 +1083,7 @@ const styleQuiz = () => {
               options={
                 sex === 0 ? styleQuizData_M.page_38 : styleQuizData_W.page_38
               }
-              qText={"어떤 핏의 밑위길이를 선호하시나요?"}
+              qText={"어떤 밑위길이를 선호하시나요?"}
               inputData={data_38}
               setInputData={setData_38}
               isNoneGone={true}

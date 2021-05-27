@@ -4,30 +4,48 @@ import styled, { css } from "styled-components";
 import ic_delete from "../../assets/icons/ic-delete.svg";
 import ic_plus from "../../assets/icons/ic-plus.svg";
 
-const Tags = ({ qtext, datas, setData, options, setIsOpen }) => {
+const Tags = ({ qtext, datas, setData, options, setIsOpen, isLook }) => {
   return (
     <>
       <Title>{qtext}</Title>
       <TagContainer>
         <TagBox isFirst={true} onClick={() => setIsOpen(true)}>
           <img src={ic_plus} />
-          {qtext.replace("싫어하는 ", "") + " 추가하기"}
+          {isLook
+            ? qtext.replace("평소 착용하는 ", "") + " 추가하기"
+            : qtext.replace("싫어하는 ", "") + " 추가하기"}
         </TagBox>
-        {datas.map((item) => {
-          return (
-            <TagBox key={item} id={item}>
-              {options[item].text}
-              <img
-                id={item}
-                src={ic_delete}
-                style={{ width: "1.5rem", marginLeft: "0.8rem" }}
-                onClick={(e) =>
-                  setData(datas.filter((d) => d !== Number(e.target.id)))
-                }
-              />
-            </TagBox>
-          );
-        })}
+        {isLook
+          ? datas.map((item) => {
+              return (
+                <TagBox key={item} id={item}>
+                  {options[item].label}
+                  <img
+                    id={item}
+                    src={ic_delete}
+                    style={{ width: "1.5rem", marginLeft: "0.8rem" }}
+                    onClick={(e) =>
+                      setData(datas.filter((d) => d !== Number(e.target.id)))
+                    }
+                  />
+                </TagBox>
+              );
+            })
+          : datas.map((item) => {
+              return (
+                <TagBox key={item} id={item}>
+                  {options[item].text}
+                  <img
+                    id={item}
+                    src={ic_delete}
+                    style={{ width: "1.5rem", marginLeft: "0.8rem" }}
+                    onClick={(e) =>
+                      setData(datas.filter((d) => d !== Number(e.target.id)))
+                    }
+                  />
+                </TagBox>
+              );
+            })}
       </TagContainer>
     </>
   );

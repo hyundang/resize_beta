@@ -1,4 +1,4 @@
-const size_top_M = ["top_1", "top_2", "top_3"];
+const size_top_M = ["top_1", "top_2"];
 const size_top_W = ["top_1", "top_2", "top_3", "bra_1", "bra_2"];
 
 const size_bottom = ["pants_1", "pants_2", "pants_3", "shoes"];

@@ -1,19 +1,14 @@
 import React, { useEffect, useState, useRef } from "react";
 import styled from "styled-components";
 // components
-import { Items, Bottom } from "../common";
+import { Bottom, Options } from "../common";
 
-const PageItems = ({
+const Page_28 = ({
   options,
-  qText,
   inputData,
   setInputData,
   onBackClick,
   onNextClick,
-  isNoneGone,
-  isLike,
-  isBig,
-  isTwo,
 }) => {
   // for bottom btn active
   const [isActive, setIsActive] = useState(false);
@@ -25,12 +20,10 @@ const PageItems = ({
   // for checking bottom btn active
   useEffect(() => {
     console.log(inputData);
-    if (isNoneGone) {
-      !inputData.includes(-1) & inputData.length !== 0
-        ? setIsActive(true)
-        : setIsActive(false);
-    } else {
-      !inputData.includes(-1) ? setIsActive(true) : setIsActive(false);
+    inputData.looks.length === 0 ? setIsActive(false) : setIsActive(true);
+    // '기타' 항목 작성 한 경우
+    if (inputData.looks.includes(options.length - 1)) {
+      inputData.looks_ect === "" ? setIsActive(false) : setIsActive(true);
     }
   }, [inputData]);
 
@@ -51,18 +44,26 @@ const PageItems = ({
   return (
     <>
       <Container className="container">
-        <Text>{qText}</Text>
-        <Items
-          items={options}
-          data={inputData}
-          setData={setInputData}
-          text={qText}
-          isNoneGone={isNoneGone}
-          isLike={isLike}
-          isBig={isBig}
-          isTwo={isTwo}
+        <Text
+          style={{
+            fontSize: "1.6rem",
+            fontWeight: "700",
+            letterSpacing: "-0.04rem",
+            marginBottom: "3.2rem",
+          }}
+        >
+          평소 어떤 룩 위주로 착용하시나요?
+        </Text>
+        <Options
+          options={options}
+          inputData={inputData}
+          setInputData={setInputData}
+          property={"looks"}
+          isEct={true}
+          text_2="이외에 착용하시는 룩이 있으신가요?"
+          placeholder="이외에 착용하시는 룩이 있다면 알려주세요!"
         />
-        <div style={{ marginTop: "9.2rem", height: "1px" }} ref={target} />
+        <div style={{ marginTop: "5.9rem", height: "1px" }} ref={target} />
       </Container>
       <Bottom
         ref={viewport}
@@ -76,7 +77,7 @@ const PageItems = ({
   );
 };
 
-export default PageItems;
+export default Page_28;
 
 const Container = styled.div`
   width: 100%;
@@ -90,12 +91,10 @@ const Container = styled.div`
 
 const Text = styled.div`
   width: 100%;
-  margin-bottom: 3.2rem;
+  margin-bottom: 1.6rem;
 
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   font-weight: 700;
-  letter-spacing: -0.04rem;
+  letter-spacing: -0.035rem;
   color: ${({ theme }) => theme.colors.black};
-  white-space: pre-wrap;
-  word-break: break-all;
 `;

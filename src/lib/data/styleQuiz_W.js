@@ -99,9 +99,11 @@ const top = [
   { src: "/imgs/item.png" },
   { src: "/imgs/item.png" },
   { src: "/imgs/item.png" },
+  { src: "/imgs/item.png" },
 ];
 
 const pants = [
+  { src: "/imgs/item.png" },
   { src: "/imgs/item.png" },
   { src: "/imgs/item.png" },
   { src: "/imgs/item.png" },
@@ -135,6 +137,7 @@ const skirt = [
   { src: "/imgs/item.png" },
   { src: "/imgs/item.png" },
   { src: "/imgs/item.png" },
+  { src: "/imgs/item.png" },
 ];
 
 const outer = [
@@ -153,15 +156,7 @@ const outer = [
   { src: "/imgs/item.png" },
   { src: "/imgs/item.png" },
   { src: "/imgs/item.png" },
-];
-
-const cody = [
-  { src: "/imgs/item.png", text: "캐주얼" },
-  { src: "/imgs/item.png", text: "클래식포멀" },
-  { src: "/imgs/item.png", text: "로맨틱페미닌" },
-  { src: "/imgs/item.png", text: "러블리" },
-  { src: "/imgs/item.png", text: "럭셔리" },
-  { src: "/imgs/item.png", text: "기타" },
+  { src: "/imgs/item.png" },
 ];
 
 const brand = [
@@ -182,7 +177,7 @@ const size_top = [
       { value: 3, label: "M" },
       { value: 4, label: "L" },
       { value: 5, label: "XL" },
-      { value: 6, label: "XXL" },
+      { value: 6, label: "XXL 이상" },
     ],
     text: "항목 1",
   },
@@ -216,7 +211,7 @@ const size_top = [
       { value: 3, label: "80" },
       { value: 4, label: "85" },
       { value: 5, label: "90" },
-      { value: 6, label: "95" },
+      { value: 6, label: "95 이상" },
     ],
     text: "밑가슴둘레",
   },
@@ -247,7 +242,7 @@ const size_bottom = [
       { value: 7, label: "29" },
       { value: 8, label: "30" },
       { value: 9, label: "31" },
-      { value: 10, label: "32" },
+      { value: 10, label: "32 이상" },
     ],
     text: "항목 1",
   },
@@ -294,7 +289,7 @@ const page_35 = [
 
 const page_36 = [
   { src: "/imgs/item.png", text: "타이트핏" },
-  { src: "/imgs/item.png", text: "스트레이트핏" },
+  { src: "/imgs/item.png", text: "레귤러핏" },
   { src: "/imgs/item.png", text: "루즈핏" },
   { src: "/imgs/item.png", text: "오버핏" },
 ];
@@ -427,7 +422,6 @@ export const styleQuizData_W = {
   pants,
   skirt,
   outer,
-  cody,
   brand,
   size_top,
   size_bottom,

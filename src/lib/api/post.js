@@ -11,6 +11,8 @@ const login = async (body) => {
     return data;
   } catch (e) {
     console.log("[FAIL] LOGIN", e);
+  }
+};
 
 const signup = async (body) => {
   try {
@@ -111,13 +113,13 @@ const getUserID = async (header, body) => {
 };
 
 const postApi = {
+  login,
   signup,
   phoneCheck,
   reqCode,
   codeCheck,
   postStyleQuiz,
   getUserID,
-  login,
 };
 
 export default postApi;

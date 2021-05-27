@@ -16,12 +16,14 @@ const Items = ({
   isOne,
   isLike,
   isBig,
+  isTwo,
 }) => {
   const props = {
     isNoneGone: isNoneGone,
     isOne: isOne,
     isLike: isLike,
     isBig: isBig,
+    isTwo: isTwo,
   };
   const [isNoneClick, setIsNoneClick] = useState(false);
 
@@ -37,14 +39,14 @@ const Items = ({
 
   return (
     <>
-      <Container>
+      <Container isTwo={props.isTwo}>
         {items.map((item, idx) => {
           return (
             <ItemBox
               key={idx}
               id={idx}
               src={item.src}
-              text={item.text}
+              text={item.label}
               data={data}
               setData={setData}
               props={props}
@@ -68,10 +70,18 @@ const Items = ({
 export default Items;
 
 const Container = styled.div`
+  ${(props) =>
+    props.isTwo
+      ? css`
+          grid-template-columns: 1fr 1fr;
+        `
+      : css`
+          grid-template-columns: 33% 33% 33%;
+        `};
+
   width: 100%;
 
   display: grid;
-  grid-template-columns: 33% 33% 33%;
   justify-items: center;
   align-items: flex-start;
   row-gap: 2.4rem;
@@ -120,13 +130,14 @@ const ItemBox = ({ id, src, text, data, setData, props, setIsNoneClick }) => {
         priority={true}
         // loading="eager"
         // loading="lazy"
-        width={90}
-        height={props.isBig ? 180 : 90}
+        width={props.isTwo ? 135 : 90}
+        height={props.isBig ? 180 : props.isTwo ? 135 : 90}
         onClick={handleImgClick}
       />
       <ItemHover
         isClick={isClick}
         isBig={props.isBig}
+        isTwo={props.isTwo}
         onClick={() =>
           !props.isOne
             ? setData(data.filter((item) => id !== item))
@@ -176,14 +187,22 @@ const ItemHover = styled.div`
   ${(props) =>
     props.isBig
       ? css`
+          width: 9rem;
           height: 18rem;
           border-radius: 1rem;
         `
+      : props.isTwo
+      ? css`
+          width: 13.5rem;
+          height: 13.5rem;
+          border-radius: 0.5rem;
+        `
       : css`
+          width: 9rem;
           height: 9rem;
           border-radius: 0.5rem;
         `};
-  width: 9rem;
+
   background-color: rgba(0, 0, 0, 0.4);
 
   display: ${(props) => (props.isClick ? "flex" : "none")};

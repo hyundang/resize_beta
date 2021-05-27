@@ -172,7 +172,7 @@ const Options = ({ options, inputData, setInputData, property }) => {
                 })
               }
             >
-              {item}
+              {item.label}
             </OptionBox>
           );
         })}

@@ -6,12 +6,19 @@ import { Modal, Tags, Items } from ".";
 // recoil
 import { useRecoilState } from "recoil";
 import {
+  StyleQuizInputState_28,
+  StyleQuizInputState_29,
   StyleQuizInputState_arr,
   StyleQuizInputState_num,
+  StyleQuizInputState_str,
 } from "../../states/styleQuiz";
+// hooks
+import { useRecoilInput } from "../../hooks";
 // data
 import { styleQuizData_M } from "../../lib/data/styleQuiz_M";
 import { styleQuizData_W } from "../../lib/data/styleQuiz_W";
+
+const sex = 0; // for male
 
 const PageStyle = ({ onNextClick, onBackClick }) => {
   // for input datas
@@ -26,9 +33,10 @@ const PageStyle = ({ onNextClick, onBackClick }) => {
   const [data_25, setData_25] = useRecoilState(StyleQuizInputState_arr(8));
   const [data_26, setData_26] = useRecoilState(StyleQuizInputState_arr(9));
   const [data_27, setData_27] = useRecoilState(StyleQuizInputState_num(0));
-  const [data_28, setData_28] = useRecoilState(StyleQuizInputState_arr(10));
-  const [data_29, setData_29] = useRecoilState(StyleQuizInputState_arr(11));
+  const [data_28, setData_28] = useRecoilState(StyleQuizInputState_28);
+  const [data_29, setData_29] = useRecoilState(StyleQuizInputState_29);
   const [data_30, setData_30] = useRecoilState(StyleQuizInputState_arr(12));
+  const data_31_1 = useRecoilInput(StyleQuizInputState_str(0));
   // for modal open
   const [isOpen, setIsOpen] = useState({
     0: false,
@@ -151,6 +159,25 @@ const PageStyle = ({ onNextClick, onBackClick }) => {
           }
         />
         <div style={{ height: "2.4rem" }} />
+        <Tags
+          qtext="평소 착용하는 룩"
+          datas={data_28.looks}
+          setData={(e) =>
+            setData_28({
+              ...setData_28,
+              looks: e,
+            })
+          }
+          options={styleQuizData_M.look}
+          setIsOpen={(param) =>
+            setIsOpen({
+              ...isOpen,
+              6: param,
+            })
+          }
+          isLook={true}
+        />
+        <div style={{ height: "2.4rem" }} />
         <Items
           options={styleQuizData_M.top}
           inputData={data_23}
@@ -159,7 +186,7 @@ const PageStyle = ({ onNextClick, onBackClick }) => {
           setIsOpen={(param) =>
             setIsOpen({
               ...isOpen,
-              6: param,
+              7: param,
             })
           }
         />
@@ -171,22 +198,24 @@ const PageStyle = ({ onNextClick, onBackClick }) => {
           setIsOpen={(param) =>
             setIsOpen({
               ...isOpen,
-              7: param,
-            })
-          }
-        />
-        <Items
-          options={styleQuizData_W.skirt}
-          inputData={data_25}
-          setInputData={setData_25}
-          qtext="마음에 드는 치마/원피스"
-          setIsOpen={(param) =>
-            setIsOpen({
-              ...isOpen,
               8: param,
             })
           }
         />
+        {sex === 1 && (
+          <Items
+            options={styleQuizData_W.skirt}
+            inputData={data_25}
+            setInputData={setData_25}
+            qtext="마음에 드는 치마/원피스"
+            setIsOpen={(param) =>
+              setIsOpen({
+                ...isOpen,
+                9: param,
+              })
+            }
+          />
+        )}
         <Items
           options={styleQuizData_M.top}
           inputData={data_26}
@@ -195,31 +224,7 @@ const PageStyle = ({ onNextClick, onBackClick }) => {
           setIsOpen={(param) =>
             setIsOpen({
               ...isOpen,
-              9: param,
-            })
-          }
-        />
-        <Items
-          options={styleQuizData_M.cody}
-          inputData={data_28}
-          setInputData={setData_28}
-          qtext="평소 자주 착용하는 코디"
-          setIsOpen={(param) =>
-            setIsOpen({
-              ...isOpen,
               10: param,
-            })
-          }
-        />
-        <Items
-          options={styleQuizData_M.cody}
-          inputData={data_29}
-          setInputData={setData_29}
-          qtext="시도해보고 싶은 코디"
-          setIsOpen={(param) =>
-            setIsOpen({
-              ...isOpen,
-              11: param,
             })
           }
         />
@@ -231,10 +236,12 @@ const PageStyle = ({ onNextClick, onBackClick }) => {
           setIsOpen={(param) =>
             setIsOpen({
               ...isOpen,
-              12: param,
+              11: param,
             })
           }
         />
+        <Text>자주 구매하는 브랜드</Text>
+        <InputBox placeholder="joonj..." type="text" input={data_31_1} />
         <div style={{ marginTop: "7.2rem", height: "1px" }} ref={target} />
       </Container>
       <Bottom
@@ -335,12 +342,27 @@ const PageStyle = ({ onNextClick, onBackClick }) => {
           options={styleQuizData_M.page_7}
         />
       )}
-      {isOpen[6] && (
+      {/* {isOpen[6] && (
         <Modal
           setIsOpen={(param) =>
             setIsOpen({
               ...isOpen,
               6: param,
+            })
+          }
+          inputData={data_28}
+          setInputData={setData_28}
+          qtext="평소 착용하는 룩을 선택해주세요."
+          isNoneGone={true}
+          options={styleQuizData_M.look}
+        />
+      )} */}
+      {isOpen[7] && (
+        <Modal
+          setIsOpen={(param) =>
+            setIsOpen({
+              ...isOpen,
+              7: param,
             })
           }
           inputData={data_23}
@@ -351,12 +373,12 @@ const PageStyle = ({ onNextClick, onBackClick }) => {
           options={styleQuizData_M.top}
         />
       )}
-      {isOpen[7] && (
+      {isOpen[8] && (
         <Modal
           setIsOpen={(param) =>
             setIsOpen({
               ...isOpen,
-              7: param,
+              8: param,
             })
           }
           inputData={data_24}
@@ -367,12 +389,12 @@ const PageStyle = ({ onNextClick, onBackClick }) => {
           options={styleQuizData_M.pants}
         />
       )}
-      {isOpen[8] && (
+      {isOpen[9] && (
         <Modal
           setIsOpen={(param) =>
             setIsOpen({
               ...isOpen,
-              8: param,
+              9: param,
             })
           }
           inputData={data_25}
@@ -383,12 +405,12 @@ const PageStyle = ({ onNextClick, onBackClick }) => {
           options={styleQuizData_W.skirt}
         />
       )}
-      {isOpen[9] && (
+      {isOpen[10] && (
         <Modal
           setIsOpen={(param) =>
             setIsOpen({
               ...isOpen,
-              9: param,
+              10: param,
             })
           }
           inputData={data_26}
@@ -399,44 +421,12 @@ const PageStyle = ({ onNextClick, onBackClick }) => {
           options={styleQuizData_M.outer}
         />
       )}
-      {isOpen[10] && (
-        <Modal
-          setIsOpen={(param) =>
-            setIsOpen({
-              ...isOpen,
-              10: param,
-            })
-          }
-          inputData={data_28}
-          setInputData={setData_28}
-          qtext="평소 자주 착용하는 코디를 선택해주세요."
-          isNoneGone={true}
-          isLike={true}
-          options={styleQuizData_M.cody}
-        />
-      )}
       {isOpen[11] && (
         <Modal
           setIsOpen={(param) =>
             setIsOpen({
               ...isOpen,
               11: param,
-            })
-          }
-          inputData={data_29}
-          setInputData={setData_29}
-          qtext="시도해보고 싶은 코디를 선택해주세요."
-          isNoneGone={true}
-          isLike={true}
-          options={styleQuizData_M.cody}
-        />
-      )}
-      {isOpen[12] && (
-        <Modal
-          setIsOpen={(param) =>
-            setIsOpen({
-              ...isOpen,
-              12: param,
             })
           }
           inputData={data_30}

@@ -1,10 +1,10 @@
 import React, { useEffect, useState, useRef } from "react";
-import styled, { css } from "styled-components";
+import styled, { css, keyframes } from "styled-components";
 import StyleImg from "next/image";
 // components
 import { Bottom } from "../common";
 
-const PageStyle = ({
+const PageCody = ({
   src,
   inputData,
   setInputData,
@@ -41,7 +41,7 @@ const PageStyle = ({
   return (
     <>
       <Container className="container">
-        <Text>이 스타일은 어떠신가요?</Text>
+        <Text>이 코디는 어떠신가요?</Text>
         <StyleImg
           className="style_img"
           src={src}
@@ -62,7 +62,9 @@ const PageStyle = ({
             isActive={inputData === 0}
             onClick={() => {
               setInputData(0);
-              onNextClick();
+              setTimeout(() => {
+                onNextClick();
+              }, [500]);
             }}
           >
             좋아요
@@ -72,7 +74,9 @@ const PageStyle = ({
             isActive={inputData === 1}
             onClick={() => {
               setInputData(1);
-              onNextClick();
+              setTimeout(() => {
+                onNextClick();
+              }, [500]);
             }}
           >
             나쁘지 않아요
@@ -82,7 +86,9 @@ const PageStyle = ({
             isActive={inputData === 2}
             onClick={() => {
               setInputData(2);
-              onNextClick();
+              setTimeout(() => {
+                onNextClick();
+              }, [600]);
             }}
           >
             싫어요
@@ -102,7 +108,7 @@ const PageStyle = ({
   );
 };
 
-export default PageStyle;
+export default PageCody;
 
 const Container = styled.div`
   width: 100%;
@@ -136,6 +142,18 @@ const BtnContainer = styled.div`
   justify-content: center;
 `;
 
+const pop = keyframes`
+  0%{
+    transform: scale(1);
+  }
+  50%{
+    transform: scale(1.05);
+  }
+  100%{
+    transform: scale(1);
+  }
+`;
+
 const Btn = styled.div`
   width: 15.8rem;
   height: 4.6rem;
@@ -155,6 +173,7 @@ const Btn = styled.div`
       ? css`
           border: none;
           background-color: ${({ theme }) => theme.colors.black};
+          animation: ${pop} 0.5s linear; 
           color: ${({ theme }) => theme.colors.white};
         `
       : css`

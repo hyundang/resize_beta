@@ -1,7 +1,9 @@
 export { default as Page_0 } from "./Page_0";
 export { default as Page_1 } from "./Page_1";
+export { default as Page_28 } from "./Page_28";
+export { default as Page_29 } from "./Page_29";
 export { default as PageItems } from "./PageItems";
-export { default as PageStyle } from "./PageStyle";
+export { default as PageCody } from "./PageCody";
 export { default as PageBrand } from "./PageBrand";
 export { default as PageBodySize } from "./PageBodySize";
 export { default as PageTopSize } from "./PageTopSize";
