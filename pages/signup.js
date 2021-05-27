@@ -10,6 +10,10 @@ import ic_dropdown from "../src/assets/icons/dropdown.svg";
 import ic_down_arrow from "../src/assets/icons/arrow-down.svg";
 import ic_up_arrow from "../src/assets/icons/arrow-up.svg";
 import ic_find from "../src/assets/icons/ic-find.svg";
+// api
+import { postApi } from "../src/lib/api";
+// router
+import { useRouter } from "next/router";
 
 const SignupPage = () => {
   // prevent refresh
@@ -29,6 +33,7 @@ const SignupPage = () => {
     phone: "",
     password: "",
     password_check: "",
+    CE: "",
     address: "",
     address_detail: "",
     check_list: [],
@@ -49,7 +54,6 @@ const SignupPage = () => {
     two: false,
     three: false,
   });
-
   // for policy data
   const policyDatas = [
     {
@@ -71,6 +75,8 @@ const SignupPage = () => {
       policyText: PolicyThree,
     },
   ];
+  // for router
+  const router = useRouter();
 
   // for inputs
   const handleInputChange = (e) => {
@@ -93,16 +99,26 @@ const SignupPage = () => {
     });
   };
 
-  const handleCEGetBtn = () => {
+  const handleCEGetBtn = async () => {
     if (inputData.phone.length > 0) {
-      setIsCEGetBtnAtv(true);
-      setPnFormat(false);
-      setIsCEOkay(true);
+      const data = await postApi.phoneCheck({ phone: inputData.phone });
+      if (data.result !== "exist") {
+        const req = await postApi.reqCode({ phone: inputData.phone });
+        setIsCEGetBtnAtv(true);
+        setPnFormat(false);
+        setIsCEOkay(true);
+      } else {
+        console.log("exist");
+      }
     }
   };
 
-  const handleCECheckBtn = () => {
-    setIsCEOkay(false);
+  const handleCECheckBtn = async () => {
+    const data = await postApi.codeCheck({
+      phone: inputData.phone,
+      code: inputData.CE,
+    });
+    data.result ? setIsCEOkay(false) : setIsCEOkay(true);
   };
 
   // for check all
@@ -156,10 +172,28 @@ const SignupPage = () => {
     }
   };
 
+  const handleNextClick = async () => {
+    const body = {
+      user_name: inputData.name,
+      date_of_birth: inputData.birth,
+      gender: inputData.sex,
+      phone: inputData.phone,
+      email: inputData.email,
+      password: inputData.password,
+      address_main: inputData.address,
+      address_detail: inputData.address_detail,
+      is_terms_of_service: inputData.check_list.includes(0),
+      is_privacy_policy: inputData.check_list.includes(1),
+      is_marketing: inputData.check_list.includes(2),
+    };
+    const data = await postApi.signup(body);
+    router.replace("/login");
+  };
+
   // password format check
   useEffect(() => {
     //  8 ~ 16자 영문, 숫자 조합
-    const regExp = /^(?=.*\d)(?=.*[a-zA-Z])[0-9a-zA-Z]{10,16}$/;
+    const regExp = /^(?=.*\d)(?=.*[a-zA-Z])[0-9a-zA-Z!@#$%^&*]{10,16}$/;
     inputData.password.length === 0
       ? setPwFormat(true)
       : setPwFormat(regExp.test(inputData.password));
@@ -398,7 +432,7 @@ const SignupPage = () => {
           );
         })}
         <div style={{ height: "12.2rem" }} />
-        <BottomBlack>다음</BottomBlack>
+        <BottomBlack text="가입하기" onClick={handleNextClick} />
       </Container>
     </>
   );

@@ -124,11 +124,10 @@ const Page_0 = ({onNextClick}) => {
         ) : (
           <BottomBlack
             ref={viewport_2}
+            text="다음"
             isShow={isShow}
             onClick={() => setIsNext(true)}
-          >
-            다음
-          </BottomBlack>
+          />
         )}
       </PageTransition>
     </div>

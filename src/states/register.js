@@ -12,7 +12,7 @@ export const getUserSelector = selector({
       baseURL: API_DOMAIN,
       header: localStorage.getItem("token"),
       url: `/api/user/getUserID`,
-      body: { phone: localStorage.getItem("phone") },
+      data: { phone: localStorage.getItem("phone") },
     });
     return data.id;
   },

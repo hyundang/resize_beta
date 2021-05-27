@@ -110,7 +110,7 @@ const LoginPage = () => {
         >
           인증번호 확인
         </Btn>
-        <BottomBlack>다음</BottomBlack>
+        <BottomBlack text="다음"/>
       </Container>
       {isOpen && (
         <Modal

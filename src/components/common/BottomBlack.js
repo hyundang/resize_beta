@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
-const BottomBlack = ({ isShow, onClick }) => {
-  return <Container isShow={isShow} onClick={onClick}>다음</Container>;
+const BottomBlack = ({ isShow, onClick, text }) => {
+  return <Container isShow={isShow} onClick={onClick}>{text}</Container>;
 };
 
 const Container = styled.div`
