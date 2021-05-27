@@ -78,6 +78,7 @@ const SignupPage = () => {
   // for router
   const router = useRouter();
 
+
   // for inputs
   const handleInputChange = (e) => {
     const {
