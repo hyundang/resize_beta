@@ -88,7 +88,7 @@ const PageTopSize = ({
               </Text>
               <Options
                 options={item[props[idx]]}
-                text={item.text}
+                text={item.label}
                 inputData={inputData}
                 setInputData={setInputData}
                 property={props[idx]}
@@ -97,7 +97,7 @@ const PageTopSize = ({
           ) : (
             <Options
               options={item[props[idx]]}
-              text={item.text}
+              text={item.label}
               inputData={inputData}
               setInputData={setInputData}
               property={props[idx]}

@@ -15,37 +15,21 @@ const Tags = ({ qtext, datas, setData, options, setIsOpen, isLook }) => {
             ? qtext.replace("평소 착용하는 ", "") + " 추가하기"
             : qtext.replace("싫어하는 ", "") + " 추가하기"}
         </TagBox>
-        {isLook
-          ? datas.map((item) => {
-              return (
-                <TagBox key={item} id={item}>
-                  {options[item].label}
-                  <img
-                    id={item}
-                    src={ic_delete}
-                    style={{ width: "1.5rem", marginLeft: "0.8rem" }}
-                    onClick={(e) =>
-                      setData(datas.filter((d) => d !== Number(e.target.id)))
-                    }
-                  />
-                </TagBox>
-              );
-            })
-          : datas.map((item) => {
-              return (
-                <TagBox key={item} id={item}>
-                  {options[item].text}
-                  <img
-                    id={item}
-                    src={ic_delete}
-                    style={{ width: "1.5rem", marginLeft: "0.8rem" }}
-                    onClick={(e) =>
-                      setData(datas.filter((d) => d !== Number(e.target.id)))
-                    }
-                  />
-                </TagBox>
-              );
-            })}
+        {datas.map((item) => {
+          return (
+            <TagBox key={item} id={item}>
+              {options[item].label}
+              <img
+                id={item}
+                src={ic_delete}
+                style={{ width: "1.5rem", marginLeft: "0.8rem" }}
+                onClick={(e) =>
+                  setData(datas.filter((d) => d !== Number(e.target.id)))
+                }
+              />
+            </TagBox>
+          );
+        })}
       </TagContainer>
     </>
   );

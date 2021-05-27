@@ -78,11 +78,11 @@ const PagePayment = ({ onBackClick, onNextClick }) => {
         <Text style={{ marginBottom: "4rem", fontWeight: "400" }}>
           마이페이지에서 언제든지 업데이트가 가능합니다.
         </Text>
-        <Text>{styleQuizData_M.payment[0].text}</Text>
+        <Text>{styleQuizData_M.payment[0].label}</Text>
         <Picker
           options={styleQuizData_M.payment[0].options}
           placeholder={
-            styleQuizData_M.payment[0].text + " 비용을 선택해주세요."
+            styleQuizData_M.payment[0].label + " 비용을 선택해주세요."
           }
           isMulti={true}
           isSearchable={true}
@@ -99,11 +99,11 @@ const PagePayment = ({ onBackClick, onNextClick }) => {
           }}
         />
         <div style={{ height: "2.4rem" }} />
-        <Text>{styleQuizData_M.payment[1].text}</Text>
+        <Text>{styleQuizData_M.payment[1].label}</Text>
         <Picker
           options={styleQuizData_M.payment[1].options}
           placeholder={
-            styleQuizData_M.payment[1].text + " 비용을 선택해주세요."
+            styleQuizData_M.payment[1].label + " 비용을 선택해주세요."
           }
           isMulti={true}
           isSearchable={true}
@@ -120,11 +120,11 @@ const PagePayment = ({ onBackClick, onNextClick }) => {
           }}
         />
         <div style={{ height: "2.4rem" }} />
-        <Text>{styleQuizData_M.payment[2].text}</Text>
+        <Text>{styleQuizData_M.payment[2].label}</Text>
         <Picker
           options={styleQuizData_M.payment[2].options}
           placeholder={
-            styleQuizData_M.payment[2].text + " 비용을 선택해주세요."
+            styleQuizData_M.payment[2].label + " 비용을 선택해주세요."
           }
           isMulti={true}
           isSearchable={true}
@@ -141,11 +141,11 @@ const PagePayment = ({ onBackClick, onNextClick }) => {
           }}
         />
         <div style={{ height: "2.4rem" }} />
-        <Text>{styleQuizData_M.payment[3].text}</Text>
+        <Text>{styleQuizData_M.payment[3].label}</Text>
         <Picker
           options={styleQuizData_M.payment[3].options}
           placeholder={
-            styleQuizData_M.payment[3].text + " 비용을 선택해주세요."
+            styleQuizData_M.payment[3].label + " 비용을 선택해주세요."
           }
           isMulti={true}
           isSearchable={true}
@@ -162,11 +162,11 @@ const PagePayment = ({ onBackClick, onNextClick }) => {
           }}
         />
         <div style={{ height: "2.4rem" }} />
-        <Text>{styleQuizData_M.payment[4].text}</Text>
+        <Text>{styleQuizData_M.payment[4].label}</Text>
         <Picker
           options={styleQuizData_M.payment[4].options}
           placeholder={
-            styleQuizData_M.payment[4].text + " 비용을 선택해주세요."
+            styleQuizData_M.payment[4].label + " 비용을 선택해주세요."
           }
           isMulti={true}
           isSearchable={true}
@@ -183,11 +183,11 @@ const PagePayment = ({ onBackClick, onNextClick }) => {
           }}
         />
         <div style={{ height: "2.4rem" }} />
-        <Text>{styleQuizData_M.payment[5].text}</Text>
+        <Text>{styleQuizData_M.payment[5].label}</Text>
         <Picker
           options={styleQuizData_M.payment[5].options}
           placeholder={
-            styleQuizData_M.payment[5].text + " 비용을 선택해주세요."
+            styleQuizData_M.payment[5].label + " 비용을 선택해주세요."
           }
           isMulti={true}
           isSearchable={true}
@@ -204,11 +204,11 @@ const PagePayment = ({ onBackClick, onNextClick }) => {
           }}
         />
         <div style={{ height: "2.4rem" }} />
-        <Text>{styleQuizData_M.payment[6].text}</Text>
+        <Text>{styleQuizData_M.payment[6].label}</Text>
         <Picker
           options={styleQuizData_M.payment[6].options}
           placeholder={
-            styleQuizData_M.payment[6].text + " 비용을 선택해주세요."
+            styleQuizData_M.payment[6].label + " 비용을 선택해주세요."
           }
           isMulti={true}
           isSearchable={true}
@@ -225,11 +225,11 @@ const PagePayment = ({ onBackClick, onNextClick }) => {
           }}
         />
         <div style={{ height: "2.4rem" }} />
-        <Text>{styleQuizData_M.payment[7].text}</Text>
+        <Text>{styleQuizData_M.payment[7].label}</Text>
         <Picker
           options={styleQuizData_M.payment[7].options}
           placeholder={
-            styleQuizData_M.payment[7].text + " 비용을 선택해주세요."
+            styleQuizData_M.payment[7].label + " 비용을 선택해주세요."
           }
           isMulti={true}
           isSearchable={true}
