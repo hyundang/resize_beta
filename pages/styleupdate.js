@@ -14,10 +14,28 @@ import TransitionPage from "../src/components/PageTransition";
 // data
 import { styleQuizData_M } from "../src/lib/data/styleQuiz_M";
 import { styleQuizData_W } from "../src/lib/data/styleQuiz_W";
+// recoil
+import { useRecoilValue } from "recoil";
+import { StyleQuizPostState } from "../src/states/styleQuiz";
+// api
+import { postApi } from "../src/lib/api";
 
 const styleUpdate = () => {
+  // for page routing
   const [pageNum, setPageNum] = useState(0);
+  // for post data
   const router = useRouter();
+  const postData = useRecoilValue(StyleQuizPostState);
+
+  const handleSubmit = () => {
+    console.log(postData);
+    // api submit
+    postApi.postStyleQuiz(
+      { Authorization: localStorage.getItem("userToken") },
+      postData
+    );
+    router.push("/");
+  };
 
   switch (pageNum) {
     case 1:
@@ -63,10 +81,7 @@ const styleUpdate = () => {
           <TransitionPage type="page" pagenum={pageNum}>
             <PagePayment
               onBackClick={() => setPageNum(3)}
-              onNextClick={() => {
-                // api submit
-                router.push("/");
-              }}
+              onNextClick={handleSubmit}
             />
           </TransitionPage>
         </>

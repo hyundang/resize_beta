@@ -83,8 +83,8 @@ const ItemBox = ({ id, src, text, data, setData, props, setIsNoneClick }) => {
 
   const handleImgClick = () => {
     if (!props.isOne) {
-      if (data.length === 0) {
-        setData(data.concat([id]));
+      if (data.includes(-1) || data.length === 0) {
+        setData([id]);
         setIsNoneClick(false);
       } else {
         setData(data.concat([id]));
@@ -201,10 +201,11 @@ const CheckBox = ({ isClick, setIsClick, setData, text }) => {
     if (isClick) {
       setCheckedList([]);
       setIsClick(false);
-      setData([]);
+      setData([-1]);
     } else {
       setCheckedList([0]);
       setIsClick(true);
+      setData([]);
     }
   };
 

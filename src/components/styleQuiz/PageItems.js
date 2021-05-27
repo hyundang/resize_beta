@@ -24,7 +24,13 @@ const PageItems = ({
   // for checking bottom btn active
   useEffect(() => {
     console.log(inputData);
-    inputData.length !== 0 ? setIsActive(true) : setIsActive(false);
+    if (isNoneGone) {
+      !inputData.includes(-1) & inputData.length !== 0
+        ? setIsActive(true)
+        : setIsActive(false);
+    } else {
+      !inputData.includes(-1) ? setIsActive(true) : setIsActive(false);
+    }
   }, [inputData]);
 
   useEffect(() => {

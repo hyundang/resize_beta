@@ -3,7 +3,7 @@ import axios from "axios";
 const getData = async (id) => {
   try {
     const { data } = await axios({
-      API_DOMAIN,
+      baseURL: API_DOMAIN,
       url: `/api/${id}`,
       method: "get",
     });

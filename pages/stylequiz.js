@@ -42,6 +42,8 @@ import { styleQuizData_W } from "../src/lib/data/styleQuiz_W";
 import { props } from "../src/lib/data/properties";
 // hooks
 import { useRecoilInput } from "../src/hooks";
+// router
+import {useRouter} from 'next/router';
 
 const sex = 1; // only man
 
@@ -65,7 +67,8 @@ const styleQuiz = () => {
   const [data_28, setData_28] = useRecoilState(StyleQuizInputState_arr(10));
   const [data_29, setData_29] = useRecoilState(StyleQuizInputState_arr(11));
   const [data_30, setData_30] = useRecoilState(StyleQuizInputState_arr(12));
-  const data_31 = useRecoilInput(StyleQuizInputState_str(0));
+  const data_31_1 = useRecoilInput(StyleQuizInputState_str(0));
+  const [data_31_2, setData_31_2] = useRecoilState(StyleQuizInputState_num(1));
   const data_32_1 = useRecoilInput(StyleQuizInputState_str(1));
   const data_32_2 = useRecoilInput(StyleQuizInputState_str(2));
   const [data_33, setData_33] = useRecoilState(StyleQuizInputState_33);
@@ -82,6 +85,9 @@ const styleQuiz = () => {
   const [data_44, setData_44] = useRecoilState(StyleQuizInputState_44);
   const [data_45, setData_45] = useRecoilState(StyleQuizInputState_45);
   const [data_46, setData_46] = useRecoilState(StyleQuizInputState_46);
+
+  // for router
+  const router = useRouter();
 
   // prevent refresh
   useEffect(() => {
@@ -901,7 +907,9 @@ const styleQuiz = () => {
           <Bar pageNum={sex === 0 ? pageNum - 2 : pageNum} maxNum={46} />
           <TransitionPage type="page" pagenum={pageNum}>
             <PageBrand
-              inputData={data_31}
+              inputData={data_31_1}
+              inputData_2={data_31_2}
+              setInputData_2={setData_31_2}
               placeholder={sex === 0 ? "maje, Juun.J..." : "maje, Juun.J..."}
               onBackClick={() => setPageNum(30)}
               onNextClick={() => setPageNum(32)}
@@ -1265,7 +1273,7 @@ const styleQuiz = () => {
               inputData={data_46}
               setInputData={setData_46}
               onBackClick={() => setPageNum(45)}
-              onNextClick={() => setPageNum(47)}
+              onNextClick={() => router.push('/styleupdate')}
             />
           </TransitionPage>
         </>

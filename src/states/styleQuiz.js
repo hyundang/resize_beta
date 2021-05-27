@@ -1,4 +1,5 @@
-import { atom, atomFamily } from "recoil";
+import { atom, atomFamily, selector } from "recoil";
+import { UserState } from "./register";
 
 export const StyleQuizPageNumState = atom({
   key: "StyleQuizPageNumState",
@@ -31,7 +32,7 @@ export const StyleQuizInputState_Cody = atom({
     12: -1,
     13: -1,
     14: -1,
-  }
+  },
 });
 
 export const StyleQuizInputState_33 = atom({
@@ -113,13 +114,13 @@ export const StyleQuizInputState_46 = atom({
     industry: -1,
     industry_ect: "",
     task: -1,
-    task_ect: ""
+    task_ect: "",
   },
 });
 
 export const StyleQuizInputState_arr = atomFamily({
   key: "StyleQuizInputState_arr",
-  default: [],
+  default: [-1],
 });
 
 export const StyleQuizInputState_num = atomFamily({
@@ -130,4 +131,51 @@ export const StyleQuizInputState_num = atomFamily({
 export const StyleQuizInputState_str = atomFamily({
   key: "StyleQuizInputState_str",
   default: "",
+});
+
+export const StyleQuizPostState = selector({
+  key: "StyleQuizPostState",
+  get: ({ get }) => {
+    return {
+      user: get(UserState),
+      page_1: get(StyleQuizInputState_1),
+      color_tone: get(StyleQuizInputState_arr(0)),
+      color: get(StyleQuizInputState_arr(1)),
+      pattern: get(StyleQuizInputState_arr(2)),
+      detail: get(StyleQuizInputState_arr(3)),
+      material: get(StyleQuizInputState_arr(4)),
+      neck: get(StyleQuizInputState_arr(5)),
+      cody: get(StyleQuizInputState_Cody),
+      top: get(StyleQuizInputState_arr(6)),
+      pants: get(StyleQuizInputState_arr(7)),
+      skirt: get(StyleQuizInputState_arr(8)),
+      outer: get(StyleQuizInputState_arr(9)),
+      prefer: get(StyleQuizInputState_num(0)),
+      often_cody: get(StyleQuizInputState_arr(10)),
+      try_cody: get(StyleQuizInputState_arr(11)),
+      brand_1: get(StyleQuizInputState_arr(12)),
+      brand_2: {
+        name: get(StyleQuizInputState_str(0)),
+        popular: get(StyleQuizInputState_num(1)),
+      },
+      body_size: {
+        height: get(StyleQuizInputState_str(1)),
+        weight: get(StyleQuizInputState_str(2)),
+      },
+      top_size: get(StyleQuizInputState_33),
+      bottom_size: get(StyleQuizInputState_34),
+      top_len: get(StyleQuizInputState_arr(13)),
+      top_fit: get(StyleQuizInputState_arr(14)),
+      pants_fit: get(StyleQuizInputState_arr(15)),
+      patns_len: get(StyleQuizInputState_arr(16)),
+      skirt_type: get(StyleQuizInputState_arr(17)),
+      skirt_len: get(StyleQuizInputState_arr(18)),
+      shoes_type: get(StyleQuizInputState_arr(19)),
+      body_type: get(StyleQuizInputState_42),
+      face_type: get(StyleQuizInputState_43),
+      payment: get(StyleQuizInputState_44),
+      ect: get(StyleQuizInputState_45).text,
+      job: get(StyleQuizInputState_46),
+    };
+  },
 });

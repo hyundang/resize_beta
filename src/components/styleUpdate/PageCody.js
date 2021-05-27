@@ -8,8 +8,8 @@ import btn_good from "../../assets/icons/btn-good.svg";
 import btn_soso from "../../assets/icons/btn-soso.svg";
 import btn_bad from "../../assets/icons/btn-bad.svg";
 import btn_good_active from "../../assets/icons/btn-good-active.svg";
-// import btn_soso_active from "../../assets/icons/btn-soso-active.svg";
-// import btn_bad_active from "../../assets/icons/btn-bad-active.svg";
+import btn_soso_active from "../../assets/icons/btn-soso-active.svg";
+import btn_bad_active from "../../assets/icons/btn-bad-active.svg";
 // recoil
 import { useRecoilState } from "recoil";
 import { StyleQuizInputState_Cody } from "../../states/styleQuiz";
@@ -118,8 +118,14 @@ const Cody = ({ src, data, setData }) => {
           src={data === 0 ? btn_good_active : btn_good}
           onClick={() => setData(0)}
         />
-        <Btn src={btn_soso} onClick={() => setData(1)} />
-        <Btn src={btn_bad} onClick={() => setData(2)} />
+        <Btn
+          src={data === 1 ? btn_soso_active : btn_soso}
+          onClick={() => setData(1)}
+        />
+        <Btn
+          src={data === 2 ? btn_bad_active : btn_bad}
+          onClick={() => setData(2)}
+        />
       </div>
     </CodyBox>
   );

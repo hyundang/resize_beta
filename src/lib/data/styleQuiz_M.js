@@ -202,6 +202,12 @@ const brand = [
   { src: "/imgs/item.png", text: "기타" },
 ];
 
+const brand_pop = [
+  "유명한 브랜드가 좋아요",
+  "알려지지 않은 브랜드가 좋아요",
+  "브랜드는 상관 없어요"
+];
+
 const size_top = [
   {
     top_1: [
@@ -529,6 +535,7 @@ export const styleQuizData_M = {
   outer,
   cody,
   brand,
+  brand_pop,
   size_top,
   size_bottom,
   page_35,

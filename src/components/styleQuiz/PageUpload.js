@@ -11,6 +11,11 @@ const PageUpload = ({ inputData, setInputData, onBackClick, onNextClick }) => {
   const viewport = useRef(null);
   const target = useRef(null);
   const [isShow, setIsShow] = useState(true);
+  // for file url
+  const [imgURL, setImgURL] = useState({
+    img_face: [],
+    img_body: [],
+  });
   // for file delete
   const file = useRef();
 
@@ -27,15 +32,21 @@ const PageUpload = ({ inputData, setInputData, onBackClick, onNextClick }) => {
   const handleInputFile = (e) => {
     const len = e.target.files.length;
     const files = e.target.files;
-    let urls = inputData[e.target.id];
-    if (inputData[e.target.id].length + len <= 5) {
+    let urls = imgURL[e.target.id];
+    let imgFiles = inputData[e.target.id];
+    if (imgURL[e.target.id].length + len <= 5) {
       for (let i = 0; i < len; i++) {
         let img_url = URL.createObjectURL(files[i]);
         urls = urls.concat([img_url]);
+        imgFiles = imgFiles.concat([files[i]]);
       }
+      setImgURL({
+        ...imgURL,
+        [e.target.id]: urls,
+      });
       setInputData({
         ...inputData,
-        [e.target.id]: urls,
+        [e.target.id]: imgFiles,
       });
     } else {
       file.current.value = "";
@@ -44,6 +55,12 @@ const PageUpload = ({ inputData, setInputData, onBackClick, onNextClick }) => {
 
   const handleFaceDelClick = async (e) => {
     file.current.value = "";
+    setImgURL({
+      ...imgURL,
+      img_face: imgURL.img_face.filter((item, idx) => {
+        return e.target.id != String(idx);
+      }),
+    });
     setInputData({
       ...inputData,
       img_face: inputData.img_face.filter((item, idx) => {
@@ -54,6 +71,12 @@ const PageUpload = ({ inputData, setInputData, onBackClick, onNextClick }) => {
 
   const handleBodyDelClick = async (e) => {
     file.current.value = "";
+    setImgURL({
+      ...imgURL,
+      img_body: imgURL.img_body.filter((item, idx) => {
+        return e.target.id != String(idx);
+      }),
+    });
     setInputData({
       ...inputData,
       img_body: inputData.img_body.filter((item, idx) => {
@@ -141,7 +164,7 @@ const PageUpload = ({ inputData, setInputData, onBackClick, onNextClick }) => {
               onChange={handleInputFile}
               style={{ width: "0", height: "0" }}
             />
-            {inputData.img_face.map((item, idx) => {
+            {imgURL.img_face.map((item, idx) => {
               return (
                 <Picture className="input_img" id={idx} key={idx} src={item}>
                   <DelIcon
@@ -183,7 +206,7 @@ const PageUpload = ({ inputData, setInputData, onBackClick, onNextClick }) => {
               onChange={handleInputFile}
               style={{ width: "0", height: "0" }}
             />
-            {inputData.img_body.map((item, idx) => {
+            {imgURL.img_body.map((item, idx) => {
               return (
                 <Picture className="input_img" id={idx} key={idx} src={item}>
                   <DelIcon

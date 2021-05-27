@@ -53,6 +53,8 @@ const InputGender = styled.input`
   height: 2rem;
 
   &:checked + ${RadioBtnLabel} {
-    border: 0.5rem solid ${({ theme }) => theme.colors.black};
+    border: 0.45rem solid ${({ theme }) => theme.colors.white};
+    background-color: ${({ theme }) => theme.colors.black};
+    box-shadow: 0 0 0 0.1rem ${({ theme }) => theme.colors.black};
   }
 `;
