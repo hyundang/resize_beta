@@ -1,22 +1,7 @@
-import "../styles/globals.css";
-// recoil
-import { RecoilRoot } from "recoil";
-// theme
-import { ThemeProvider } from "styled-components";
-import theme from "../styles/theme";
-// for rendering when routing
-import PageTransition from "../src/components/PageTransition";
+import '../styles/globals.css'
 
-function Resize({ Component, pageProps }) {
-  return (
-    <ThemeProvider theme={theme}>
-      <RecoilRoot>
-        <PageTransition type="app">
-          <Component {...pageProps} />
-        </PageTransition>
-      </RecoilRoot>
-    </ThemeProvider>
-  );
+function MyApp({ Component, pageProps }) {
+  return <Component {...pageProps} />
 }
 
-export default Resize;
+export default MyApp
